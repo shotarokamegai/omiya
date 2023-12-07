@@ -40,13 +40,13 @@ var sonota = [
   <main>
     <section id="top" class="section">
         <h1>
-            <img src="./assets/img/title.svg" alt="JRE POINTのご案内">
+            <picture>
+              <source srcset="./assets/img/title.svg" media="(max-width: 750px)" />
+              <img src="./assets/img/title-pc.svg" alt="JRE POINTのご案内"/>
+            </picture>
         </h1>
         <div class="card">
-          <picture>
-            <source srcset="./assets/img/card.webp" type="image/webp" />
-            <img src="./assets/img/card.png" width="1012" height="409" alt="">
-          </picture>
+          <img src="./assets/img/card.png" width="1012" height="409" alt="">
         </div>
     </section>
     <section id="information" class="section">
@@ -105,44 +105,55 @@ var sonota = [
         <div class="section__inner">
           <h2 class="section-title blue">
             <span class="ja">
-              ルミネ・ニュウマンで<br/>
+              ルミネ・ニュウマンで<br class="sp"/>
               JRE POINTを使う
             </span>
-            <!-- <span class="en">
-              USE JRE POINT
-            </span> -->
           </h2>
           <div class="bg-title">
-            <img src="./assets/img/bg-green.svg" alt="">
+            <picture>
+              <source srcset="./assets/img/bg-green.svg" media="(max-width: 750px)" />
+              <img src="./assets/img/bg-green-pc.svg" alt=""/>
+            </picture>
             <p class="text">
-              ルミネカード提示で、<br/>
+              ルミネカード提示で、<br class="sp"/>
               1ポイント＝1円で使えます。
             </p>
           </div>
-          <p class="section-text kome">
+          <p class="section-text kome text-center">
             <span class="small">
-              ※その他ビューカード、JRE POINTアプリ、LINEマイカードのバーコード<br/>
+              ※その他ビューカード、JRE POINTアプリ、LINEマイカードのバーコード<br class="sp"/>
               提示でも使えます。詳細は <a href="http://" target="_blank" rel="noopener" class="bold underline">こちら</a>
             </span>
           </p>
           <div class="scene-wrapper">
             <div class="scene green scene1">
-              <h3 class="scene-title flex flex-sp">
-                <img src="./assets/img/scene1.svg" alt="SCENE 01">
+              <h3 class="scene-title flex flex-sp align-center">
+                <picture>
+                  <source srcset="./assets/img/scene1.svg" media="(max-width: 750px)" />
+                  <img src="./assets/img/scene1-pc.svg" alt="SCENE 01"/>
+                </picture>
                 <p>
-                  日常的に貯まったポイントを<br/>
+                  日常的に貯まったポイントを<br class="sp"/>
                   少しずつ使いたい！
                 </p>
               </h3>
               <div class="scene-content">
                 <p class="big-title">
-                  <span class="wrap">
-                    <span class="text">ルミネ・ニュウマンでの</span>
-                    <span class="line"></span>
+                  <span class="sp">
+                    <span class="wrap">
+                      <span class="text">ルミネ・ニュウマンでの</span>
+                      <span class="line"></span>
+                    </span>
+                    <span class="wrap">
+                      <span class="text">お勧めの使い方</span>
+                      <span class="line"></span>
+                    </span>
                   </span>
-                  <span class="wrap">
-                    <span class="text">お勧めの使い方</span>
-                    <span class="line"></span>
+                  <span class="pc">
+                    <span class="wrap">
+                      <span class="text">ルミネ・ニュウマンでのお勧めの使い方</span>
+                      <span class="line"></span>
+                    </span>
                   </span>
                 </p>
                 <div class="example flex flex-sp align-center">
@@ -157,13 +168,13 @@ var sonota = [
                     残り<span class="big">10,000円</span>をルミネカードで支払う
                   </p>
                   <p class="text">
-                    ご利用代金引き落としの際、<br/>
-                    お買い上げ金額が<span class="big">5%オフ</span><br/>
+                    ご利用代金引き落としの際、<br class="sp"/>
+                    お買い上げ金額が<span class="big">5%オフ</span><br class="sp"/>
                     <span class="big">9,500円</span>に
                   </p>
                   <p class="text">
-                    さらに、<br/>
-                    <span class="big">9,500円分の45ポイント</span><br/>
+                    さらに、<br class="sp"/>
+                    <span class="big">9,500円分の45ポイント</span><br class="sp"/>
                     （1,000円につき5ポイント）が貯まります！
                   </p>
                 </div>
@@ -181,10 +192,13 @@ var sonota = [
               </div>
             </div>
             <div class="scene green scene2">
-              <h3 class="scene-title flex flex-sp">
-                <img src="./assets/img/scene2.svg" alt="SCENE 02">
+              <h3 class="scene-title flex flex-sp align-center">
+                <picture>
+                  <source srcset="./assets/img/scene2.svg" media="(max-width: 750px)" />
+                  <img src="./assets/img/scene2-pc.svg" alt="SCENE 02"/>
+                </picture>
                 <p>
-                  ここぞという時にまとめて<br/>
+                  ここぞという時にまとめて<br class="sp"/>
                   使いたい！
                 </p>
               </h3>
@@ -194,15 +208,24 @@ var sonota = [
                     <span class="text">たくさん貯まったポイントは、</span>
                     <span class="line"></span>
                   </span>
-                  <span class="wrap">
-                    <span class="text">
-                      ルミネ商品券に交換するのが</span>
-                    <span class="line"></span>
+                  <span class="sp">
+                    <span class="wrap">
+                      <span class="text">
+                        ルミネ商品券に交換するのが</span>
+                      <span class="line"></span>
+                    </span>
+                    <span class="wrap">
+                      <span class="text">
+                        一番還元率が高い！</span>
+                      <span class="line"></span>
+                    </span>
                   </span>
-                  <span class="wrap">
-                    <span class="text">
-                      一番還元率が高い！</span>
-                    <span class="line"></span>
+                  <span class="pc">
+                    <span class="wrap">
+                      <span class="text">
+                        ルミネ商品券に交換するのが一番還元率が高い！</span>
+                      <span class="line"></span>
+                    </span>
                   </span>
                 </p>
                 <div class="example flex flex-sp align-center">
@@ -211,34 +234,38 @@ var sonota = [
                   <span class="bar"></span>
                 </div>
                 <div class="text-wrapper">
-                  <p class="text flex flex-sp align-center">
-                    <span>2,000ポイント</span>
-                    <span>2,000円分</span>
-                  </p>
-                  <p class="text flex flex-sp align-center">
-                    <span>3,600ポイント</span>
-                    <span>4,000円分</span>
-                  </p>
-                  <p class="text flex flex-sp align-center">
-                    <span>5,300ポイント</span>
-                    <span>6,000円分</span>
-                  </p>
-                  <p class="text flex flex-sp align-center">
-                    <span>6,800ポイント</span>
-                    <span>8,000円分</span>
-                  </p>
-                  <p class="text flex flex-sp align-center">
-                    <span>8,400ポイント</span>
-                    <span>10,000円分</span>
-                  </p>
-                  <p class="text flex flex-sp align-center">
-                    <span>16,400ポイント</span>
-                    <span>10,000円分</span>
-                  </p>
-                  <p class="text flex flex-sp align-center">
-                    <span>24,400ポイント</span>
-                    <span>30,000円分</span>
-                  </p>
+                  <div class="left">
+                    <p class="text flex flex-sp align-center">
+                      <span>2,000ポイント</span>
+                      <span>2,000円分</span>
+                    </p>
+                    <p class="text flex flex-sp align-center">
+                      <span>3,600ポイント</span>
+                      <span>4,000円分</span>
+                    </p>
+                    <p class="text flex flex-sp align-center">
+                      <span>5,300ポイント</span>
+                      <span>6,000円分</span>
+                    </p>
+                    <p class="text flex flex-sp align-center">
+                      <span>6,800ポイント</span>
+                      <span>8,000円分</span>
+                    </p>
+                  </div>
+                  <div class="right">
+                    <p class="text flex flex-sp align-center">
+                      <span>8,400ポイント</span>
+                      <span>10,000円分</span>
+                    </p>
+                    <p class="text flex flex-sp align-center">
+                      <span>16,400ポイント</span>
+                      <span>10,000円分</span>
+                    </p>
+                    <p class="text flex flex-sp align-center">
+                      <span>24,400ポイント</span>
+                      <span>30,000円分</span>
+                    </p>
+                  </div>
                 </div>
                 <div class="hikikae">
                   <div class="hikikae-title flex flex-sp align-center">
@@ -248,47 +275,63 @@ var sonota = [
                   </div>
                   <div class="step-wrapper">
                     <div class="step">
-                      <div class="step-title">
-                        <p>STEP 1</p>
+                      <div class="flex space-between">
+                        <div class="flex">
+                          <div class="step-title">
+                            <p>STEP 1</p>
+                          </div>
+                          <p class="step-text">
+                            予め、JRE POINT WEBサイトに<br/>
+                            登録が必要です。
+                          </p>
+                        </div>
+                        <a href="http://" target="_blank" rel="noopener" class="step-btn">
+                          <span>JRE POINT WEB サイト<br/>
+                            登録方法はこちら</span>
+                        </a>
                       </div>
-                      <p class="step-text">
-                        予め、JRE POINT WEBサイトに<br/>
-                        登録が必要です。
-                      </p>
-                      <a href="http://" target="_blank" rel="noopener" class="step-btn">
-                        <span>JRE POINT WEB サイト<br/>
-                          登録方法はこちら</span>
-                      </a>
                     </div>
                     <div class="step">
-                      <div class="step-title">
-                        <p>STEP 2</p>
+                      <div class="flex space-between">
+                        <div class="flex">
+                          <div class="step-title">
+                            <p>STEP 2</p>
+                          </div>
+                          <p class="step-text">
+                            JRE POINT WEBサイトにログインの上、<br/>
+                            ご交換いただけます。
+                          </p>
+                        </div>
+                        <a href="http://" target="_blank" rel="noopener" class="step-btn">
+                          <span>ルミネ商品券への<br/>
+                            ご交換はこちら</span>
+                        </a>
                       </div>
-                      <p class="step-text">
-                        JRE POINT WEBサイトにログインの上、<br/>
-                        ご交換いただけます。
-                      </p>
-                      <a href="http://" target="_blank" rel="noopener" class="step-btn">
-                        <span>ルミネ商品券への<br/>
-                          ご交換はこちら</span>
-                      </a>
                     </div>
                   </div>
                 </div>
-                <p class="big-title">
-                  <span class="wrap">
-                    <span class="text">貯まったポイントを</span>
-                    <span class="line"></span>
+                <p class="big-title full">
+                  <span class="sp">
+                    <span class="wrap">
+                      <span class="text">貯まったポイントを</span>
+                      <span class="line"></span>
+                    </span>
+                    <span class="wrap">
+                      <span class="text">
+                        Suicaへチャージして</span>
+                      <span class="line"></span>
+                    </span>
+                    <span class="wrap">
+                      <span class="text">
+                        使うこともできます。</span>
+                      <span class="line"></span>
+                    </span>
                   </span>
-                  <span class="wrap">
-                    <span class="text">
-                      Suicaへチャージして</span>
-                    <span class="line"></span>
-                  </span>
-                  <span class="wrap">
-                    <span class="text">
-                      使うこともできます。</span>
-                    <span class="line"></span>
+                  <span class="pc">
+                    <span class="wrap">
+                      <span class="text">貯まったポイントをSuicaへチャージして使うこともできます。</span>
+                      <span class="line"></span>
+                    </span>
                   </span>
                 </p>
                 <p class="section-text">
@@ -305,40 +348,49 @@ var sonota = [
         <div class="section__inner">
           <h2 class="section-title green">
             <span class="ja">
-              ルミネ・ニュウマンで<br/>
+              ルミネ・ニュウマンで<br class="sp"/>
               JRE POINTを貯める
             </span>
           </h2>
           <div class="bg-title mb">
-            <img src="./assets/img/bg-blue1.svg" alt="">
+            <picture>
+              <source srcset="./assets/img/bg-blue1.svg" media="(max-width: 750px)" />
+              <img src="./assets/img/bg-blue1-pc.svg" alt=""/>
+            </picture>
             <p class="text">
-              ルミネ・ニュウマン・<br/>
+              ルミネ・ニュウマン・<br class="sp"/>
               ネット通販「アイルミネ」で<br/>
-              ルミネカードご利用で<br/>
-              1,000円（税込）につき5ポイント<br/>
+              ルミネカードご利用で<br class="sp"/>
+              1,000円（税込）につき5ポイント<br class="sp"/>
               貯まります。
             </p>
           </div>
           <div class="bg-title">
-            <img src="./assets/img/bg-blue2.svg" alt="">
+            <picture>
+              <source srcset="./assets/img/bg-blue2.svg" media="(max-width: 750px)" />
+              <img src="./assets/img/bg-blue2-pc.svg" alt=""/>
+            </picture>
             <p class="text">
-              JRE POINTにご登録済みの<br/>
+              JRE POINTにご登録済みの<br class="sp"/>
               Suicaでのお支払いで、<br/>
-              200円（税込）ごとに<br/>
+              200円（税込）ごとに<br class="sp"/>
               1ポイント貯まります。
             </p>
           </div>
-          <p class="section-text kome">
+          <p class="section-text kome text-center">
             <span class="small">
               ※ルミネカード以外でのポイント付与について、詳細は<a href="http://" target="_blank" rel="noopener" class="bold underline">こちら</a>
             </span>
           </p>
           <div class="scene-wrapper">
             <div class="scene navy scene3">
-              <h3 class="scene-title flex flex-sp">
-                <img src="./assets/img/scene3.svg" alt="SCENE 03">
+              <h3 class="scene-title flex flex-sp align-center">
+                <picture>
+                  <source srcset="./assets/img/scene3.svg" media="(max-width: 750px)" />
+                  <img src="./assets/img/scene3-pc.svg" alt="SCENE 03"/>
+                </picture>
                 <p>
-                  お買いもの以外でもポイント<br/>
+                  お買いもの以外でもポイント<br class="sp"/>
                   を貯めたい！
                 </p>
               </h3>
@@ -543,9 +595,11 @@ var sonota = [
     </section>
   </main>
   <%- include('parts/_footer') %>
-  <div id="bottom" class="scroll-trigger" data-target="faq">
-    <span class="text">よくある質問</span>
-    <%- include('parts/_tri') %>
+  <div class="sp">
+    <div id="bottom" class="scroll-trigger" data-target="faq">
+      <span class="text">よくある質問</span>
+      <%- include('parts/_tri') %>
+    </div>
   </div>
   </div>
 </body>
