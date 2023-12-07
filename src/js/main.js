@@ -28,6 +28,7 @@ class main {
     this.speakerCredit = document.getElementById('speaker-credit');
     this.speakerFace = document.getElementsByClassName('speaker-face')[0];
     this.keyvImg = document.getElementsByClassName('keyv-img');
+    this.qa = document.getElementsByClassName('qa-faq');
     this.fixed = document.getElementsByClassName('fixed');
     this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
     this.menuTrigger = document.getElementsByClassName('menu-trigger');
@@ -101,6 +102,9 @@ class main {
     for (let i = 0; i < this.menuTrigger.length; i++) {
       this.menuTrigger[i].addEventListener('click', this.triggerMenu.bind(this));
     }
+    for (let i = 0; i < this.qa.length; i++) {
+      this.qa[i].addEventListener('click', this.triggerQa.bind(this));
+    }
     // for (let i = 0; i < this.scrollTrigger.length; i++) {
     //   this.scrollTrigger[i].addEventListener('click', this.toScroll.bind(this));
     // }
@@ -112,6 +116,20 @@ class main {
   checkBreakPoint() {
     if (window.innerWidth < 750) {
       this.sp = true;
+    }
+  }
+
+  triggerQa(e) {
+    let elm = e.currentTarget;
+    let a = elm.getElementsByClassName('a')[0];
+    let aInner = a.getElementsByClassName('a__inner')[0];
+
+    if (elm.classList.contains('active')) {
+      elm.classList.remove('active');
+      a.setAttribute('style', `height: 0`);
+    } else {
+      elm.classList.add('active');
+      a.setAttribute('style', `height: ${aInner.clientHeight}px`);
     }
   }
   
@@ -154,59 +172,11 @@ class main {
     Scroll.to(top, 2);
   }
 
-  animation() {
-    const logo1 = document.querySelector('.logo1');
-    const logo2 = document.querySelector('.logo2');
-    const logo3 = document.querySelector('.logo3');
-    const logo4 = document.querySelector('.logo4');
-
-    console.log(33)
-
-    new Vivus('logo1', {duration: 150}, () => {
-      // logo1.classList.add('fill');
-    });
-    logo1.classList.add('active');
-    setTimeout(() => {
-      logo1.classList.add('fill');
-    }, 500);
-
-    setTimeout(() => {
-      new Vivus('logo2', {duration: 150}, () => {
-        // logo2.classList.add('fill');
-      });
-      logo2.classList.add('active');
-      setTimeout(() => {
-        logo2.classList.add('fill');
-      }, 1000);
-    }, 500);
-
-    setTimeout(() => {
-      new Vivus('logo3', {duration: 150}, () => {
-        // logo3.classList.add('fill');
-      });
-      logo3.classList.add('active');
-      setTimeout(() => {
-        logo3.classList.add('fill');
-      }, 1000);
-    }, 1000);
-
-    setTimeout(() => {
-      new Vivus('logo4', {duration: 150}, () => {
-        // logo4.classList.add('fill');
-      });
-      logo4.classList.add('active');
-      setTimeout(() => {
-        logo4.classList.add('fill');
-      }, 1000);
-    }, 1500);
-  }
 
   init() {
     this.resizeEvent();
     window.scrollTo(0, 0);
-    this.animation();
     document.body.classList.add('loaded');
-    // this.interval = setInterval(this.topGif.bind(this), 5000);
   }
 
   topGif() {

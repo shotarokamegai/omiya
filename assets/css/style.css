@@ -590,18 +590,17 @@ html.lenis {
 
 body {
   font-feature-settings: "palt";
-  font-family: "ryo-gothic-plusn", sans-serif;
-  color: #254850;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  color: #000000;
   overscroll-behavior: none;
-  transition: opacity 0.5s ease;
 }
 body ::-moz-selection {
   color: #ffffff;
-  background-color: #254850;
+  background-color: #000000;
 }
 body ::selection {
   color: #ffffff;
-  background-color: #254850;
+  background-color: #000000;
 }
 body.loaded, body.visited {
   opacity: 1;
@@ -614,6 +613,808 @@ body .hidden {
   font-weight: bold;
 }
 
+.underline {
+  color: #221815;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 749px) {
+  #bottom {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    height: 16vw;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 0.1rem solid #888888;
+    z-index: 10;
+  }
+  #bottom .text {
+    font-size: 1.6rem;
+    font-size: 4.2666666667vw;
+    letter-spacing: 0.1em;
+    color: #888888;
+    font-weight: bold;
+  }
+  #bottom svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 5.3333333333vw;
+  }
+  #bottom svg * {
+    fill: #888888;
+  }
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 13.3333333333vw;
+    width: 100%;
+    padding-left: 4vw;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.1rem solid #221815;
+    z-index: 10;
+  }
+  #header .lumine {
+    margin-right: 5.3333333333vw;
+    width: 17.9481466667vw;
+  }
+  #header .newoman {
+    width: 23.5475733333vw;
+  }
+  #footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 13.3333333333vw;
+    background-color: #221815;
+  }
+  #footer p {
+    font-size: 1.1rem;
+    font-size: 2.9333333333vw;
+    text-align: center;
+    color: #ffffff;
+  }
+  .container {
+    background-image: url(/assets/img/bg_sp.svg);
+    background-size: 100%;
+    background-repeat: repeat;
+  }
+  main {
+    padding-top: 13.3333333333vw;
+  }
+  main .wrapper.gray {
+    background-color: rgba(226, 226, 226, 0.7);
+  }
+  main .wrapper.green {
+    background-color: rgba(49, 182, 160, 0.4);
+  }
+  main .wrapper.blue {
+    background-color: rgba(108, 155, 210, 0.4);
+  }
+  main .bg-title {
+    position: relative;
+    margin-bottom: 3.3333333333vw;
+  }
+  main .bg-title.mb {
+    margin-bottom: 6.6666666667vw;
+  }
+  main .bg-title .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1) rotate(0);
+    text-align: center;
+    width: 100%;
+    font-size: 1.9rem;
+    font-size: 5.0666666667vw;
+    line-height: 1.4736842105;
+    font-weight: bold;
+    color: #ffffff;
+    z-index: 1;
+  }
+  main .scene-wrapper {
+    margin-top: 6.6666666667vw;
+  }
+  main .cards {
+    margin-top: 7.3333333333vw;
+  }
+  main .cards .img {
+    margin: 0 auto 5.3333333333vw;
+    width: 53.3333333333vw;
+  }
+  main .cards p {
+    font-size: 1.4rem;
+    font-size: 3.7333333333vw;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+  }
+  main .cards p .wrap {
+    position: relative;
+  }
+  main .cards p .wrap::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    content: "";
+    height: 2.2644vw;
+    width: 100%;
+    background-color: #ffffff;
+  }
+  main .cards p .wrap .text {
+    position: relative;
+    z-index: 1;
+  }
+  main .scene {
+    background-color: #ffffff;
+    margin-bottom: 7.3333333333vw;
+  }
+  main .scene:last-child {
+    margin-bottom: 0;
+  }
+  main .scene .step {
+    margin-bottom: 6.6666666667vw;
+  }
+  main .scene .step:last-child {
+    margin-bottom: 0;
+  }
+  main .scene .step-title {
+    margin-bottom: 3.3333333333vw;
+  }
+  main .scene .step-title p {
+    margin: 0 auto;
+    height: 6vw;
+    width: 16vw;
+    line-height: 5.8666666667vw;
+    font-size: 1.7rem;
+    font-size: 4.5333333333vw;
+    letter-spacing: 0.06em;
+    font-weight: bold;
+    text-align: center;
+    color: #00833E;
+    border: 0.1rem solid #00833E;
+    font-family: "Advent Pro", sans-serif;
+  }
+  main .scene .step-text {
+    margin-bottom: 2.6666666667vw;
+    font-size: 1.5rem;
+    font-size: 4vw;
+    letter-spacing: 0.05em;
+    line-height: 1.3333333333;
+    font-weight: bold;
+    text-align: center;
+  }
+  main .scene .step-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16vw;
+    width: 100%;
+    border-radius: 2.6666666667vw;
+    background-color: #31B6A0;
+  }
+  main .scene .step-btn.navy {
+    background-color: #6C9BD2;
+  }
+  main .scene .step-btn span {
+    font-size: 1.6rem;
+    font-size: 4.2666666667vw;
+    letter-spacing: 0.1em;
+    line-height: 1.3125;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+  }
+  main .scene .step-btn::after {
+    position: absolute;
+    top: 50%;
+    right: 3.3333333333vw;
+    transform: translate3d(0, -50%, 0);
+    content: url(./../../assets/img/arrow.svg);
+    height: 5.3333333333vw;
+    width: 2.6666666667vw;
+  }
+  main .scene .text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-size: 3.2vw;
+    line-height: 2;
+  }
+  main .scene .text .big {
+    font-size: 1.5rem;
+    font-size: 4vw;
+  }
+  main .scene .text .small {
+    font-weight: normal;
+    font-size: 1.1rem;
+    font-size: 2.9333333333vw;
+    line-height: 1.6363636364;
+  }
+  main .scene .text .small.kome {
+    display: flex;
+  }
+  main .scene .text .small.kome::before {
+    content: "※";
+  }
+  main .scene.scene1 .scene-content .text-wrapper .text {
+    text-align: center;
+  }
+  main .scene.scene1 .scene-content .text-wrapper .text::after {
+    margin: 2.6666666667vw auto;
+    display: block;
+    content: url(./../../assets/img/tri-green.svg);
+    height: 2vw;
+    width: 4vw;
+    line-height: 0;
+  }
+  main .scene.scene1 .scene-content .text-wrapper .text .big {
+    color: #00833E;
+  }
+  main .scene.scene2 .scene-content {
+    text-align: center;
+  }
+  main .scene.scene2 .scene-content .text-wrapper {
+    display: inline-block;
+  }
+  main .scene.scene2 .scene-content .text-wrapper .text {
+    text-align: center;
+  }
+  main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(1) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.4rem;
+    font-size: 3.7333333333vw;
+    letter-spacing: 0.04em;
+    width: 37vw;
+    font-weight: bold;
+  }
+  main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(1)::after {
+    position: relative;
+    margin: 0 3.3333333333vw;
+    display: block;
+    content: url(./../../assets/img/tri-green.svg);
+    height: 2vw;
+    width: 4vw;
+    line-height: 0;
+    transform: rotate(-90deg);
+  }
+  main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(2) {
+    font-size: 1.6rem;
+    font-size: 4.2666666667vw;
+    letter-spacing: 0.04em;
+    font-weight: bold;
+    color: #00833E;
+  }
+  main .scene.scene2 .scene-content .text-wrapper .text .big {
+    color: #00833E;
+  }
+  main .scene.scene2 .scene-content .hikikae-title {
+    padding: 4.6666666667vw 0 4vw;
+    font-size: 1.9rem;
+    font-size: 5.0666666667vw;
+    font-weight: bold;
+    color: #00833E;
+    text-align: center;
+  }
+  main .scene.scene2 .scene-content .hikikae-title p {
+    padding: 0 2.6666666667vw;
+  }
+  main .scene.scene2 .scene-content .hikikae-title .bar {
+    display: block;
+    height: 0.1rem;
+    flex-grow: 1;
+    background-color: #221815;
+  }
+  main .scene.scene2 .scene-content .step-wrapper {
+    padding-bottom: 6.6666666667vw;
+    margin-bottom: 6.6666666667vw;
+    border-bottom: 0.1rem solid #221815;
+  }
+  main .scene.scene3 .scene-content {
+    text-align: center;
+  }
+  main .scene.scene3 .scene-content .big-title.mt {
+    margin-top: 8vw;
+  }
+  main .scene.scene3 .scene-content .text-wrapper {
+    display: inline-block;
+  }
+  main .scene.scene3 .scene-content .text-wrapper .text {
+    text-align: left;
+    font-size: 1.4rem;
+    font-size: 3.7333333333vw;
+  }
+  main .scene.scene3 .scene-content .text-wrapper .big {
+    color: #1D65BA;
+  }
+  main .scene.scene3 .scene-content .text .kome {
+    margin-top: 4vw;
+    text-align: left;
+  }
+  main .scene.scene3 .scene-content .step-wrapper {
+    margin-top: 6.6666666667vw;
+  }
+  main .scene.scene3 .scene-content .hikikae-title {
+    padding: 4.6666666667vw 0 4vw;
+    font-size: 1.9rem;
+    font-size: 5.0666666667vw;
+    font-weight: bold;
+    color: #00833E;
+    text-align: center;
+  }
+  main .scene.scene3 .scene-content .hikikae-title p {
+    padding: 0 2.6666666667vw;
+  }
+  main .scene.scene3 .scene-content .hikikae-title .bar {
+    display: block;
+    height: 0.1rem;
+    flex-grow: 1;
+    background-color: #221815;
+  }
+  main .scene.navy {
+    border: 0.2666666667vw solid #1D65BA;
+  }
+  main .scene.navy .scene-title {
+    color: #1D65BA;
+    border-bottom: 0.2666666667vw solid #1D65BA;
+  }
+  main .scene.navy .scene-content .line {
+    background-color: rgba(108, 155, 210, 0.3);
+  }
+  main .scene.blue {
+    border: 0.2666666667vw solid #0090D5;
+  }
+  main .scene.blue .scene-title {
+    color: #0090D5;
+    border-bottom: 0.2666666667vw solid #0090D5;
+  }
+  main .scene.blue .scene-content .line {
+    background-color: #6C9BD2;
+  }
+  main .scene.green {
+    border: 0.2666666667vw solid #00833E;
+  }
+  main .scene.green .scene-title {
+    color: #00833E;
+    border-bottom: 0.2666666667vw solid #00833E;
+  }
+  main .scene.green .scene-content .line {
+    background-color: rgba(49, 182, 160, 0.3);
+  }
+  main .scene-title {
+    padding: 5.3333333333vw;
+  }
+  main .scene-title img {
+    margin-right: 4vw;
+    height: 12.11524vw;
+    width: auto;
+  }
+  main .scene-title p {
+    font-size: 1.9rem;
+    font-size: 5.0666666667vw;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  main .scene .example {
+    margin-bottom: 3.3333333333vw;
+  }
+  main .scene .example .bar {
+    display: block;
+    height: 0.1rem;
+    flex-grow: 1;
+    background-color: #221815;
+  }
+  main .scene .example p {
+    padding: 0 2vw;
+    font-size: 1.5rem;
+    font-size: 4vw;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    text-align: center;
+  }
+  main .scene-content {
+    padding: 6.6666666667vw 5.3333333333vw;
+  }
+  main .scene-content .big-title {
+    margin-bottom: 6vw;
+    text-align: center;
+  }
+  main .scene-content .big-title span.wrap {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  main .scene-content .big-title span.text {
+    position: relative;
+    font-size: 1.9rem;
+    font-size: 5.0666666667vw;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    font-weight: bold;
+    z-index: 1;
+  }
+  main .scene-content .big-title span.line {
+    position: absolute;
+    height: 2vw;
+    left: 50%;
+    bottom: 0.9333333333vw;
+    width: 100%;
+    transform: translate3d(-50%, 0, 0);
+  }
+  main .btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16vw;
+    width: 26.6666666667vw;
+    text-align: center;
+  }
+  main .btn svg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 5.3333333333vw;
+  }
+  main .btn.blue {
+    border: 0.1rem solid #6C9BD2;
+    color: #6C9BD2;
+  }
+  main .btn.blue svg * {
+    fill: #6C9BD2;
+  }
+  main .btn.green {
+    border: 0.1rem solid #31B6A0;
+    color: #31B6A0;
+  }
+  main .btn.green svg * {
+    fill: #31B6A0;
+  }
+  main .btn.black {
+    border: 0.1rem solid #888888;
+    color: #888888;
+  }
+  main .btn.black svg * {
+    fill: #888888;
+  }
+  main .btn .text {
+    font-size: 1.6rem;
+    font-size: 4.2666666667vw;
+    line-height: 1.3125;
+    font-weight: bold;
+  }
+  main .qa {
+    margin-bottom: 3.3333333333vw;
+    overflow: hidden;
+  }
+  main .qa:last-child {
+    margin-bottom: 0;
+  }
+  main .qa.light-green .q {
+    background-color: #31B6A0;
+  }
+  main .qa.light-green .a {
+    border: 0.1rem solid #31B6A0;
+  }
+  main .qa.light-green .a::before {
+    color: #00833E;
+  }
+  main .qa.light-blue .q {
+    background-color: #6C9BD2;
+  }
+  main .qa.light-blue .a {
+    border: 0.1rem solid #6C9BD2;
+  }
+  main .qa.light-blue .a::before {
+    color: #0090D5;
+  }
+  main .qa.light-gray .q {
+    background-color: #888888;
+  }
+  main .qa.light-gray .a {
+    border: 0.1rem solid #888888;
+  }
+  main .qa.light-gray .a::before {
+    color: #221815;
+  }
+  main .qa.active .q .plus-minus {
+    transform: translate3d(0, -50%, 0) rotate(90deg);
+  }
+  main .qa.active .q .plus-minus span:nth-child(1) {
+    opacity: 0;
+  }
+  main .qa:last-child {
+    border-bottom: none;
+  }
+  main .qa .overflow {
+    margin: 2.6666666667vw 0;
+    overflow: scroll;
+  }
+  main .qa .overflow img {
+    height: 133.3333333333vw;
+    max-width: initial;
+    width: auto;
+  }
+  main .qa .card {
+    margin-bottom: 2.6666666667vw;
+  }
+  main .qa .card img {
+    height: 12vw;
+    max-width: initial;
+    width: auto;
+  }
+  main .qa .q, main .qa .a {
+    font-size: 1.2rem;
+    font-size: 3.2vw;
+    line-height: 1.3333333333;
+    font-weight: bold;
+  }
+  main .qa .q {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 10.6666666667vw;
+    padding-right: 12vw;
+    width: 100%;
+    height: 16vw;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
+  main .qa .q::before {
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    content: "Q";
+    left: 4vw;
+    font-family: "Advent Pro", sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    font-size: 8vw;
+    color: #ffffff;
+  }
+  main .qa .q .plus-minus {
+    position: absolute;
+    top: 50%;
+    right: 3.3333333333vw;
+    height: 5.3333333333vw;
+    width: 5.3333333333vw;
+    transform: translate3d(0, -50%, 0);
+    transition: transform 0.5s ease;
+  }
+  main .qa .q .plus-minus span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1) rotate(0);
+    height: 0.1rem;
+    width: 5.3333333333vw;
+    background-color: #ffffff;
+    transition: opacity 0.5s ease;
+  }
+  main .qa .q .plus-minus span:nth-child(2) {
+    transform: translate3d(-50%, -50%, 0) rotate(90deg);
+  }
+  main .qa .a {
+    position: relative;
+    height: 0;
+    font-weight: normal;
+    transition: height 0.5s ease;
+  }
+  main .qa .a::before {
+    position: absolute;
+    top: 2vw;
+    content: "A";
+    left: 4vw;
+    font-family: "Advent Pro", sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    font-size: 8vw;
+  }
+  main .qa .a__inner {
+    padding: 3.3333333333vw 3.3333333333vw 3.3333333333vw 10.6666666667vw;
+  }
+  main .faq {
+    overflow: hidden;
+    margin-bottom: 6.6666666667vw;
+  }
+  main .faq:last-child {
+    margin-bottom: 0;
+  }
+  main .faq.active .q::after {
+    transform: translate3d(0, -50%, 0) rotate(180deg);
+  }
+  main .faq:last-child {
+    border-bottom: none;
+  }
+  main .faq .q, main .faq .a {
+    font-size: 1.2rem;
+    font-size: 3.2vw;
+    line-height: 1.3333333333;
+    font-weight: bold;
+  }
+  main .faq .q {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: underline;
+  }
+  main .faq .a {
+    height: 0;
+    transition: height 0.5s ease;
+  }
+  main .faq .a__inner {
+    padding: 3.3333333333vw;
+  }
+  main .section#top {
+    padding: 13.3333333333vw 0 10vw;
+  }
+  main .section#top h1 {
+    margin: 0 auto 8.6666666667vw;
+    width: 77.4861333333vw;
+  }
+  main .section#top .card {
+    margin: 0 auto;
+    width: 67.25732vw;
+  }
+  main .section#information {
+    padding-bottom: 9.3333333333vw;
+  }
+  main .section#information .gray {
+    padding: 9.3333333333vw 0;
+    margin-bottom: 10vw;
+  }
+  main .section#information .section-text {
+    padding-top: 3.3333333333vw;
+    border-top: 0.1rem solid #221815;
+  }
+  main .section#information .btn-wrapper .btn {
+    margin-right: 4.6666666667vw;
+  }
+  main .section#information .btn-wrapper .btn:last-child {
+    margin-right: 0;
+  }
+  main .section#use-jre-point .wrapper {
+    padding: 8vw 0 10vw;
+  }
+  main .section#get-jre-point .wrapper {
+    padding: 8vw 0 10vw;
+  }
+  main .section#last {
+    padding: 10vw 0 10.6666666667vw;
+    background-color: #00833E;
+  }
+  main .section#last .wrapper {
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 89.3333333333vw;
+  }
+  main .section#last .wrapper .box {
+    margin-bottom: 5.3333333333vw;
+    display: block;
+    height: 27.3333333333vw;
+    width: 42vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+  main .section#last .wrapper .box .text {
+    font-size: 1rem;
+    font-size: 2.6666666667vw;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #221815;
+  }
+  main .section__inner {
+    margin: 0 auto;
+    width: 86.6666666667vw;
+  }
+  main .section-text {
+    font-size: 1.2rem;
+    font-size: 3.2vw;
+    line-height: 1.75;
+  }
+  main .section-text .small {
+    font-size: 1.1rem;
+    font-size: 2.9333333333vw;
+    white-space: nowrap;
+  }
+  main .section-title {
+    margin-bottom: 6.6666666667vw;
+    text-align: center;
+  }
+  main .section-title.blue span.en::before {
+    background-color: #0090D5;
+  }
+  main .section-title.blue span.en {
+    color: #0090D5;
+  }
+  main .section-title.green span.en::before {
+    background-color: #00833E;
+  }
+  main .section-title.green span.en {
+    color: #00833E;
+  }
+  main .section-title span {
+    display: block;
+  }
+  main .section-title .ja {
+    font-size: 2.4rem;
+    font-size: 6.4vw;
+    line-height: 1.4166666667;
+    font-weight: bold;
+  }
+  main .section-title .en {
+    font-size: 1.5rem;
+    font-size: 4vw;
+    font-family: "Advent Pro", sans-serif;
+  }
+  main .section-title .en::before {
+    display: block;
+    margin: 2.6666666667vw auto;
+    content: "";
+    height: 0.2666666667vw;
+    width: 6.6666666667vw;
+  }
+  main .section#faq {
+    padding-bottom: 10vw;
+  }
+  main .section#faq .gray {
+    padding: 10vw 0 10vw;
+  }
+  main .section#faq .faq-title {
+    margin-top: 6.6666666667vw;
+    margin-bottom: 6.6666666667vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  main .section#faq .faq-title.green .text {
+    color: #00833E;
+  }
+  main .section#faq .faq-title.green .bar {
+    background-color: #00833E;
+  }
+  main .section#faq .faq-title.navy .text {
+    color: #1D65BA;
+  }
+  main .section#faq .faq-title.navy .bar {
+    background-color: #1D65BA;
+  }
+  main .section#faq .faq-title.black .text {
+    color: #221815;
+  }
+  main .section#faq .faq-title.black .bar {
+    background-color: #221815;
+  }
+  main .section#faq .faq-title .text {
+    padding: 0 1.6vw;
+    font-size: 2.1rem;
+    font-size: 5.6vw;
+    font-weight: bold;
+  }
+  main .section#faq .faq-title .bar {
+    height: 0.5333333333vw;
+    flex-grow: 1;
+    background-color: black;
+  }
+}
 @media screen and (min-width: 750px) {
   .show {
     opacity: 0;

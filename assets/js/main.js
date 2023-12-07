@@ -52229,6 +52229,7 @@ var main = /*#__PURE__*/function () {
     this.speakerCredit = document.getElementById('speaker-credit');
     this.speakerFace = document.getElementsByClassName('speaker-face')[0];
     this.keyvImg = document.getElementsByClassName('keyv-img');
+    this.qa = document.getElementsByClassName('qa-faq');
     this.fixed = document.getElementsByClassName('fixed');
     this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
     this.menuTrigger = document.getElementsByClassName('menu-trigger');
@@ -52302,6 +52303,9 @@ var main = /*#__PURE__*/function () {
     for (var i = 0; i < this.menuTrigger.length; i++) {
       this.menuTrigger[i].addEventListener('click', this.triggerMenu.bind(this));
     }
+    for (var _i = 0; _i < this.qa.length; _i++) {
+      this.qa[_i].addEventListener('click', this.triggerQa.bind(this));
+    }
     // for (let i = 0; i < this.scrollTrigger.length; i++) {
     //   this.scrollTrigger[i].addEventListener('click', this.toScroll.bind(this));
     // }
@@ -52314,6 +52318,20 @@ var main = /*#__PURE__*/function () {
     value: function checkBreakPoint() {
       if (window.innerWidth < 750) {
         this.sp = true;
+      }
+    }
+  }, {
+    key: "triggerQa",
+    value: function triggerQa(e) {
+      var elm = e.currentTarget;
+      var a = elm.getElementsByClassName('a')[0];
+      var aInner = a.getElementsByClassName('a__inner')[0];
+      if (elm.classList.contains('active')) {
+        elm.classList.remove('active');
+        a.setAttribute('style', "height: 0");
+      } else {
+        elm.classList.add('active');
+        a.setAttribute('style', "height: ".concat(aInner.clientHeight, "px"));
       }
     }
   }, {
@@ -52330,8 +52348,8 @@ var main = /*#__PURE__*/function () {
         this.menu.classList.add('active');
         this.logo.classList.add('active');
         this.headerEllipse.classList.add('open');
-        for (var _i = 0; _i < this.menuTrigger.length; _i++) {
-          this.menuTrigger[_i].classList.add('active');
+        for (var _i2 = 0; _i2 < this.menuTrigger.length; _i2++) {
+          this.menuTrigger[_i2].classList.add('active');
         }
       }
     }
@@ -52355,64 +52373,11 @@ var main = /*#__PURE__*/function () {
       Scroll.to(top, 2);
     }
   }, {
-    key: "animation",
-    value: function animation() {
-      var logo1 = document.querySelector('.logo1');
-      var logo2 = document.querySelector('.logo2');
-      var logo3 = document.querySelector('.logo3');
-      var logo4 = document.querySelector('.logo4');
-      console.log(33);
-      new Vivus('logo1', {
-        duration: 150
-      }, function () {
-        // logo1.classList.add('fill');
-      });
-      logo1.classList.add('active');
-      setTimeout(function () {
-        logo1.classList.add('fill');
-      }, 500);
-      setTimeout(function () {
-        new Vivus('logo2', {
-          duration: 150
-        }, function () {
-          // logo2.classList.add('fill');
-        });
-        logo2.classList.add('active');
-        setTimeout(function () {
-          logo2.classList.add('fill');
-        }, 1000);
-      }, 500);
-      setTimeout(function () {
-        new Vivus('logo3', {
-          duration: 150
-        }, function () {
-          // logo3.classList.add('fill');
-        });
-        logo3.classList.add('active');
-        setTimeout(function () {
-          logo3.classList.add('fill');
-        }, 1000);
-      }, 1000);
-      setTimeout(function () {
-        new Vivus('logo4', {
-          duration: 150
-        }, function () {
-          // logo4.classList.add('fill');
-        });
-        logo4.classList.add('active');
-        setTimeout(function () {
-          logo4.classList.add('fill');
-        }, 1000);
-      }, 1500);
-    }
-  }, {
     key: "init",
     value: function init() {
       this.resizeEvent();
       window.scrollTo(0, 0);
-      this.animation();
       document.body.classList.add('loaded');
-      // this.interval = setInterval(this.topGif.bind(this), 5000);
     }
   }, {
     key: "topGif",
@@ -52684,8 +52649,8 @@ var main = /*#__PURE__*/function () {
         });
       }
 
-      for (var _i2 = 0; _i2 < targetImg.length; _i2++) {
-        var target = targetImg[_i2];
+      for (var _i3 = 0; _i3 < targetImg.length; _i3++) {
+        var target = targetImg[_i3];
         var path1 = 'polygon(0px 0px, 100% 0px, 100% 0%, 0% 0%)';
         var path2 = "polygon(0% 0px, 100% 0px, 100% 100%, 0% 100%)";
         var clip_polygon = gsap.timeline({
@@ -52705,8 +52670,8 @@ var main = /*#__PURE__*/function () {
           duration: 1.5
         });
       }
-      for (var _i3 = 0; _i3 < splitting.length; _i3++) {
-        var _elm = splitting[_i3];
+      for (var _i4 = 0; _i4 < splitting.length; _i4++) {
+        var _elm = splitting[_i4];
         var _char = _elm.getElementsByClassName('char');
         var start = "center bottom+=".concat(window.innerHeight * .2, "px");
         for (var j = 0; j < _char.length; j++) {
@@ -52728,7 +52693,7 @@ var main = /*#__PURE__*/function () {
         }
       }
       var _loop = function _loop() {
-        var elm = splitShow[_i4];
+        var elm = splitShow[_i5];
         var start = "center bottom";
         if (!elm.classList.contains('fixed')) {
           if (elm.classList.contains('first')) {
@@ -52748,11 +52713,11 @@ var main = /*#__PURE__*/function () {
           });
         }
       };
-      for (var _i4 = 0; _i4 < splitShow.length; _i4++) {
+      for (var _i5 = 0; _i5 < splitShow.length; _i5++) {
         _loop();
       }
       var _loop2 = function _loop2() {
-        var elm = dot[_i5];
+        var elm = dot[_i6];
         gsap.to(elm, {
           ease: "power4.inOut",
           scrollTrigger: {
@@ -52766,11 +52731,11 @@ var main = /*#__PURE__*/function () {
           }
         });
       };
-      for (var _i5 = 0; _i5 < dot.length; _i5++) {
+      for (var _i6 = 0; _i6 < dot.length; _i6++) {
         _loop2();
       }
       var _loop3 = function _loop3() {
-        var elm = bar[_i6];
+        var elm = bar[_i7];
         gsap.to(elm, {
           ease: "power4.inOut",
           scrollTrigger: {
@@ -52784,11 +52749,11 @@ var main = /*#__PURE__*/function () {
           }
         });
       };
-      for (var _i6 = 0; _i6 < bar.length; _i6++) {
+      for (var _i7 = 0; _i7 < bar.length; _i7++) {
         _loop3();
       }
       var _loop4 = function _loop4() {
-        var elm = show[_i7];
+        var elm = show[_i8];
         var start = "center bottom";
         if (!elm.classList.contains('fixed')) {
           if (elm.classList.contains('first')) {
@@ -52809,11 +52774,11 @@ var main = /*#__PURE__*/function () {
           });
         }
       };
-      for (var _i7 = 0; _i7 < show.length; _i7++) {
+      for (var _i8 = 0; _i8 < show.length; _i8++) {
         _loop4();
       }
-      for (var _i8 = 0; _i8 < scaleUp.length; _i8++) {
-        var _elm2 = scaleUp[_i8];
+      for (var _i9 = 0; _i9 < scaleUp.length; _i9++) {
+        var _elm2 = scaleUp[_i9];
         gsap.to(_elm2, {
           scale: 1,
           ease: "power1.out",
@@ -52827,7 +52792,7 @@ var main = /*#__PURE__*/function () {
         });
       }
       var _loop5 = function _loop5() {
-        var elm = parallax[_i9];
+        var elm = parallax[_i10];
         var amount = elm.getAttribute('data-amount');
         gsap.to(elm, {
           y: function y() {
@@ -52843,11 +52808,11 @@ var main = /*#__PURE__*/function () {
           }
         });
       };
-      for (var _i9 = 0; _i9 < parallax.length; _i9++) {
+      for (var _i10 = 0; _i10 < parallax.length; _i10++) {
         _loop5();
       }
-      for (var _i10 = 0; _i10 < zoom.length; _i10++) {
-        var _elm3 = zoom[_i10];
+      for (var _i11 = 0; _i11 < zoom.length; _i11++) {
+        var _elm3 = zoom[_i11];
         gsap.to(_elm3, {
           scale: 1,
           ease: "power1.out",

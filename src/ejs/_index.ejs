@@ -1,78 +1,554 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/../webapp/src/static.ini.php'; ?>
+<%
+var faq = [
+  ['ルミネカードでポイントは貯まりますか？',''],
+  ['お買いもの以外でも、ルミネカードでポイントをもっと貯めたいです。',''],
+  ['ルミネ・ニュウマンでポイントを利用したいです。',''],
+  ['貯まったポイントをルミネ商品券に交換したいです。',''],
+  ['JRE POINTとは何ですか？',''],
+  ['JRE POINTに関する問い合わせ先',''],
+];
+var tameru = [
+  ['ルミネカードでポイントは貯まりますか？','ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用はもちろん、普段のお買いものやご飲食、公共料金のお支払いにルミネカードをご利用いただくと、ご利用金額1,000円（税込）につき5ポイント貯まります。※ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用の場合、ポイントは5％オフ後の金額に対し付与されます。<br/>※ポイントはご請求金額確定時に付与されます。<br/><br/>また、モバイルSuicaでの定期券購入、オートチャージ、チャージのご利用（ルミネカードでのお支払い）でさらにポイントが貯まります。<br/>詳細はこちらをご覧ください。'],
+  ['お買いもの以外でも、ルミネカードでポイントをもっと貯めたいです。','モバイルSuicaでの定期券購入、オートチャージ、チャージのご利用のお支払いに、ルミネカードのご利用をお勧めいたします。<br/>ポイント還元率についてはこちらをご覧ください。<br/><br/>※オートチャージとは、Suicaの残額が設定金額以下になると、改札入出場時に自動的に設定金額が入金（チャージ）できるサービスです。<br/>詳しくはこちらをご覧ください。<br/>※モバイルSuicaとは、Suicaをスマートフォンでご利用いただけるサービスです。<br/>詳しくはこちらをご覧ください。'],
+  ['ルミネ・ニュウマンで、ルミネカード以外でポイントは貯まりますか？','・JRE POINTにご登録済みのSuicaでのお支払いで、200円（税込）ごとに1ポイント貯まります。<br/>詳しくはこちらをご覧ください。<br/><br/>・ビューカード（ルミネカードを除く）、JRE POINTアプリ、LINEマイカードのバーコード提示でJRE POINTが貯まります。<br/>※対象決済手段：現金、商品券、他社クレジット、QR決済、電子マネー<br/>※対象外決済手段：ルミネカード・JRE CARDを含むビューカード<br/>・ ビューカードでのクレジット決済でポイントが貯まります。※JRE POINTはご請求金額確定時に付与されます。<div class="overflow"><img src="./assets/img/zu.png" alt="" /></div>※JRE POINTカードはご利用いただけません。<br/>※ビューカード（ルミネカードを除く）・JRE POINTアプリ・LINEマイカードのバーコードの提示で100円（税抜）ごとに1ポイントが貯まります。<br/>※JRE CARDでクレジット払いをいただくと、その場で100円（税抜）につき3ポイントが、ご請求確定時に1,000円（税込）につき5ポイントが貯まります。<br/>※JRE CARD以外のJRE POINTロゴマークが記載されたビューカード（ルミネカードを除く）でクレジット払いをいただくと、その場で100円（税抜）につき1ポイントが、ご請求確定時に1,000円（税込）につき5ポイントが貯まります。<br/>※一部対象外ショップがございます。詳しくはショップへお問い合わせください。<br/><br/><span class="bold">ルミネカードについて：<br/>ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用がいつでも5％オフ。<br/>また、ご利用金額1,000円（税込）につきJRE POINTが5ポイント貯まります。<br/>※ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用の場合、JRE POINTは5％オフ後の金額に対し付与されます。<br/>ルミネ・ニュウマン館内でのクレジットカードでのお支払いには、特にルミネカードのご利用をお勧めします。</span>'],
+  ['ルミネカードの提示でポイントは貯まりますか？','ルミネカードでのお支払い時には、提示でのポイントは付与されません。<br/>ルミネカードをルミネ・ニュウマン・ネット通販「アイルミネ」でのお買いものでご利用の場合、ポイントは5％オフ後の金額に対し付与されます。'],
+  ['ルミネ・ニュウマンで、JRE POINT カード（クレジット機能なしのポイントカード）は利用できますか？','<div class="card"><img src="./assets/img/jre-point.png" alt="JRE POINT"></div>JRE POINT カード（クレジット機能なしのポイントカード）は、ポイントを貯めることも使うこともできません。'],
+  ['お買いもの時のポイント利用分に対しても、ポイントは貯まりますか？','<div class="card"><img src="./assets/img/card-three.png" alt=""></div>JRE POINTアプリバーコード・ルミネカード以外のビューカードのご提示で、ポイント利用対象金額100円（税抜）につき1ポイント（※）貯まります。<br/>※軽減税率適用の有無にかかわらず、お買い上げ金額​から8％分を差し引いて税抜金額相当といたします​<br/><br/>なお、ルミネカードは、ポイント利用分に対するポイント付与対象外です。']
+];
+var tsukau = [
+  ['ルミネ・ニュウマンでポイントを利用したいです。','<div class="card"><img src="./assets/img/card-four.png" alt=""></div>ルミネカードを含むビューカード、JRE POINTアプリ、LINEマイカードのバーコード提示で、JRE POINTを1ポイント1円としてご利用いただけます。<br/>※JRE POINTカードはご利用いただけません。<br/>※ルミネカードは、利用ポイント相当金額に対するポイント付与やポイントカードとして提示した場合のポイントの付与はされません。<br/>※ルミネのネット通販「アイルミネ」、ルミネカードWEB決済サービス、店頭での無線端末ではポイントは利用できません。<br/>※一部対象外ショップがございます。詳しくはショップへお問い合わせください。'],
+  ['貯まったポイントをルミネ商品券に交換したいです。','JRE POINT WEBサイトでルミネ商品券への交換申込みができます。<br/>ルミネ商品券へのご交換はこちらからお進みください。<br/><br/>※貯めたポイントをJRE POINT WEBサイトで商品に交換するには、事前にルミネカードや、その他ビューカードをJRE POINT WEBサイトへ登録いただく必要があります。<br/>JRE POINT WEBサイトはこちら<br/><br/>なお、ビューカード会員の方は、以下方法もご利用いただけます。<br/>【電話でのお申し込み】<br/>16桁のカード番号・4桁の暗証番号・3桁の商品番号をご用意のうえ、以下にお電話ください。<br/><br/><JRE POINT 商品交換ダイヤル><br/>電話番号：03-6685-4000（通話料有料）<br/>受付時間：6:00～23:00（年中無休）<br/><br/>【郵送でのお申し込み】<br/>ご利用代金明細書のJRE POINT交換申込用紙をご郵送ください。<br/>※期限切れ間近のポイントをご利用になる際は、毎月25日までに投函ください。<br/><br/>詳しくは、以下のページをご確認ください。<br/><外部サイト>JRE POINTの交換申込方法'],
+  ['貯まったポイントをSuicaへチャージして使いたいです。','Suicaへのチャージ方法はこちらをご覧ください。<br/>なお、JRE POINT WEBサイトにご登録済みのSuicaで、ルミネ・ニュウマンでお支払いいただくと、200円（税込）ごとに1ポイント貯まりますのでご利用をお勧めします。<br/>詳しくはこちらをご覧ください。'],
+];
+var sonota = [
+  ['JRE POINTとは何ですか？','JRE POINTは、JR東日本グループのポイントサービスです。<br/>ルミネカードでのお買いものやSuicaチャージなどでポイントを貯めることができ、貯まったポイントは、店頭での利用やルミネ商品券など様々な商品と交換することができます。<br/>詳しくはこちらをご覧ください。'],
+  ['JRE POINTに関する問い合わせ先','お電話、メールでお問合せを受け付けています。こちらをご確認ください。<br/><br/>■お電話でのお問い合わせ<br/>JRE POINTコールセンター（10:00～18:00）<br/>0570-036-389ナビダイヤル'],
+  ['ポイントとルミネマイルの違いは何ですか？','<span class="bold">ポイントについて：JRE POINT</span><br/>JRE POINTは、JR東日本グループのポイントサービスです。ルミネカードでのお買い物やSuicaチャージなどでポイントを貯めることができ、貯まったポイントは、店頭での利用(1ポイント＝1円）やルミネ商品券など様々な商品と交換することができます。<br/>詳しくはこちらをご覧ください。<br/><br/><span class="bold">ルミネマイルについて：ルミネのアプリ「ONE LUMINE」</span><br/>ルミネのアプリ「ONE LUMINE」にクレジットカードを連携することで、ルミネ・ニュウマンでのお買いものでマイルが貯まります。貯まったルミネマイルに応じてランクが上がり、ランクアップ時にルミネチケットがプレゼントされます。<br/>詳しくはこちらをご覧ください。'],
+  ['ルミネカードに関する問い合わせ先','■【VIEW】ルミネカード専用ダイヤル(9:00～20:00　年中無休)<br/>03-6685-9000<br/>※受付時間は予告なく変更となる場合がございます。<br/><br/>紛失・盗難の場合<br/>■ビューカード　紛失･盗難デスク(24時間・年中無休)<br/>03-6685-4800']
+];
+%>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="ja">
 
 <head>
-  <%- include('parts/_head', {title: '', description: '', keywords: '', url: ''}) %>
+  <%- include('parts/_head', {title: '', description: '', keywords: '', url: '', ogimage: ''}) %>
 </head>
 
-<body class="static <?= \App\CommonLogic::isYappli() ? 'yappli' : ''; ?>">
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/body-start.phtml'; ?>
-
-  <!-- PC用メニュー ------------------------------------->
-  <div class="pc-menu">
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/header-pc.phtml'; ?>
+<body class="">
+  <div class="container">
+  <%- include('parts/_header') %>
+  <main>
+    <section id="top" class="section">
+        <h1>
+            <img src="./assets/img/title.svg" alt="JRE POINTのご案内">
+        </h1>
+        <div class="card">
+          <picture>
+            <source srcset="./assets/img/card.webp" type="image/webp" />
+            <img src="./assets/img/card.png" width="1012" height="409" alt="">
+          </picture>
+        </div>
+    </section>
+    <section id="information" class="section">
+      <div class="wrapper gray">
+        <div class="section__inner">
+          <h2 class="section-title blue">
+            <span class="ja">
+              お知らせ
+            </span>
+            <span class="en">
+              INFORMATION
+            </span>
+          </h2>
+          <p class="section-text">
+            2024年10月26日（木）～ルミネ川越<br/>
+            2024年1月16日（火）～ルミネ大宮<br/>
+            2024年1月18日（木）～ルミネ池袋<br/>
+            2024年1月23日（火）～ルミネ新宿<br/>
+            2024年1月24日（水）～ルミネエス<br/>ト
+            2024年1月25日（木）～ルミネ有楽町・ニュウマン新宿<br/>
+            2024年1月30日（火）～ルミネ大船、ルミネ藤沢、ルミネ荻窪、ルミネ町田<br/>
+            2024年1月31日（水）～ルミネ立川<br/>
+            2024年2月6日（火）～ルミネ北千住<br/>
+            2024年2月8日（木）～ルミネ横浜・ニュウマン横浜<br/><br/>
+            ・ルミネカードを含むビューカード、JRE POINTアプリ、LINEマイカードのバーコード提示で、JRE POINTを1ポイント1円としてご利用いただけるようになりました。<br/>
+            ・ビューカード（ルミネカードを除く）、JRE POINTアプリ、LINEマイカードのバーコード提示でJRE POINTが貯まるようになりました。<br/><br/>
+            詳細は以下をご確認ください。
+          </p>
+        </div>
+      </div>
+      <div class="section__inner">
+        <div class="btn-wrapper flex flex-sp justify-center">
+          <a href="http://" target="_blank" rel="noopener" class="btn blue">
+            <span class="text">
+              使う
+            </span>
+            <%- include('parts/_tri') %>
+          </a>
+          <a href="http://" target="_blank" rel="noopener" class="btn green">
+            <span class="text">
+              貯める
+            </span>
+            <%- include('parts/_tri') %>
+          </a>
+          <a href="http://" target="_blank" rel="noopener" class="btn black">
+            <span class="text">
+              FAQ
+            </span>
+            <%- include('parts/_tri') %>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="use-jre-point" class="section">
+      <div class="wrapper green">
+        <div class="section__inner">
+          <h2 class="section-title blue">
+            <span class="ja">
+              ルミネ・ニュウマンで<br/>
+              JRE POINTを使う
+            </span>
+            <!-- <span class="en">
+              USE JRE POINT
+            </span> -->
+          </h2>
+          <div class="bg-title">
+            <img src="./assets/img/bg-green.svg" alt="">
+            <p class="text">
+              ルミネカード提示で、<br/>
+              1ポイント＝1円で使えます。
+            </p>
+          </div>
+          <p class="section-text kome">
+            <span class="small">
+              ※その他ビューカード、JRE POINTアプリ、LINEマイカードのバーコード<br/>
+              提示でも使えます。詳細は <a href="http://" target="_blank" rel="noopener" class="bold underline">こちら</a>
+            </span>
+          </p>
+          <div class="scene-wrapper">
+            <div class="scene green scene1">
+              <h3 class="scene-title flex flex-sp">
+                <img src="./assets/img/scene1.svg" alt="SCENE 01">
+                <p>
+                  日常的に貯まったポイントを<br/>
+                  少しずつ使いたい！
+                </p>
+              </h3>
+              <div class="scene-content">
+                <p class="big-title">
+                  <span class="wrap">
+                    <span class="text">ルミネ・ニュウマンでの</span>
+                    <span class="line"></span>
+                  </span>
+                  <span class="wrap">
+                    <span class="text">お勧めの使い方</span>
+                    <span class="line"></span>
+                  </span>
+                </p>
+                <div class="example flex flex-sp align-center">
+                  <span class="bar"></span>
+                  <p>例えば…</p>
+                  <span class="bar"></span>
+                </div>
+                <div class="text-wrapper">
+                  <p class="text">
+                    <span class="big">11,000円</span>の商品を購入したい！<br/>
+                    ルミネカード提示で<span class="big">JREポイント1,000円分利用</span><br/>
+                    残り<span class="big">10,000円</span>をルミネカードで支払う
+                  </p>
+                  <p class="text">
+                    ご利用代金引き落としの際、<br/>
+                    お買い上げ金額が<span class="big">5%オフ</span><br/>
+                    <span class="big">9,500円</span>に
+                  </p>
+                  <p class="text">
+                    さらに、<br/>
+                    <span class="big">9,500円分の45ポイント</span><br/>
+                    （1,000円につき5ポイント）が貯まります！
+                  </p>
+                </div>
+                <p class="text">
+                  <span class="small kome">
+                    ルミネカードは、利用ポイント相当金額に対するポイント付与やポイントカードとして提示した場合のポイントの付与はされません。
+                  </span>
+                  <span class="small kome">
+                    ルミネのネット通販「アイルミネ」、ルミネカードWEB決済サービス、店頭での無線端末ではポイントは利用できません。
+                  </span>
+                  <span class="small kome">
+                    一部対象外ショップがございます。詳しくはショップへお問い合わせください。
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="scene green scene2">
+              <h3 class="scene-title flex flex-sp">
+                <img src="./assets/img/scene2.svg" alt="SCENE 02">
+                <p>
+                  ここぞという時にまとめて<br/>
+                  使いたい！
+                </p>
+              </h3>
+              <div class="scene-content">
+                <p class="big-title">
+                  <span class="wrap">
+                    <span class="text">たくさん貯まったポイントは、</span>
+                    <span class="line"></span>
+                  </span>
+                  <span class="wrap">
+                    <span class="text">
+                      ルミネ商品券に交換するのが</span>
+                    <span class="line"></span>
+                  </span>
+                  <span class="wrap">
+                    <span class="text">
+                      一番還元率が高い！</span>
+                    <span class="line"></span>
+                  </span>
+                </p>
+                <div class="example flex flex-sp align-center">
+                  <span class="bar"></span>
+                  <p>例えば…</p>
+                  <span class="bar"></span>
+                </div>
+                <div class="text-wrapper">
+                  <p class="text flex flex-sp align-center">
+                    <span>2,000ポイント</span>
+                    <span>2,000円分</span>
+                  </p>
+                  <p class="text flex flex-sp align-center">
+                    <span>3,600ポイント</span>
+                    <span>4,000円分</span>
+                  </p>
+                  <p class="text flex flex-sp align-center">
+                    <span>5,300ポイント</span>
+                    <span>6,000円分</span>
+                  </p>
+                  <p class="text flex flex-sp align-center">
+                    <span>6,800ポイント</span>
+                    <span>8,000円分</span>
+                  </p>
+                  <p class="text flex flex-sp align-center">
+                    <span>8,400ポイント</span>
+                    <span>10,000円分</span>
+                  </p>
+                  <p class="text flex flex-sp align-center">
+                    <span>16,400ポイント</span>
+                    <span>10,000円分</span>
+                  </p>
+                  <p class="text flex flex-sp align-center">
+                    <span>24,400ポイント</span>
+                    <span>30,000円分</span>
+                  </p>
+                </div>
+                <div class="hikikae">
+                  <div class="hikikae-title flex flex-sp align-center">
+                    <span class="bar"></span>
+                    <p>引き換え方法</p>
+                    <span class="bar"></span>
+                  </div>
+                  <div class="step-wrapper">
+                    <div class="step">
+                      <div class="step-title">
+                        <p>STEP 1</p>
+                      </div>
+                      <p class="step-text">
+                        予め、JRE POINT WEBサイトに<br/>
+                        登録が必要です。
+                      </p>
+                      <a href="http://" target="_blank" rel="noopener" class="step-btn">
+                        <span>JRE POINT WEB サイト<br/>
+                          登録方法はこちら</span>
+                      </a>
+                    </div>
+                    <div class="step">
+                      <div class="step-title">
+                        <p>STEP 2</p>
+                      </div>
+                      <p class="step-text">
+                        JRE POINT WEBサイトにログインの上、<br/>
+                        ご交換いただけます。
+                      </p>
+                      <a href="http://" target="_blank" rel="noopener" class="step-btn">
+                        <span>ルミネ商品券への<br/>
+                          ご交換はこちら</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <p class="big-title">
+                  <span class="wrap">
+                    <span class="text">貯まったポイントを</span>
+                    <span class="line"></span>
+                  </span>
+                  <span class="wrap">
+                    <span class="text">
+                      Suicaへチャージして</span>
+                    <span class="line"></span>
+                  </span>
+                  <span class="wrap">
+                    <span class="text">
+                      使うこともできます。</span>
+                    <span class="line"></span>
+                  </span>
+                </p>
+                <p class="section-text">
+                  <span class="small">詳細は<a href="http://" target="_blank" rel="noopener" class="underline bold">こちら</a></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="get-jre-point" class="section">
+      <div class="wrapper blue">
+        <div class="section__inner">
+          <h2 class="section-title green">
+            <span class="ja">
+              ルミネ・ニュウマンで<br/>
+              JRE POINTを貯める
+            </span>
+          </h2>
+          <div class="bg-title mb">
+            <img src="./assets/img/bg-blue1.svg" alt="">
+            <p class="text">
+              ルミネ・ニュウマン・<br/>
+              ネット通販「アイルミネ」で<br/>
+              ルミネカードご利用で<br/>
+              1,000円（税込）につき5ポイント<br/>
+              貯まります。
+            </p>
+          </div>
+          <div class="bg-title">
+            <img src="./assets/img/bg-blue2.svg" alt="">
+            <p class="text">
+              JRE POINTにご登録済みの<br/>
+              Suicaでのお支払いで、<br/>
+              200円（税込）ごとに<br/>
+              1ポイント貯まります。
+            </p>
+          </div>
+          <p class="section-text kome">
+            <span class="small">
+              ※ルミネカード以外でのポイント付与について、詳細は<a href="http://" target="_blank" rel="noopener" class="bold underline">こちら</a>
+            </span>
+          </p>
+          <div class="scene-wrapper">
+            <div class="scene navy scene3">
+              <h3 class="scene-title flex flex-sp">
+                <img src="./assets/img/scene3.svg" alt="SCENE 03">
+                <p>
+                  お買いもの以外でもポイント<br/>
+                  を貯めたい！
+                </p>
+              </h3>
+              <div class="scene-content">
+                <p class="big-title">
+                  <span class="wrap">
+                    <span class="text">Suica定期券機能付きルミネカード</span>
+                    <span class="line"></span>
+                  </span>
+                  <span class="wrap">
+                    <span class="text">
+                      ×モバイルSuicaで5％還元！</span>
+                    <span class="line"></span>
+                  </span>
+                </p>
+                <div class="example flex flex-sp align-center">
+                  <span class="bar"></span>
+                  <p>例えば…</p>
+                  <span class="bar"></span>
+                </div>
+                <div class="text-wrapper">
+                  <p class="text">
+                    70,000円の定期券をモバイルSuicaで購入すると、<span class="big">3,500円相当のポイント</span>が貯まります！
+                  </p>
+                  <p class="text">
+                    <span class="small kome">
+                      モバイルSuicaとは、Suicaをスマートフォンでご利用いただけるサービスです。
+                    </span>
+                    <span class="small kome">
+                      「5%還元」とは、モバイルSuica定期券の購入で付与される2%と、その際にルミネカードで決済時に付与される3%の合計です。
+                    </span>
+                  </p>
+                </div>
+                <p class="big-title mt">
+                  <span class="wrap">
+                    <span class="text">                      
+                      定期外でも、ルミネカード（Suica）
+                    </span>
+                    <span class="line"></span>
+                  </span>
+                  <span class="wrap">
+                    <span class="text">
+                      をオートチャージで1.5%還元！</span>
+                    <span class="line"></span>
+                  </span>
+                </p>
+                <div class="example flex flex-sp align-center">
+                  <span class="bar"></span>
+                  <p>例えば…</p>
+                  <span class="bar"></span>
+                </div>
+                <div class="text-wrapper">
+                  <p class="text">
+                    通勤通学中など、オートチャージ機能により<span class="big">日常的にサクサク貯まります！</span>
+                  </p>
+                  <p class="text">
+                    <span class="small kome">
+                      オートチャージとは、Suicaの残額が設定金額以下になると、改札入出場時に自動的に設定金額が入金（チャージ）できるサービスです。
+                    </span>
+                  </p>
+                </div>
+                <div class="step-wrapper">
+                  <div class="step">
+                    <a href="http://" target="_blank" rel="noopener" class="step-btn navy">
+                      <span>ポイント還元率に<br/>
+                        ついてはこちら</span>
+                    </a>
+                  </div>
+                  <div class="step">
+                    <a href="http://" target="_blank" rel="noopener" class="step-btn navy">
+                      <span>モバイルSuicaの<br/>
+                        新規登録はこちら</span>
+                    </a>
+                  </div>
+                  <div class="step">
+                    <a href="http://" target="_blank" rel="noopener" class="step-btn navy">
+                      <span>オートチャージの<br/>
+                        ご利用方法はこちら</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cards">
+            <div class="img">
+              <picture>
+                <source srcset="./assets/img/cards.webp" type="image/webp" />
+                <img src="./assets/img/cards.png" width="829" height="537" alt="">
+              </picture>
+            </div>
+            <p>
+              ルミネ・ニュウマン・ネット通販<br/>
+              「アイルミネ」でのご利用が<span class="wrap"><span class="text">いつでも5％オフ。</span></span><br/>
+              クレジットカード決済での<br/>
+              お支払いで<span class="wrap"><span class="text">JRE POINTが5ポイント貯まる。</span></span><br/>
+              館内でのご利用は、<br/>
+              <span class="wrap"><span class="text">特にルミネカードがおすすめ！</span></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="faq" class="section">
+      <div class="wrapper gray">
+        <div class="section__inner">
+          <h2 class="section-title blue">
+            <span class="ja">
+              よくある質問
+            </span>
+            <span class="en">
+              FAQ
+            </span>
+          </h2>
+          <div class="faq-wrapper">
+            <% for (var i = 0; i < faq.length; i++) { %>
+              <%- include('parts/_faq', {q: faq[i][0], a: faq[i][1]}) %>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="section__inner">
+        <h3 class="faq-title navy">
+          <span class="bar">
+          </span>
+          <span class="text">貯める</span>
+          <span class="bar">
+          </span>
+        </h3>
+        <div class="qa-wrapper">
+          <% for (var i = 0; i < tameru.length; i++) { %>
+            <%- include('parts/_qa', {q: tameru[i][0], a: tameru[i][1], color: 'light-blue'}) %>
+          <% } %>
+        </div>
+        <h3 class="faq-title green">
+          <span class="bar">
+          </span>
+          <span class="text">使う</span>
+          <span class="bar">
+          </span>
+        </h3>
+        <div class="qa-wrapper">
+          <% for (var i = 0; i < tsukau.length; i++) { %>
+            <%- include('parts/_qa', {q: tsukau[i][0], a: tsukau[i][1], color: 'light-green'}) %>
+          <% } %>
+        </div>
+        <h3 class="faq-title black">
+          <span class="bar">
+          </span>
+          <span class="text">その他</span>
+          <span class="bar">
+          </span>
+        </h3>
+        <div class="qa-wrapper">
+          <% for (var i = 0; i < sonota.length; i++) { %>
+            <%- include('parts/_qa', {q: sonota[i][0], a: sonota[i][1], color: 'light-gray'}) %>
+          <% } %>
+        </div>
+      </div>
+    </section>
+    <section id="last" class="section">
+      <div class="section__inner">
+        <div class="wrapper flex flex-sp space-between">
+          <a href="http://" target="_blank" rel="noopener" class="box">
+            <span class="text">
+              JRE POINTに関する<br/>
+              問い合わせ先
+            </span>
+          </a>
+          <a href="http://" target="_blank" rel="noopener" class="box">
+            <span class="text">
+              ルミネカードに関する<br/>
+              問い合わせ先
+            </span>
+          </a>
+          <a href="http://" target="_blank" rel="noopener" class="box">
+            <span class="text">
+              JR関連ページへの<br/>
+              リンクバナー
+            </span>
+          </a>
+          <a href="http://" target="_blank" rel="noopener" class="box">
+            <span class="text">
+              JR関連ページへの<br/>
+              リンクバナー
+            </span>
+          </a>
+          <a href="http://" target="_blank" rel="noopener" class="box">
+            <span class="text">
+              JR関連ページへの<br/>
+              リンクバナー
+            </span>
+          </a>
+          <a href="http://" target="_blank" rel="noopener" class="box">
+            <span class="text">
+              JR関連ページへの<br/>
+              リンクバナー
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <%- include('parts/_footer') %>
+  <div id="bottom" class="scroll-trigger" data-target="faq">
+    <span class="text">よくある質問</span>
+    <%- include('parts/_tri') %>
   </div>
-  <!-- /PC用メニュー ------------------------------------->
-
-  <!-- SP用メニュー ------------------------------------->
-  <div class="sp-menu">
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/header-sp.phtml'; ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/gnav-sp.phtml'; ?>
-    <div class="overlay"></div>
-    <!-- [/overlay] -->
   </div>
-  <!-- /SP用メニュー ------------------------------------->
-
-  <div class="wrapper">
-    <div class="pc-menu">
-      <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/gnav-pc.phtml'; ?>
-    </div>
-    <div class="contents">
-      <%- include('pages/_loading') %>
-      <%- include('pages/_home') %>
-      <!-- [/main] -->
-    </div>
-    <!-- [/contents] -->
-
-    <!-- PC用 フッタ ------------------------------------->
-    <div class="pc-menu">
-      <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/footer-pc.phtml'; ?>
-    </div>
-    <!-- /PC用 フッタ ------------------------------------->
-
-    <!-- SP用 フッタ ------------------------------------->
-    <div class="sp-menu">
-      <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/footer-sp.phtml'; ?>
-    </div>
-    <!-- /SP用 フッタ ------------------------------------->
-  </div>
-  <!-- [/wrapper] -->
-
-  <!-- SP用 メニュー ------------------------------------->
-  <div class="sp-menu">
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/search-modal.phtml'; ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/sp-menu.phtml'; ?>
-  </div>
-  <!-- /SP用 メニュー ------------------------------------->
-
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/webapp_settings.phtml'; ?>
-
-  <!-- scripts -->
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/body-end-first.phtml'; ?>
-  <script src="/common/static/js/lib/lib.js"></script>
-  <script src="/common/static/js/common.js"></script>
-  <script src="/common/static/js/gnavi-responsive.js"></script>
-  <script src="/common/static/js/select-modal-formenu.js"></script>
-  <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/parts/body-end-last.phtml'; ?>
-  <!-- 静的ページ用 script ------------------------------------ -->
-  <script src="/common/static/js/jos_common.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
-  <!-- unpkg -->
-  <script src="//unpkg.com/@barba/core" defer></script>
-  <script src="./assets/js/libs.js" defer></script>
-  <script src="./assets/js/main.js" defer></script>
-  <!-- 静的ページ用 script ------------------------------------ -->
 </body>
-
+<script src="./assets/js/libs.js"></script>
+<script src="./assets/js/main.js"></script>
 </html>
