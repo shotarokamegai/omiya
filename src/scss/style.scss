@@ -60,6 +60,20 @@ body {
 }
 
 @media screen and (max-width: 749px) {
+  #to-top {
+    position: fixed;
+    right: vw(20);
+    bottom: vw(125);
+    width: vw(100);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s $zoom;
+    z-index: 10;
+    &.active {
+      pointer-events: initial;
+      opacity: 1;
+    }
+  }
   #bottom {
     position: fixed;
     @include fitcenter();
@@ -118,13 +132,13 @@ body {
     }
   }
   .container {
+    padding-bottom: vw(120);
     background-image: url(./../../assets/img/bg_sp.svg);
     background-size: 100%;
     background-repeat: repeat;
   }
   main {
     padding-top: vw(100);
-    // padding-bottom: vw(120);
     .wrapper {
       &.gray {
         background-color: #F7F8F8;
@@ -1027,7 +1041,19 @@ body {
   .scroll-trigger {
     cursor: pointer;
   }
-  #bottom {
+  #to-top {
+    position: fixed;
+    right: rem(50);
+    bottom: rem(100);
+    width: rem(50);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s $zoom;
+    z-index: 10;
+    &.active {
+      pointer-events: initial;
+      opacity: 1;
+    }
   }
   #header {
     position: fixed;
