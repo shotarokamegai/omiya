@@ -618,6 +618,10 @@ body .hidden {
   text-decoration: underline;
 }
 
+.whitespace {
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 749px) {
   #bottom {
     position: fixed;
@@ -703,6 +707,9 @@ body .hidden {
     position: relative;
     margin-bottom: 3.3333333333vw;
   }
+  main .bg-title.mt {
+    margin-top: 3.3333333333vw;
+  }
   main .bg-title.mb {
     margin-bottom: 6.6666666667vw;
   }
@@ -713,12 +720,16 @@ body .hidden {
     transform: translateX(-50%) translateY(-50%) scale(1) rotate(0);
     text-align: center;
     width: 100%;
-    font-size: 1.9rem;
-    font-size: 5.0666666667vw;
-    line-height: 1.4736842105;
+    font-size: 1.7rem;
+    font-size: 4.5333333333vw;
+    line-height: 1.4705882353;
     font-weight: bold;
     color: #ffffff;
     z-index: 1;
+  }
+  main .bg-title .text .big {
+    font-size: 2.5rem;
+    font-size: 6.6666666667vw;
   }
   main .scene-wrapper {
     margin-top: 6.6666666667vw;
@@ -758,6 +769,23 @@ body .hidden {
   main .scene {
     background-color: #ffffff;
     margin-bottom: 7.3333333333vw;
+  }
+  main .scene .normal {
+    font-weight: normal !important;
+  }
+  main .scene .box_ {
+    display: block;
+    height: 6vw;
+    line-height: 5.8666666667vw;
+    width: 16vw;
+    font-size: 1.2rem;
+    font-size: 3.2vw;
+    text-align: center;
+    margin: 3.3333333333vw auto;
+  }
+  main .scene .box_.green {
+    color: #00833E;
+    border: 0.1rem solid #00833E;
   }
   main .scene:last-child {
     margin-bottom: 0;
@@ -835,6 +863,9 @@ body .hidden {
     font-size: 1.5rem;
     font-size: 4vw;
   }
+  main .scene .text .big.black {
+    color: #221815 !important;
+  }
   main .scene .text .small {
     font-weight: normal;
     font-size: 1.1rem;
@@ -847,8 +878,20 @@ body .hidden {
   main .scene .text .small.kome::before {
     content: "※";
   }
+  main .scene .illust {
+    position: relative;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+  main .scene.scene1 .illust {
+    margin-top: -4vw;
+    width: 74.8422533333vw;
+  }
   main .scene.scene1 .scene-content .text-wrapper .text {
     text-align: center;
+  }
+  main .scene.scene1 .scene-content .text-wrapper .text:last-child::after {
+    opacity: 0;
   }
   main .scene.scene1 .scene-content .text-wrapper .text::after {
     margin: 2.6666666667vw auto;
@@ -861,8 +904,15 @@ body .hidden {
   main .scene.scene1 .scene-content .text-wrapper .text .big {
     color: #00833E;
   }
+  main .scene.scene2 .illust {
+    margin-top: 1.3333333333vw;
+    width: 80.1410933333vw;
+  }
   main .scene.scene2 .scene-content {
     text-align: center;
+  }
+  main .scene.scene2 .scene-content .big-title.full {
+    margin-bottom: 2.6666666667vw;
   }
   main .scene.scene2 .scene-content .text-wrapper {
     display: inline-block;
@@ -922,6 +972,13 @@ body .hidden {
     margin-bottom: 6.6666666667vw;
     border-bottom: 0.1rem solid #221815;
   }
+  main .scene.scene2 .section-text.right {
+    text-align: right;
+    padding-right: 4vw;
+  }
+  main .scene.scene3 .illust {
+    width: 62.03724vw;
+  }
   main .scene.scene3 .scene-content {
     text-align: center;
   }
@@ -932,16 +989,26 @@ body .hidden {
     display: inline-block;
   }
   main .scene.scene3 .scene-content .text-wrapper .text {
-    text-align: left;
     font-size: 1.4rem;
     font-size: 3.7333333333vw;
+  }
+  main .scene.scene3 .scene-content .text-wrapper .text.arrow::after {
+    position: relative;
+    margin: 2.6666666667vw auto;
+    display: block;
+    content: url(./../../assets/img/tri-blue.svg);
+    height: 2vw;
+    width: 4vw;
+    line-height: 0;
   }
   main .scene.scene3 .scene-content .text-wrapper .big {
     color: #1D65BA;
   }
   main .scene.scene3 .scene-content .text .kome {
-    margin-top: 4vw;
     text-align: left;
+  }
+  main .scene.scene3 .scene-content .text .kome:first-child {
+    margin-top: 4vw;
   }
   main .scene.scene3 .scene-content .step-wrapper {
     margin-top: 6.6666666667vw;
@@ -1050,6 +1117,10 @@ body .hidden {
     font-weight: bold;
     z-index: 1;
   }
+  main .scene-content .big-title span.text .md {
+    font-size: 1.4rem;
+    font-size: 3.7333333333vw;
+  }
   main .scene-content .big-title span.line {
     position: absolute;
     height: 2vw;
@@ -1075,25 +1146,25 @@ body .hidden {
     width: 5.3333333333vw;
   }
   main .btn.blue {
-    border: 0.1rem solid #6C9BD2;
-    color: #6C9BD2;
+    border: 0.2666666667vw solid #0090D5;
+    color: #0090D5;
   }
   main .btn.blue svg * {
-    fill: #6C9BD2;
+    fill: #0090D5;
   }
   main .btn.green {
-    border: 0.1rem solid #31B6A0;
-    color: #31B6A0;
+    border: 0.2666666667vw solid #00833E;
+    color: #00833E;
   }
   main .btn.green svg * {
-    fill: #31B6A0;
+    fill: #00833E;
   }
   main .btn.black {
-    border: 0.1rem solid #888888;
-    color: #888888;
+    border: 0.2666666667vw solid #221815;
+    color: #221815;
   }
   main .btn.black svg * {
-    fill: #888888;
+    fill: #221815;
   }
   main .btn .text {
     font-size: 1.6rem;
@@ -1150,6 +1221,17 @@ body .hidden {
   }
   main .qa .overflow img {
     height: 133.3333333333vw;
+    max-width: initial;
+    width: auto;
+  }
+  main .qa .icon {
+    position: relative;
+    top: 0.6666666667vw;
+    margin: 0 0.6666666667vw;
+    display: inline-block;
+  }
+  main .qa .icon img {
+    height: 5.3333333333vw;
     max-width: initial;
     width: auto;
   }
@@ -1285,6 +1367,16 @@ body .hidden {
     padding-top: 3.3333333333vw;
     border-top: 0.1rem solid #221815;
   }
+  main .section#information .section-text picture, main .section#information .section-text img {
+    display: inline-block;
+    height: 5.3333333333vw;
+    width: auto;
+  }
+  main .section#information .section-text picture {
+    position: relative;
+    margin-right: 0.4vw;
+    top: 1.3333333333vw;
+  }
   main .section#information .btn-wrapper .btn {
     margin-right: 4.6666666667vw;
   }
@@ -1307,21 +1399,39 @@ body .hidden {
     width: 89.3333333333vw;
   }
   main .section#last .wrapper .box {
-    margin-bottom: 5.3333333333vw;
     display: block;
-    height: 27.3333333333vw;
-    width: 42vw;
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 6.6666666667vw;
+  }
+  main .section#last .wrapper .box:last-child {
+    margin-bottom: 0;
+  }
+  main .section#last .wrapper .box-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
-  }
-  main .section#last .wrapper .box .text {
-    font-size: 1rem;
-    font-size: 2.6666666667vw;
-    letter-spacing: 0.05em;
-    line-height: 1.5;
+    height: 10.6666666667vw;
+    width: 100%;
+    line-height: 10.6666666667vw;
+    background-color: #221815;
+    font-size: 1.4rem;
+    font-size: 3.7333333333vw;
+    letter-spacing: 0.04em;
     font-weight: bold;
+    color: #ffffff;
+  }
+  main .section#last .wrapper .box-content {
+    padding: 4vw;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  main .section#last .wrapper .box-content p {
+    font-size: 1.2rem;
+    font-size: 3.2vw;
+    line-height: 1.75;
+  }
+  main .section#last .wrapper .box-content p a {
     color: #221815;
   }
   main .section__inner {
@@ -1353,6 +1463,12 @@ body .hidden {
   }
   main .section-title.green span.en {
     color: #00833E;
+  }
+  main .section-title.lightGreen span.en::before {
+    background-color: #31B6A0;
+  }
+  main .section-title.lightGreen span.en {
+    color: #31B6A0;
   }
   main .section-title span {
     display: block;
@@ -1479,6 +1595,9 @@ body .hidden {
     position: relative;
     margin-bottom: 1rem;
   }
+  main .bg-title.mt {
+    margin-top: 2.5rem;
+  }
   main .bg-title.mb {
     margin-bottom: 2.5rem;
   }
@@ -1495,6 +1614,10 @@ body .hidden {
     font-weight: bold;
     color: #ffffff;
     z-index: 1;
+  }
+  main .bg-title .text .big {
+    font-size: 42px;
+    font-size: 4.2rem;
   }
   main .scene-wrapper {
     margin-top: 5rem;
@@ -1537,7 +1660,26 @@ body .hidden {
   main .scene {
     position: relative;
     background-color: #ffffff;
-    margin-bottom: 7.3333333333vw;
+    margin-bottom: 5.5rem;
+  }
+  main .scene .normal {
+    font-weight: normal !important;
+  }
+  main .scene .box_ {
+    display: block;
+    height: 3rem;
+    line-height: 3rem;
+    width: 8rem;
+    font-size: 16px;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  main .scene .box_.mt {
+    margin-top: 1rem;
+  }
+  main .scene .box_.green {
+    color: #00833E;
+    border: 0.15rem solid #00833E;
   }
   main .scene:last-child {
     margin-bottom: 0;
@@ -1613,6 +1755,9 @@ body .hidden {
     font-size: 20px;
     font-size: 2rem;
   }
+  main .scene .text .big.black {
+    color: #221815 !important;
+  }
   main .scene .text .small {
     font-weight: normal;
     font-size: 12px;
@@ -1625,8 +1770,19 @@ body .hidden {
   main .scene .text .small.kome::before {
     content: "※";
   }
+  main .scene .illust {
+    position: absolute;
+  }
+  main .scene.scene1 .illust {
+    top: 5rem;
+    right: 3rem;
+    width: 35.67588rem;
+  }
+  main .scene.scene1 .scene-content .text-wrapper .text:last-child::after {
+    margin-bottom: 0;
+    opacity: 0;
+  }
   main .scene.scene1 .scene-content .text-wrapper .text::after {
-    margin: 2rem auto 2rem 16rem;
     display: block;
     content: url(./../../assets/img/tri-green.svg);
     height: 1rem;
@@ -1636,15 +1792,29 @@ body .hidden {
   main .scene.scene1 .scene-content .text-wrapper .text .big {
     color: #00833E;
   }
+  main .scene.scene2 .illust {
+    top: -5rem;
+    left: 3rem;
+    width: 36.37299rem;
+  }
   main .scene.scene2 .scene-title {
     justify-content: flex-end;
+  }
+  main .scene.scene2 .left .text, main .scene.scene2 .right .text {
+    line-height: 1.6;
   }
   main .scene.scene2 .scene-content {
     text-align: center;
   }
-  main .scene.scene2 .scene-content .big-title, main .scene.scene2 .scene-content .text-wrapper {
+  main .scene.scene2 .scene-content .big-title, main .scene.scene2 .scene-content .example, main .scene.scene2 .scene-content .text-wrapper {
     margin: 0 0 0 auto;
     width: 56rem;
+  }
+  main .scene.scene2 .scene-content .example {
+    margin: 2rem 0 2rem auto;
+  }
+  main .scene.scene2 .scene-content .flex .big-title {
+    margin: 0 6rem 0 0;
   }
   main .scene.scene2 .scene-content .big-title {
     text-align: left;
@@ -1672,13 +1842,15 @@ body .hidden {
     letter-spacing: 0.04em;
     font-weight: bold;
   }
+  main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(1).zu::after {
+    left: 0.9rem;
+  }
   main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(1)::after {
     position: relative;
     margin: 0 1.8rem;
     display: block;
     content: url(./../../assets/img/tri-green.svg);
-    height: 1.71429rem;
-    width: 0.85714rem;
+    width: 1.71428rem;
     line-height: 0;
     transform: rotate(-90deg);
   }
@@ -1688,6 +1860,10 @@ body .hidden {
     letter-spacing: 0.04em;
     font-weight: bold;
     color: #00833E;
+  }
+  main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(2).zu {
+    position: relative;
+    left: 0.9rem;
   }
   main .scene.scene2 .scene-content .text-wrapper .text .big {
     color: #00833E;
@@ -1714,6 +1890,11 @@ body .hidden {
     margin-bottom: 3rem;
     border-bottom: 0.1rem solid #221815;
   }
+  main .scene.scene3 .illust {
+    top: -6rem;
+    right: 3.5rem;
+    width: 28.5253rem;
+  }
   main .scene.scene3 .scene-content {
     text-align: center;
   }
@@ -1731,9 +1912,15 @@ body .hidden {
     font-size: 16px;
     font-size: 1.6rem;
   }
+  main .scene.scene3 .scene-content .text-wrapper .text.arrow::after {
+    margin: 1rem 0 1rem 0;
+    display: block;
+    content: url(./../../assets/img/tri-blue.svg);
+    height: 1rem;
+    width: 2rem;
+    line-height: 0;
+  }
   main .scene.scene3 .scene-content .text-wrapper .big {
-    font-size: 16px;
-    font-size: 1.6rem;
     color: #1D65BA;
   }
   main .scene.scene3 .scene-content .text .kome {
@@ -1799,7 +1986,7 @@ body .hidden {
     white-space: nowrap;
   }
   main .scene .example {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
   main .scene .example .bar {
     display: block;
@@ -1819,10 +2006,15 @@ body .hidden {
     text-align: center;
   }
   main .scene-content {
+    position: relative;
     padding: 3rem;
   }
   main .scene-content .big-title {
     margin-bottom: 2.5rem;
+  }
+  main .scene-content .big-title.small span.text {
+    font-size: 22px;
+    font-size: 2.2rem;
   }
   main .scene-content .big-title span.wrap {
     position: relative;
@@ -1837,6 +2029,10 @@ body .hidden {
     line-height: 1.5;
     font-weight: bold;
     z-index: 1;
+  }
+  main .scene-content .big-title span.text .md {
+    font-size: 16px;
+    font-size: 1.6rem;
   }
   main .scene-content .big-title span.line {
     position: absolute;
@@ -1863,25 +2059,25 @@ body .hidden {
     width: 2.5rem;
   }
   main .btn.blue {
-    border: 0.2rem solid #6C9BD2;
-    color: #6C9BD2;
+    border: 0.2rem solid #0090D5;
+    color: #0090D5;
   }
   main .btn.blue svg * {
-    fill: #6C9BD2;
+    fill: #0090D5;
   }
   main .btn.green {
-    border: 0.2rem solid #31B6A0;
-    color: #31B6A0;
+    border: 0.2rem solid #00833E;
+    color: #00833E;
   }
   main .btn.green svg * {
-    fill: #31B6A0;
+    fill: #00833E;
   }
   main .btn.black {
-    border: 0.2rem solid #888888;
-    color: #888888;
+    border: 0.2rem solid #221815;
+    color: #221815;
   }
   main .btn.black svg * {
-    fill: #888888;
+    fill: #221815;
   }
   main .btn .text {
     font-size: 26px;
@@ -1938,6 +2134,17 @@ body .hidden {
   }
   main .qa .overflow img {
     height: 61.55676rem;
+    max-width: initial;
+    width: auto;
+  }
+  main .qa .icon {
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0.5rem;
+    display: inline-block;
+  }
+  main .qa .icon img {
+    height: 2.4rem;
     max-width: initial;
     width: auto;
   }
@@ -2073,6 +2280,16 @@ body .hidden {
     padding-top: 2rem;
     border-top: 0.1rem solid #221815;
   }
+  main .section#information .section-text picture, main .section#information .section-text img {
+    display: inline-block;
+    height: 2.4rem;
+    width: auto;
+  }
+  main .section#information .section-text picture {
+    position: relative;
+    margin-right: 0.3rem;
+    top: 0.5rem;
+  }
   main .section#information .btn-wrapper .btn {
     margin-right: 5rem;
   }
@@ -2081,6 +2298,14 @@ body .hidden {
   }
   main .section#use-jre-point .wrapper {
     padding: 7.5rem 0 6rem;
+  }
+  main .section#get-jre-point .section-text .small {
+    display: block;
+  }
+  main .section#get-jre-point .bg-title .text {
+    font-size: 20px;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
   }
   main .section#get-jre-point .wrapper {
     padding: 7.5rem 0 6rem;
@@ -2095,28 +2320,42 @@ body .hidden {
   }
   main .section#last .wrapper .box {
     display: block;
-    height: 20rem;
-    width: 30%;
+    height: 25.5rem;
+    width: 47.5%;
+    background-color: #ffffff;
+  }
+  main .section#last .wrapper .box-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
-  }
-  main .section#last .wrapper .box:nth-child(1), main .section#last .wrapper .box:nth-child(2), main .section#last .wrapper .box:nth-child(3) {
-    margin-bottom: 5rem;
-  }
-  main .section#last .wrapper .box .text {
-    font-size: 19.05px;
-    font-size: 1.905rem;
-    letter-spacing: 0.05em;
-    line-height: 1.4997375328;
+    height: 5.6rem;
+    width: 100%;
+    line-height: 5.6rem;
+    background-color: #221815;
+    font-size: 20px;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
     font-weight: bold;
-    text-align: center;
+    color: #ffffff;
+  }
+  main .section#last .wrapper .box-content {
+    padding: 2rem;
+    height: calc(100% - 5.6rem);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  main .section#last .wrapper .box-content p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.7142857143;
+  }
+  main .section#last .wrapper .box-content p a {
     color: #221815;
   }
   main .section__inner {
     margin: 0 auto;
     max-width: 100rem;
+    min-width: 100rem;
     width: 78.125%;
   }
   main .section-text {
@@ -2144,6 +2383,12 @@ body .hidden {
   }
   main .section-title.green span.en {
     color: #00833E;
+  }
+  main .section-title.lightGreen span.en::before {
+    background-color: #31B6A0;
+  }
+  main .section-title.lightGreen span.en {
+    color: #31B6A0;
   }
   main .section-title span {
     display: block;

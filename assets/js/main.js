@@ -3,6 +3,64 @@
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Scroll)
+/* harmony export */ });
+
+
+// import DisableCover from 'controller/DisableCover';
+
+/**
+ * import Scroll from 'utils/Scroll';
+ */
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var Scroll = /*#__PURE__*/function () {
+  function Scroll() {
+    _classCallCheck(this, Scroll);
+  }
+  _createClass(Scroll, null, [{
+    key: "to",
+    value:
+    /**
+     * @example Scroll.to(0,1,Power2.easeOut);
+     */
+    function to(y) {
+      var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : .3;
+      var ease = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Power3.easeInOut;
+      TweenMax.to([document.body, document.documentElement], time, {
+        scrollTop: y,
+        ease: ease
+      });
+
+      // DisableCover.timer(time);
+    }
+
+    /**
+     * @example Scroll.set(0);
+     */
+  }, {
+    key: "set",
+    value: function set() {
+      var y = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      var tgt;
+      if ('scrollingElement' in document) tgt = document.scrollingElement;else if ('WebkitAppearance' in document.documentElement.style) tgt = document.body;else tgt = document.documentElement;
+      tgt.scrollTop = y;
+    }
+  }]);
+  return Scroll;
+}();
+
+
+/***/ }),
+/* 2 */
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -52191,13 +52249,15 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _utils_Scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
 
 // import frag from "./../../assets/shader/main.frag?raw";
 // import vert from "./../../assets/shader/main.vert?raw";
@@ -52306,9 +52366,9 @@ var main = /*#__PURE__*/function () {
     for (var _i = 0; _i < this.qa.length; _i++) {
       this.qa[_i].addEventListener('click', this.triggerQa.bind(this));
     }
-    // for (let i = 0; i < this.scrollTrigger.length; i++) {
-    //   this.scrollTrigger[i].addEventListener('click', this.toScroll.bind(this));
-    // }
+    for (var _i2 = 0; _i2 < this.scrollTrigger.length; _i2++) {
+      this.scrollTrigger[_i2].addEventListener('click', this.toScroll.bind(this));
+    }
     window.onresize = function () {
       _this.resizeEvent();
     };
@@ -52348,8 +52408,8 @@ var main = /*#__PURE__*/function () {
         this.menu.classList.add('active');
         this.logo.classList.add('active');
         this.headerEllipse.classList.add('open');
-        for (var _i2 = 0; _i2 < this.menuTrigger.length; _i2++) {
-          this.menuTrigger[_i2].classList.add('active');
+        for (var _i3 = 0; _i3 < this.menuTrigger.length; _i3++) {
+          this.menuTrigger[_i3].classList.add('active');
         }
       }
     }
@@ -52361,16 +52421,8 @@ var main = /*#__PURE__*/function () {
       var elemRect = target.getBoundingClientRect();
       var scrollY = window.scrollY || window.pageYOffset;
       var top = elemRect.top + scrollY;
-      if (elm.getAttribute('data-target') === 'theme' && window.innerWidth < 750) {
-        this.dir = 'enter';
-        this.scrollDown();
-        top = 1;
-      }
-      this.headerEllipse.classList.remove('open');
-      this.menuTrigger[0].classList.remove('active');
-      this.menu.classList.remove('active');
-      this.logo.classList.remove('active');
-      Scroll.to(top, 2);
+      top -= this.header.clientHeight;
+      _utils_Scroll__WEBPACK_IMPORTED_MODULE_0__["default"].to(top, 2);
     }
   }, {
     key: "init",
@@ -52649,8 +52701,8 @@ var main = /*#__PURE__*/function () {
         });
       }
 
-      for (var _i3 = 0; _i3 < targetImg.length; _i3++) {
-        var target = targetImg[_i3];
+      for (var _i4 = 0; _i4 < targetImg.length; _i4++) {
+        var target = targetImg[_i4];
         var path1 = 'polygon(0px 0px, 100% 0px, 100% 0%, 0% 0%)';
         var path2 = "polygon(0% 0px, 100% 0px, 100% 100%, 0% 100%)";
         var clip_polygon = gsap.timeline({
@@ -52670,8 +52722,8 @@ var main = /*#__PURE__*/function () {
           duration: 1.5
         });
       }
-      for (var _i4 = 0; _i4 < splitting.length; _i4++) {
-        var _elm = splitting[_i4];
+      for (var _i5 = 0; _i5 < splitting.length; _i5++) {
+        var _elm = splitting[_i5];
         var _char = _elm.getElementsByClassName('char');
         var start = "center bottom+=".concat(window.innerHeight * .2, "px");
         for (var j = 0; j < _char.length; j++) {
@@ -52693,7 +52745,7 @@ var main = /*#__PURE__*/function () {
         }
       }
       var _loop = function _loop() {
-        var elm = splitShow[_i5];
+        var elm = splitShow[_i6];
         var start = "center bottom";
         if (!elm.classList.contains('fixed')) {
           if (elm.classList.contains('first')) {
@@ -52713,11 +52765,11 @@ var main = /*#__PURE__*/function () {
           });
         }
       };
-      for (var _i5 = 0; _i5 < splitShow.length; _i5++) {
+      for (var _i6 = 0; _i6 < splitShow.length; _i6++) {
         _loop();
       }
       var _loop2 = function _loop2() {
-        var elm = dot[_i6];
+        var elm = dot[_i7];
         gsap.to(elm, {
           ease: "power4.inOut",
           scrollTrigger: {
@@ -52731,11 +52783,11 @@ var main = /*#__PURE__*/function () {
           }
         });
       };
-      for (var _i6 = 0; _i6 < dot.length; _i6++) {
+      for (var _i7 = 0; _i7 < dot.length; _i7++) {
         _loop2();
       }
       var _loop3 = function _loop3() {
-        var elm = bar[_i7];
+        var elm = bar[_i8];
         gsap.to(elm, {
           ease: "power4.inOut",
           scrollTrigger: {
@@ -52749,11 +52801,11 @@ var main = /*#__PURE__*/function () {
           }
         });
       };
-      for (var _i7 = 0; _i7 < bar.length; _i7++) {
+      for (var _i8 = 0; _i8 < bar.length; _i8++) {
         _loop3();
       }
       var _loop4 = function _loop4() {
-        var elm = show[_i8];
+        var elm = show[_i9];
         var start = "center bottom";
         if (!elm.classList.contains('fixed')) {
           if (elm.classList.contains('first')) {
@@ -52774,11 +52826,11 @@ var main = /*#__PURE__*/function () {
           });
         }
       };
-      for (var _i8 = 0; _i8 < show.length; _i8++) {
+      for (var _i9 = 0; _i9 < show.length; _i9++) {
         _loop4();
       }
-      for (var _i9 = 0; _i9 < scaleUp.length; _i9++) {
-        var _elm2 = scaleUp[_i9];
+      for (var _i10 = 0; _i10 < scaleUp.length; _i10++) {
+        var _elm2 = scaleUp[_i10];
         gsap.to(_elm2, {
           scale: 1,
           ease: "power1.out",
@@ -52792,7 +52844,7 @@ var main = /*#__PURE__*/function () {
         });
       }
       var _loop5 = function _loop5() {
-        var elm = parallax[_i10];
+        var elm = parallax[_i11];
         var amount = elm.getAttribute('data-amount');
         gsap.to(elm, {
           y: function y() {
@@ -52808,11 +52860,11 @@ var main = /*#__PURE__*/function () {
           }
         });
       };
-      for (var _i10 = 0; _i10 < parallax.length; _i10++) {
+      for (var _i11 = 0; _i11 < parallax.length; _i11++) {
         _loop5();
       }
-      for (var _i11 = 0; _i11 < zoom.length; _i11++) {
-        var _elm3 = zoom[_i11];
+      for (var _i12 = 0; _i12 < zoom.length; _i12++) {
+        var _elm3 = zoom[_i12];
         gsap.to(_elm3, {
           scale: 1,
           ease: "power1.out",
@@ -52870,7 +52922,7 @@ var main = /*#__PURE__*/function () {
     key: "setting",
     value: function setting() {
       this.webgl.appendChild(this.renderer.domElement);
-      this.camera = new three__WEBPACK_IMPORTED_MODULE_0__.PerspectiveCamera(180 * (2 * Math.atan(this.height / 2 / 800)) / Math.PI, this.width / this.height, 1, 100000);
+      this.camera = new three__WEBPACK_IMPORTED_MODULE_1__.PerspectiveCamera(180 * (2 * Math.atan(this.height / 2 / 800)) / Math.PI, this.width / this.height, 1, 100000);
       this.camera.position.set(0, 0, 800);
       this.setMesh();
     }
@@ -52886,15 +52938,15 @@ var main = /*#__PURE__*/function () {
   }, {
     key: "setMesh",
     value: function setMesh() {
-      this.geometry = new three__WEBPACK_IMPORTED_MODULE_0__.PlaneGeometry(1, 1, 1, 1);
+      this.geometry = new three__WEBPACK_IMPORTED_MODULE_1__.PlaneGeometry(1, 1, 1, 1);
       this.uniforms = {
         resolution: {
           type: 'v2',
-          value: new three__WEBPACK_IMPORTED_MODULE_0__.Vector2(window.innerWidth, window.innerHeight)
+          value: new three__WEBPACK_IMPORTED_MODULE_1__.Vector2(window.innerWidth, window.innerHeight)
         },
         imageResolution: {
           type: 'v2',
-          value: new three__WEBPACK_IMPORTED_MODULE_0__.Vector2(2880, 1800)
+          value: new three__WEBPACK_IMPORTED_MODULE_1__.Vector2(2880, 1800)
         },
         uAnimation: {
           value: 0
@@ -52915,12 +52967,12 @@ var main = /*#__PURE__*/function () {
           value: this.white
         }
       };
-      this.material = new three__WEBPACK_IMPORTED_MODULE_0__.ShaderMaterial({
+      this.material = new three__WEBPACK_IMPORTED_MODULE_1__.ShaderMaterial({
         vertexShader: vert,
         fragmentShader: frag,
         uniforms: this.uniforms
       });
-      this.mesh = new three__WEBPACK_IMPORTED_MODULE_0__.Mesh(this.geometry, this.material);
+      this.mesh = new three__WEBPACK_IMPORTED_MODULE_1__.Mesh(this.geometry, this.material);
       this.scene.add(this.mesh);
       this.mesh.scale.x = this.width;
       this.mesh.scale.y = this.height;

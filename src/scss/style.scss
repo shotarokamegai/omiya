@@ -55,6 +55,9 @@ body {
   color: $black;
   text-decoration: underline;
 }
+.whitespace {
+  white-space: nowrap;
+}
 
 @media screen and (max-width: 749px) {
   #bottom {
@@ -136,6 +139,9 @@ body {
     .bg-title {
       position: relative;
       margin-bottom: vw(25);
+      &.mt {
+        margin-top: vw(25);
+      }
       &.mb {
         margin-bottom: vw(50);
       }
@@ -143,11 +149,14 @@ body {
         @include center();
         text-align: center;
         width: 100%;
-        @include fontvw(38);
-        line-height: (56 / 38);
+        @include fontvw(34);
+        line-height: (50 / 34);
         font-weight: bold;
         color: $white;
         z-index: 1;
+        .big {
+          @include fontvw(50);
+        }
       }
     }
     .scene-wrapper {
@@ -187,6 +196,22 @@ body {
     .scene {
       background-color: $white;
       margin-bottom: vw(55);
+      .normal {
+        font-weight: normal !important;
+      }
+      .box_ {
+        display: block;
+        height: vw(45);
+        line-height: vw(44);
+        width: vw(120);
+        @include fontvw(24);
+        text-align: center;
+        margin: vw(25) auto;
+        &.green {
+          color: $green;
+          border: rem(1) solid $green;
+        }
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -254,6 +279,9 @@ body {
         line-height: (48 / 24);
         .big {
           @include fontvw(30);
+          &.black {
+            color: #221815 !important;
+          }
         }
         .small {
           font-weight: normal;
@@ -267,11 +295,25 @@ body {
           }
         }
       }
+      .illust {
+        position: relative;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+      }
       &.scene1 {
+        .illust {
+          margin-top: vw(-30);
+          width: vw(561.3169);
+        }
         .scene-content {
           .text-wrapper {
             .text {
               text-align: center;
+              &:last-child {
+                &::after {
+                  opacity: 0;
+                }
+              }
               &::after {
                 margin: vw(20) auto;
                 display: block;
@@ -288,8 +330,17 @@ body {
         }
       }
       &.scene2 {
+        .illust {
+          margin-top: vw(10);
+          width: vw(601.0582);
+        }
         .scene-content {
           text-align: center;
+          .big-title {
+            &.full {
+              margin-bottom: vw(20);
+            }
+          }
           .text-wrapper {
             display: inline-block;
             .text {
@@ -350,8 +401,15 @@ body {
             border-bottom: rem(1) solid $black;
           }
         }
+        .section-text.right {
+          text-align: right;
+          padding-right: 4vw;
+        }
       }
       &.scene3 {
+        .illust {
+          width: vw(465.2793);
+        }
         .scene-content {
           text-align: center;
           .big-title.mt {
@@ -360,16 +418,28 @@ body {
           .text-wrapper {
             display: inline-block;
             .text {
-              text-align: left;
               @include fontvw(28);
+              &.arrow {
+                &::after {
+                  position: relative;
+                  margin: vw(20) auto;
+                  display: block;
+                  content: url(./../../assets/img/tri-blue.svg);
+                  height: vw(15);
+                  width: vw(30);
+                  line-height: 0;
+                }
+              }
             }
             .big {
               color: $navy;
             }
           }
           .text .kome {
-            margin-top: vw(30);
             text-align: left;
+            &:first-child {
+              margin-top: vw(30);
+            }
           }
           .step-wrapper {
             margin-top: vw(50);
@@ -482,6 +552,9 @@ body {
               line-height: (57 / 38);
               font-weight: bold;
               z-index: 1;
+              .md {
+                @include fontvw(28);
+              }
             }
             &.line {
               position: absolute;
@@ -510,26 +583,26 @@ body {
       }
       &.blue {
         // background-color: rgba(161, 214, 220, .6);
-        border: rem(1) solid $lightBlue;
-        color: $lightBlue;
+        border: vw(2) solid $blue;
+        color: $blue;
         svg * {
-          fill: $lightBlue;
+          fill: $blue;
         }
       }
       &.green {
         // background-color: rgba(194, 216, 78, .5);
-        border: rem(1) solid $lightGreen;
-        color: $lightGreen;
+        border: vw(2) solid $green;
+        color: $green;
         svg * {
-          fill: $lightGreen;
+          fill: $green;
         }
       }
       &.black {
         // background-color: rgba(226, 226, 226, .7);
-        border: rem(1) solid $lightGray;
-        color: $lightGray;
+        border: vw(2) solid $black;
+        color: $black;
         svg * {
-          fill: $lightGray;
+          fill: $black;
         }
       }
       .text {
@@ -597,6 +670,17 @@ body {
         overflow: scroll;
         img {
           height: vw(1000);
+          max-width: initial;
+          width: auto;
+        }
+      }
+      .icon {
+        position: relative;
+        top: vw(5);
+        margin: 0 vw(5);
+        display: inline-block;
+        img {
+          height: vw(40);
           max-width: initial;
           width: auto;
         }
@@ -743,6 +827,16 @@ body {
         .section-text {
           padding-top: vw(25);
           border-top: rem(1) solid $black;
+          picture, img {
+            display: inline-block;
+            height: vw(40);
+            width: auto;
+          }
+          picture {
+            position: relative;
+            margin-right: vw(3);
+            top: vw(10);
+          }
         }
         .btn-wrapper {
           .btn {
@@ -771,18 +865,35 @@ body {
           margin: 0 auto;
           width: vw(670);
           .box {
-            margin-bottom: vw(40);
             display: block;
-            height: vw(205);
-            width: vw(315);
-            @include fitcenter();
+            width: 100%;
             background-color: $white;
-            .text {
-              @include fontvw(20);
-              @include tracking(50);
-              line-height: (30 / 20);
+            margin-bottom: vw(50);
+            &:last-child {
+              margin-bottom: 0;
+            }
+            &-title {
+              @include fitcenter();
+              height: vw(80);
+              width: 100%;
+              line-height: vw(80);
+              background-color: $black;
+              @include fontvw(28);
+              @include tracking(40);
               font-weight: bold;
-              color: $black;
+              color: $white;
+            }
+            &-content {
+              padding: vw(30);
+              width: 100%;
+              box-sizing: border-box;
+              p {
+                @include fontvw(24);
+                line-height: (42 / 24);
+                a {
+                  color: $black;
+                }
+              }
             }
           }
         }
@@ -820,6 +931,16 @@ body {
           }
           span.en {
             color: $green;
+          }
+        }
+        &.lightGreen {
+          span.en {
+            &::before {
+              background-color: $lightGreen;
+            }
+          }
+          span.en {
+            color: $lightGreen;
           }
         }
         span {
@@ -954,6 +1075,9 @@ body {
     .bg-title {
       position: relative;
       margin-bottom: rem(10);
+      &.mt {
+        margin-top: rem(25);
+      }
       &.mb {
         margin-bottom: rem(25);
       }
@@ -966,6 +1090,9 @@ body {
         font-weight: bold;
         color: $white;
         z-index: 1;
+        .big {
+        @include fontsize(42);
+        }
       }
     }
     .scene-wrapper {
@@ -1006,7 +1133,25 @@ body {
     .scene {
       position: relative;
       background-color: $white;
-      margin-bottom: vw(55);
+      margin-bottom: rem(55);
+      .normal {
+        font-weight: normal !important;
+      }
+      .box_ {
+        display: block;
+        height: rem(30);
+        line-height: rem(30);
+        width: rem(80);
+        @include fontsize(16);
+        text-align: center;
+        &.mt {
+          margin-top: rem(10);
+        }
+        &.green {
+          color: $green;
+          border: rem(1.5) solid $green;
+        }
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -1072,6 +1217,9 @@ body {
         line-height: (32 / 16);
         .big {
           @include fontsize(20);
+          &.black {
+            color: #221815 !important;
+          }
         }
         .small {
           font-weight: normal;
@@ -1085,12 +1233,25 @@ body {
           }
         }
       }
+      .illust {
+        position: absolute;
+      }
       &.scene1 {
+        .illust {
+          top: rem(50);
+          right: rem(30);
+          width: rem(356.7588);
+        }
         .scene-content {
           .text-wrapper {
             .text {
+              &:last-child {
+                &::after {
+                  margin-bottom: 0;
+                  opacity: 0;
+                }
+              }
               &::after {
-                margin: rem(20) auto rem(20) rem(160);
                 display: block;
                 content: url(./../../assets/img/tri-green.svg);
                 height: rem(10);
@@ -1105,14 +1266,32 @@ body {
         }
       }
       &.scene2 {
+        .illust {
+          top: rem(-50);
+          left: rem(30);
+          width: rem(363.7299);
+        }
         .scene-title {
           justify-content: flex-end;
         }
+        .left, .right {
+          .text {
+            line-height: 1.6;
+          }
+        }
         .scene-content {
           text-align: center;
-          .big-title, .text-wrapper {
+          .big-title, .example, .text-wrapper {
             margin: 0 0 0 auto;
             width: rem(560);
+          }
+          .example {
+            margin: rem(20) 0 rem(20) auto;
+          }
+          .flex {
+            .big-title {
+              margin: 0 6rem 0 0;
+            }
           }
           .big-title {
             text-align: left;
@@ -1139,13 +1318,17 @@ body {
                   @include fontsize(16);
                   @include tracking(40);
                   font-weight: bold;
+                  &.zu {
+                    &::after {
+                      left: rem(9);
+                    }
+                  }
                   &::after {
                     position: relative;
                     margin: 0 rem(18);
                     display: block;
                     content: url(./../../assets/img/tri-green.svg);
-                    height: rem(17.1429);
-                    width: rem(8.5714);
+                    width: rem(17.1428);
                     line-height: 0;
                     transform: rotate(-90deg);
                   }
@@ -1155,6 +1338,10 @@ body {
                   @include tracking(40);
                   font-weight: bold;
                   color: $green;
+                  &.zu {
+                    position: relative;
+                    left: rem(9);
+                  }
                 }
               }
               .big {
@@ -1188,6 +1375,11 @@ body {
         }
       }
       &.scene3 {
+        .illust {
+          top: rem(-60);
+          right: rem(35);
+          width: rem(285.253);
+        }
         .scene-content {
           text-align: center;
           .big-title, .text-wrapper, .example {
@@ -1203,9 +1395,18 @@ body {
             .text {
               text-align: left;
               @include fontsize(16);
+              &.arrow {
+                &::after {
+                  margin: rem(10) 0 rem(10) 0;
+                  display: block;
+                  content: url(./../../assets/img/tri-blue.svg);
+                  height: rem(10);
+                  width: rem(20);
+                  line-height: 0;
+                }
+              }
             }
             .big {
-              @include fontsize(16);
               color: $navy;
             }
           }
@@ -1281,7 +1482,7 @@ body {
         }
       }
       .example {
-        margin-bottom: rem(25);
+        margin-bottom: rem(20);
         .bar {
           display: block;
           height: rem(1);
@@ -1300,10 +1501,18 @@ body {
         }
       }
       &-content {
+        position: relative;
         padding: rem(30);
         .big-title {
           margin-bottom: rem(25);
           // text-align: center;
+          &.small {
+            span {
+              &.text {
+                @include fontsize(22);
+              }
+            }
+          }
           span {
             &.wrap {
               position: relative;
@@ -1317,6 +1526,9 @@ body {
               line-height: (57 / 38);
               font-weight: bold;
               z-index: 1;
+              .md {
+                @include fontsize(16);
+              }
             }
             &.line {
               position: absolute;
@@ -1345,26 +1557,26 @@ body {
       }
       &.blue {
         // background-color: rgba(161, 214, 220, .6);
-        border: rem(2) solid $lightBlue;
-        color: $lightBlue;
+        border: rem(2) solid $blue;
+        color: $blue;
         svg * {
-          fill: $lightBlue;
+          fill: $blue;
         }
       }
       &.green {
         // background-color: rgba(194, 216, 78, .5);
-        border: rem(2) solid $lightGreen;
-        color: $lightGreen;
+        border: rem(2) solid $green;
+        color: $green;
         svg * {
-          fill: $lightGreen;
+          fill: $green;
         }
       }
       &.black {
         // background-color: rgba(226, 226, 226, .7);
-        border: rem(2) solid $lightGray;
-        color: $lightGray;
+        border: rem(2) solid $black;
+        color: $black;
         svg * {
-          fill: $lightGray;
+          fill: $black;
         }
       }
       .text {
@@ -1432,6 +1644,17 @@ body {
         overflow: scroll;
         img {
           height: rem(615.5676);
+          max-width: initial;
+          width: auto;
+        }
+      }
+      .icon {
+        position: relative;
+        top: rem(5);
+        margin: 0 rem(5);
+        display: inline-block;
+        img {
+          height: rem(24);
           max-width: initial;
           width: auto;
         }
@@ -1578,6 +1801,16 @@ body {
         .section-text {
           padding-top: rem(20);
           border-top: rem(1) solid $black;
+          picture, img {
+            display: inline-block;
+            height: rem(24);
+            width: auto;
+          }
+          picture {
+            position: relative;
+            margin-right: rem(3);
+            top: rem(5);
+          }
         }
         .btn-wrapper {
           .btn {
@@ -1594,6 +1827,17 @@ body {
         }
       }
       &#get-jre-point {
+        .section-text {
+          .small {
+            display: block;
+          }
+        }
+        .bg-title {
+          .text {
+            @include fontsize(20);
+            @include tracking(100);
+          }
+        }
         .wrapper {
           padding: rem(75) 0 rem(60);
         }
@@ -1606,20 +1850,32 @@ body {
           justify-content: space-between;
           .box {
             display: block;
-            height: rem(200);
-            width: 30%;
-            @include fitcenter();
+            height: rem(255);
+            width: 47.5%;
             background-color: $white;
-            &:nth-child(1), &:nth-child(2), &:nth-child(3) {
-              margin-bottom: rem(50);
-            }
-            .text {
-              @include fontsize(19.05);
-              @include tracking(50);
-              line-height: (28.57 / 19.05);
+            &-title {
+              @include fitcenter();
+              height: rem(56);
+              width: 100%;
+              line-height: rem(56);
+              background-color: $black;
+              @include fontsize(20);
+              @include tracking(40);
               font-weight: bold;
-              text-align: center;
-              color: $black;
+              color: $white;
+            }
+            &-content {
+              padding: rem(20);
+              height: calc( 100% - 5.6rem );
+              width: 100%;
+              box-sizing: border-box;
+              p {
+                @include fontsize(14);
+                line-height: (24 / 14);
+                a {
+                  color: $black;
+                }
+              }
             }
           }
         }
@@ -1627,6 +1883,7 @@ body {
       &__inner {
         margin: 0 auto;
         max-width: rem(1000);
+        min-width: rem(1000);
         width: 78.125%;
       }
       &-text {
@@ -1658,6 +1915,16 @@ body {
           }
           span.en {
             color: $green;
+          }
+        }
+        &.lightGreen {
+          span.en {
+            &::before {
+              background-color: $lightGreen;
+            }
+          }
+          span.en {
+            color: $lightGreen;
           }
         }
         span {

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import Scroll from './utils/Scroll';
 // import frag from "./../../assets/shader/main.frag?raw";
 // import vert from "./../../assets/shader/main.vert?raw";
 
@@ -105,9 +106,9 @@ class main {
     for (let i = 0; i < this.qa.length; i++) {
       this.qa[i].addEventListener('click', this.triggerQa.bind(this));
     }
-    // for (let i = 0; i < this.scrollTrigger.length; i++) {
-    //   this.scrollTrigger[i].addEventListener('click', this.toScroll.bind(this));
-    // }
+    for (let i = 0; i < this.scrollTrigger.length; i++) {
+      this.scrollTrigger[i].addEventListener('click', this.toScroll.bind(this));
+    }
     window.onresize = () => {
       this.resizeEvent();
     }
@@ -158,16 +159,7 @@ class main {
     let scrollY = window.scrollY || window.pageYOffset;
     let top = elemRect.top + scrollY;
 
-    if (elm.getAttribute('data-target') === 'theme' && window.innerWidth < 750) {
-      this.dir = 'enter';
-      this.scrollDown();
-      top = 1;
-    }
-
-    this.headerEllipse.classList.remove('open');
-    this.menuTrigger[0].classList.remove('active');
-    this.menu.classList.remove('active');
-    this.logo.classList.remove('active');
+    top -= this.header.clientHeight;
 
     Scroll.to(top, 2);
   }
