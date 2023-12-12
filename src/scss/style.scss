@@ -33,9 +33,9 @@ body {
   font-feature-settings: "palt";
   font-family: $YuGothic;
   color: $primary;
-  // opacity: 0;
+  opacity: 0;
   overscroll-behavior: none;
-  // transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
   ::selection {
     color: $white;
     background-color: $primary;
@@ -118,7 +118,7 @@ body {
     }
   }
   .container {
-    background-image: url(/assets/img/bg_sp.svg);
+    background-image: url(./../../assets/img/bg_sp.svg);
     background-size: 100%;
     background-repeat: repeat;
   }
@@ -127,7 +127,7 @@ body {
     // padding-bottom: vw(120);
     .wrapper {
       &.gray {
-        background-color: rgba(226,226,226,.7);
+        background-color: #F7F8F8;
       }
       &.green {
         background-color: rgba(49,182,160,.4);
@@ -267,7 +267,7 @@ body {
             top: 50%;
             right: vw(25);
             transform: translate3d(0, -50%, 0);
-            content: url(./../../assets/img/arrow.svg);
+            content: url(./../.../../../assets/img/arrow.svg);
             height: vw(40);
             width: vw(20);
           }
@@ -317,7 +317,7 @@ body {
               &::after {
                 margin: vw(20) auto;
                 display: block;
-                content: url(./../../assets/img/tri-green.svg);
+                content: url(./../.../../../assets/img/tri-green.svg);
                 height: vw(15);
                 width: vw(30);
                 line-height: 0;
@@ -352,13 +352,14 @@ body {
                   align-items: center;
                   @include fontvw(28);
                   @include tracking(40);
-                  width: 37vw;
+                  white-space: nowrap;
+                  width: 41vw;
                   font-weight: bold;
                   &::after {
                     position: relative;
                     margin: 0 vw(25);
                     display: block;
-                    content: url(./../../assets/img/tri-green.svg);
+                    content: url(./../.../../../assets/img/tri-green.svg);
                     height: vw(15);
                     width: vw(30);
                     line-height: 0;
@@ -424,7 +425,7 @@ body {
                   position: relative;
                   margin: vw(20) auto;
                   display: block;
-                  content: url(./../../assets/img/tri-blue.svg);
+                  content: url(./../.../../../assets/img/tri-blue.svg);
                   height: vw(15);
                   width: vw(30);
                   line-height: 0;
@@ -794,7 +795,7 @@ body {
         //   right: vw(25);
         //   width: vw(40);
         //   transform: translate3d(0, -50%, 0);
-        //   content: url(./../../assets/img/faq-arrow.svg);
+        //   content: url(./../.../../../assets/img/faq-arrow.svg);
         //   transition: transform .5s ease;
         // }
       }
@@ -1016,6 +1017,16 @@ body {
 }
 
 @media screen and (min-width: 750px) {
+  .hover, .scroll-trigger, .underline {
+    transition: opacity 0.5s $zoom;
+    &:hover {
+      opacity: 0.5;
+      will-change: opacity;
+    }
+  }
+  .scroll-trigger {
+    cursor: pointer;
+  }
   #bottom {
   }
   #header {
@@ -1050,7 +1061,7 @@ body {
     }
   }
   .container {
-    background-image: url(/assets/img/bg.svg);
+    background-image: url(./../../assets/img/bg.svg);
     background-size: rem(1280);
     background-repeat: repeat;
   }
@@ -1063,7 +1074,7 @@ body {
     // padding-bottom: vw(120);
     .wrapper {
       &.gray {
-        background-color: rgba(226,226,226,.7);
+        background-color: #F7F8F8;
       }
       &.green {
         background-color: rgba(49,182,160,.4);
@@ -1156,7 +1167,7 @@ body {
         margin-bottom: 0;
       }
       .step {
-        margin-bottom: rem(45);
+        margin-bottom: rem(25);
         &:last-child {
           margin-bottom: 0;
         }
@@ -1205,7 +1216,7 @@ body {
             top: 50%;
             right: rem(15);
             transform: translate3d(0, -50%, 0);
-            content: url(./../../assets/img/arrow.svg);
+            content: url(./../.../../../assets/img/arrow.svg);
             height: rem(24);
             width: rem(12);
           }
@@ -1253,7 +1264,7 @@ body {
               }
               &::after {
                 display: block;
-                content: url(./../../assets/img/tri-green.svg);
+                content: url(./../.../../../assets/img/tri-green.svg);
                 height: rem(10);
                 width: rem(20);
                 line-height: 0;
@@ -1327,7 +1338,7 @@ body {
                     position: relative;
                     margin: 0 rem(18);
                     display: block;
-                    content: url(./../../assets/img/tri-green.svg);
+                    content: url(./../.../../../assets/img/tri-green.svg);
                     width: rem(17.1428);
                     line-height: 0;
                     transform: rotate(-90deg);
@@ -1399,7 +1410,7 @@ body {
                 &::after {
                   margin: rem(10) 0 rem(10) 0;
                   display: block;
-                  content: url(./../../assets/img/tri-blue.svg);
+                  content: url(./../.../../../assets/img/tri-blue.svg);
                   height: rem(10);
                   width: rem(20);
                   line-height: 0;
@@ -1768,7 +1779,7 @@ body {
         //   right: vw(25);
         //   width: vw(40);
         //   transform: translate3d(0, -50%, 0);
-        //   content: url(./../../assets/img/faq-arrow.svg);
+        //   content: url(./../.../../../assets/img/faq-arrow.svg);
         //   transition: transform .5s ease;
         // }
       }
@@ -1951,6 +1962,15 @@ body {
         padding-bottom: rem(75);
         .gray {
           padding: rem(75) 0 rem(75);
+        }
+        .faq-wrapper {
+          margin: 0 auto;
+          width: 76%;
+          display: flex;
+          flex-wrap: wrap;
+          .faq {
+            width: 50%;
+          }
         }
         .faq-title {
           margin-top: rem(50);

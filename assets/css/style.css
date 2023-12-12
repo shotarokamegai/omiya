@@ -592,7 +592,9 @@ body {
   font-feature-settings: "palt";
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
   color: #000000;
+  opacity: 0;
   overscroll-behavior: none;
+  transition: opacity 0.5s ease;
 }
 body ::-moz-selection {
   color: #ffffff;
@@ -687,7 +689,7 @@ body .hidden {
     color: #ffffff;
   }
   .container {
-    background-image: url(/assets/img/bg_sp.svg);
+    background-image: url(./../../assets/img/bg_sp.svg);
     background-size: 100%;
     background-repeat: repeat;
   }
@@ -695,7 +697,7 @@ body .hidden {
     padding-top: 13.3333333333vw;
   }
   main .wrapper.gray {
-    background-color: rgba(226, 226, 226, 0.7);
+    background-color: #F7F8F8;
   }
   main .wrapper.green {
     background-color: rgba(49, 182, 160, 0.4);
@@ -849,7 +851,7 @@ body .hidden {
     top: 50%;
     right: 3.3333333333vw;
     transform: translate3d(0, -50%, 0);
-    content: url(./../../assets/img/arrow.svg);
+    content: url(./../.../../../assets/img/arrow.svg);
     height: 5.3333333333vw;
     width: 2.6666666667vw;
   }
@@ -896,7 +898,7 @@ body .hidden {
   main .scene.scene1 .scene-content .text-wrapper .text::after {
     margin: 2.6666666667vw auto;
     display: block;
-    content: url(./../../assets/img/tri-green.svg);
+    content: url(./../.../../../assets/img/tri-green.svg);
     height: 2vw;
     width: 4vw;
     line-height: 0;
@@ -927,14 +929,15 @@ body .hidden {
     font-size: 1.4rem;
     font-size: 3.7333333333vw;
     letter-spacing: 0.04em;
-    width: 37vw;
+    white-space: nowrap;
+    width: 41vw;
     font-weight: bold;
   }
   main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(1)::after {
     position: relative;
     margin: 0 3.3333333333vw;
     display: block;
-    content: url(./../../assets/img/tri-green.svg);
+    content: url(./../.../../../assets/img/tri-green.svg);
     height: 2vw;
     width: 4vw;
     line-height: 0;
@@ -996,7 +999,7 @@ body .hidden {
     position: relative;
     margin: 2.6666666667vw auto;
     display: block;
-    content: url(./../../assets/img/tri-blue.svg);
+    content: url(./../.../../../assets/img/tri-blue.svg);
     height: 2vw;
     width: 4vw;
     line-height: 0;
@@ -1536,6 +1539,16 @@ body .hidden {
   }
 }
 @media screen and (min-width: 750px) {
+  .hover, .scroll-trigger, .underline {
+    transition: opacity 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  .hover:hover, .scroll-trigger:hover, .underline:hover {
+    opacity: 0.5;
+    will-change: opacity;
+  }
+  .scroll-trigger {
+    cursor: pointer;
+  }
   #header {
     position: fixed;
     top: 0;
@@ -1571,7 +1584,7 @@ body .hidden {
     color: #ffffff;
   }
   .container {
-    background-image: url(/assets/img/bg.svg);
+    background-image: url(./../../assets/img/bg.svg);
     background-size: 128rem;
     background-repeat: repeat;
   }
@@ -1583,7 +1596,7 @@ body .hidden {
     overflow: hidden;
   }
   main .wrapper.gray {
-    background-color: rgba(226, 226, 226, 0.7);
+    background-color: #F7F8F8;
   }
   main .wrapper.green {
     background-color: rgba(49, 182, 160, 0.4);
@@ -1685,7 +1698,7 @@ body .hidden {
     margin-bottom: 0;
   }
   main .scene .step {
-    margin-bottom: 4.5rem;
+    margin-bottom: 2.5rem;
   }
   main .scene .step:last-child {
     margin-bottom: 0;
@@ -1741,7 +1754,7 @@ body .hidden {
     top: 50%;
     right: 1.5rem;
     transform: translate3d(0, -50%, 0);
-    content: url(./../../assets/img/arrow.svg);
+    content: url(./../.../../../assets/img/arrow.svg);
     height: 2.4rem;
     width: 1.2rem;
   }
@@ -1784,7 +1797,7 @@ body .hidden {
   }
   main .scene.scene1 .scene-content .text-wrapper .text::after {
     display: block;
-    content: url(./../../assets/img/tri-green.svg);
+    content: url(./../.../../../assets/img/tri-green.svg);
     height: 1rem;
     width: 2rem;
     line-height: 0;
@@ -1849,7 +1862,7 @@ body .hidden {
     position: relative;
     margin: 0 1.8rem;
     display: block;
-    content: url(./../../assets/img/tri-green.svg);
+    content: url(./../.../../../assets/img/tri-green.svg);
     width: 1.71428rem;
     line-height: 0;
     transform: rotate(-90deg);
@@ -1915,7 +1928,7 @@ body .hidden {
   main .scene.scene3 .scene-content .text-wrapper .text.arrow::after {
     margin: 1rem 0 1rem 0;
     display: block;
-    content: url(./../../assets/img/tri-blue.svg);
+    content: url(./../.../../../assets/img/tri-blue.svg);
     height: 1rem;
     width: 2rem;
     line-height: 0;
@@ -2416,6 +2429,15 @@ body .hidden {
   }
   main .section#faq .gray {
     padding: 7.5rem 0 7.5rem;
+  }
+  main .section#faq .faq-wrapper {
+    margin: 0 auto;
+    width: 76%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .section#faq .faq-wrapper .faq {
+    width: 50%;
   }
   main .section#faq .faq-title {
     margin-top: 5rem;
