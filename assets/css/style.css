@@ -625,6 +625,23 @@ body .hidden {
 }
 
 @media screen and (max-width: 749px) {
+  .show {
+    opacity: 0;
+    transform: translate3d(0, 1.3333333333vw, 0);
+    transition: transform cubic-bezier(0.19, 1, 0.22, 1) 3s, opacity cubic-bezier(0.19, 1, 0.22, 1) 3s;
+  }
+  .show.active {
+    opacity: 1;
+    will-change: opacity, transform;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  .center-layout {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    width: 100vw;
+  }
   #to-top {
     position: fixed;
     right: 2.6666666667vw;
@@ -648,15 +665,15 @@ body .hidden {
     left: 0;
     height: 16vw;
     width: 100%;
-    background-color: #ffffff;
-    border-top: 0.1rem solid #888888;
+    background-color: #f7f8f8;
+    border-top: 0.1rem solid #221815;
     z-index: 10;
   }
   #bottom .text {
     font-size: 1.6rem;
     font-size: 4.2666666667vw;
     letter-spacing: 0.1em;
-    color: #888888;
+    color: #221815;
     font-weight: bold;
   }
   #bottom svg {
@@ -666,7 +683,7 @@ body .hidden {
     width: 5.3333333333vw;
   }
   #bottom svg * {
-    fill: #888888;
+    fill: #221815;
   }
   #header {
     position: fixed;
@@ -744,7 +761,7 @@ body .hidden {
     color: #ffffff;
     z-index: 1;
   }
-  main .bg-title .text .big {
+  main .bg-title .text .big, main .bg-title .text .medium {
     font-size: 2.5rem;
     font-size: 6.6666666667vw;
   }
@@ -894,6 +911,9 @@ body .hidden {
   }
   main .scene .text .small.kome::before {
     content: "※";
+  }
+  main .scene .text .super-small {
+    font-size: 2.733333vw !important;
   }
   main .scene .illust {
     position: relative;
@@ -1190,12 +1210,12 @@ body .hidden {
     line-height: 1.3125;
     font-weight: bold;
   }
+  main .show:last-child .qa {
+    margin-bottom: 0;
+  }
   main .qa {
     margin-bottom: 3.3333333333vw;
     overflow: hidden;
-  }
-  main .qa:last-child {
-    margin-bottom: 0;
   }
   main .qa.light-green .q {
     background-color: #31B6A0;
@@ -1316,6 +1336,7 @@ body .hidden {
     position: relative;
     height: 0;
     font-weight: normal;
+    background-color: #ffffff;
     transition: height 0.5s ease;
   }
   main .qa .a::before {
@@ -1462,9 +1483,9 @@ body .hidden {
     line-height: 1.75;
   }
   main .section-text .small {
+    display: block;
     font-size: 1.1rem;
     font-size: 2.9333333333vw;
-    white-space: nowrap;
   }
   main .section-title {
     margin-bottom: 6.6666666667vw;
@@ -1554,6 +1575,16 @@ body .hidden {
   }
 }
 @media screen and (min-width: 750px) {
+  .show {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0);
+    transition: transform cubic-bezier(0.19, 1, 0.22, 1) 3s, opacity cubic-bezier(0.19, 1, 0.22, 1) 3s;
+  }
+  .show.active {
+    opacity: 1;
+    will-change: opacity, transform;
+    transform: translate3d(0, 0, 0);
+  }
   .hover, .scroll-trigger, .underline {
     transition: opacity 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   }
@@ -1577,6 +1608,38 @@ body .hidden {
   #to-top.active {
     pointer-events: initial;
     opacity: 1;
+  }
+  #bottom {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    right: 0;
+    height: 18.5rem;
+    width: 5rem;
+    background-color: #f7f8f8;
+    border: 0.1rem solid #221815;
+    transform: translate3d(0, -50%, 0);
+    z-index: 10;
+  }
+  #bottom .text {
+    font-feature-settings: initial;
+    writing-mode: vertical-rl;
+    font-size: 18px;
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    color: #221815;
+    font-weight: bold;
+  }
+  #bottom svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 1.5rem;
+  }
+  #bottom svg * {
+    fill: #221815;
   }
   #header {
     position: fixed;
@@ -1650,16 +1713,20 @@ body .hidden {
     transform: translateX(-50%) translateY(-50%) scale(1) rotate(0);
     text-align: center;
     width: 100%;
-    font-size: 28px;
-    font-size: 2.8rem;
+    font-size: 20px;
+    font-size: 2rem;
     line-height: 1.5;
     font-weight: bold;
     color: #ffffff;
     z-index: 1;
   }
   main .bg-title .text .big {
-    font-size: 42px;
-    font-size: 4.2rem;
+    font-size: 36px;
+    font-size: 3.6rem;
+  }
+  main .bg-title .text .medium {
+    font-size: 30px;
+    font-size: 3rem;
   }
   main .scene-wrapper {
     margin-top: 5rem;
@@ -1680,7 +1747,6 @@ body .hidden {
     letter-spacing: 0.1em;
     font-weight: bold;
     line-height: 1.6363636364;
-    text-align: center;
   }
   main .cards p .wrap {
     position: relative;
@@ -1765,6 +1831,7 @@ body .hidden {
     width: 30rem;
     border-radius: 1rem;
     background-color: #31B6A0;
+    cursor: pointer;
   }
   main .scene .step-btn.navy {
     background-color: #6C9BD2;
@@ -1819,6 +1886,10 @@ body .hidden {
     top: 5rem;
     right: 3rem;
     width: 35.67588rem;
+  }
+  main .scene.scene1 .example {
+    width: 57%;
+    overflow: hidden;
   }
   main .scene.scene1 .scene-content .text-wrapper .text:last-child::after {
     margin-bottom: 0;
@@ -1933,7 +2004,7 @@ body .hidden {
     border-bottom: 0.1rem solid #221815;
   }
   main .scene.scene3 .illust {
-    top: -6rem;
+    top: -6.4rem;
     right: 3.5rem;
     width: 28.5253rem;
   }
@@ -2127,12 +2198,12 @@ body .hidden {
     line-height: 1.3125;
     font-weight: bold;
   }
+  main .show:last-child .qa {
+    margin-bottom: 0;
+  }
   main .qa {
     margin-bottom: 2.5rem;
     overflow: hidden;
-  }
-  main .qa:last-child {
-    margin-bottom: 0;
   }
   main .qa.light-green .q {
     background-color: #31B6A0;
@@ -2198,11 +2269,16 @@ body .hidden {
     max-width: initial;
     width: auto;
   }
-  main .qa .q, main .qa .a {
+  main .qa .q {
     font-size: 16px;
     font-size: 1.6rem;
     line-height: 1.5;
     font-weight: bold;
+  }
+  main .qa .a {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.7142857143;
   }
   main .qa .q {
     position: relative;
@@ -2213,6 +2289,7 @@ body .hidden {
     width: 100%;
     height: 6rem;
     color: #ffffff;
+    cursor: pointer;
     box-sizing: border-box;
   }
   main .qa .q::before {
@@ -2253,6 +2330,7 @@ body .hidden {
     position: relative;
     height: 0;
     font-weight: normal;
+    background-color: #ffffff;
     transition: height 0.5s ease;
   }
   main .qa .a::before {
@@ -2338,11 +2416,21 @@ body .hidden {
   main .section#information .btn-wrapper .btn:last-child {
     margin-right: 0;
   }
+  main .section#use-jre-point .bg-title {
+    margin-left: auto;
+    margin-right: auto;
+    width: 67rem;
+  }
   main .section#use-jre-point .wrapper {
     padding: 7.5rem 0 6rem;
   }
   main .section#get-jre-point .section-text .small {
     display: block;
+  }
+  main .section#get-jre-point .bg-title {
+    margin-left: auto;
+    margin-right: auto;
+    width: 89rem;
   }
   main .section#get-jre-point .bg-title .text {
     font-size: 20px;

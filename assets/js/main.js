@@ -149,6 +149,7 @@ var main = /*#__PURE__*/function () {
     this.scrollingElement = 'scrollingElement' in document ? document.scrollingElement : window.navigator.userAgent.indexOf('WebKit') != -1 ? body : document.documentElement || body.parentNode;
     gsap.registerPlugin(ScrollTrigger);
     this.init();
+    this.animationScroll();
     for (var i = 0; i < this.menuTrigger.length; i++) {
       this.menuTrigger[i].addEventListener('click', this.triggerMenu.bind(this));
     }
@@ -166,6 +167,36 @@ var main = /*#__PURE__*/function () {
     };
   }
   _createClass(main, [{
+    key: "animationScroll",
+    value: function animationScroll() {
+      var addactive = document.getElementsByClassName('addactive');
+      var _loop = function _loop() {
+        var elm = addactive[i];
+        var start = "top center+=".concat(window.innerHeight / 4);
+        if (elm.classList.contains('first')) {
+          start = "top center+=".concat(window.innerHeight / 2);
+        }
+        gsap.to(elm, {
+          ease: "power4.inOut",
+          scrollTrigger: {
+            trigger: elm,
+            start: start,
+            onEnter: function onEnter() {
+              elm.classList.add('active');
+              if (elm.classList.contains('show')) {
+                setTimeout(function () {
+                  elm.classList.add('nowillchange');
+                }, 3000);
+              }
+            }
+          }
+        });
+      };
+      for (var i = 0; i < addactive.length; i++) {
+        _loop();
+      }
+    }
+  }, {
     key: "triggerQa",
     value: function triggerQa(e) {
       var elm = e.currentTarget;

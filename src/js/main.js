@@ -25,6 +25,7 @@ class main {
 
     gsap.registerPlugin(ScrollTrigger);
     this.init();
+    this.animationScroll();
     for (let i = 0; i < this.menuTrigger.length; i++) {
       this.menuTrigger[i].addEventListener('click', this.triggerMenu.bind(this));
     }
@@ -39,6 +40,33 @@ class main {
     }
     window.onscroll = () => {
       this.scrollAnimation();
+    }
+  }
+
+  animationScroll() {
+    let addactive = document.getElementsByClassName('addactive');
+
+    for (let i = 0; i < addactive.length; i++) {
+      let elm = addactive[i];
+      let start = `top center+=${window.innerHeight/4}`;
+      if (elm.classList.contains('first')) {
+        start = `top center+=${window.innerHeight/2}`;
+      }
+      gsap.to(elm, {
+        ease: "power4.inOut",
+        scrollTrigger: {
+          trigger: elm,
+          start: start, 
+          onEnter: () => {
+            elm.classList.add('active');
+            if (elm.classList.contains('show')) {
+              setTimeout(() => {
+                elm.classList.add('nowillchange');
+              }, 3000)
+            }
+          }
+        }
+      });
     }
   }
 

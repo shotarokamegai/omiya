@@ -60,6 +60,24 @@ body {
 }
 
 @media screen and (max-width: 749px) {
+  .show {
+    opacity: 0;
+    transform: translate3d(0, vw(10), 0);
+    // transform: translate3d(0, rem(10), 0) scale(0.95);
+    transition: transform $slow 3s, opacity $slow 3s;
+    &.active {
+      opacity: 1;
+      will-change: opacity, transform;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+  .center-layout {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    width: 100vw;
+  }
   #to-top {
     position: fixed;
     right: vw(20);
@@ -81,13 +99,13 @@ body {
     left:0;
     height: vw(120);
     width: 100%;
-    background-color: $white;
-    border-top: rem(1) solid $lightGray;
+    background-color: #f7f8f8;
+    border-top: rem(1) solid $black;
     z-index: 10;
     .text {
       @include fontvw(32);
       @include tracking(100);
-      color: $lightGray;
+      color: $black;
       font-weight: bold;
     }
     svg {
@@ -97,7 +115,7 @@ body {
       width: vw(40);
     }
     svg * {
-      fill: $lightGray;
+      fill: #221815;
     }
   }
   #header {
@@ -168,7 +186,7 @@ body {
         font-weight: bold;
         color: $white;
         z-index: 1;
-        .big {
+        .big, .medium {
           @include fontvw(50);
         }
       }
@@ -307,6 +325,9 @@ body {
               content: '※';
             }
           }
+        }
+        .super-small {
+          font-size: 2.733333vw !important;
         }
       }
       .illust {
@@ -626,12 +647,14 @@ body {
         font-weight: bold;
       }
     }
+    .show {
+      &:last-child .qa {
+      margin-bottom: 0;
+      }
+    }
     .qa {
       margin-bottom: vw(25);
       overflow: hidden;
-      &:last-child {
-      margin-bottom: 0;
-      }
       &.light-green {
         .q {
           background-color: $lightGreen;
@@ -758,6 +781,7 @@ body {
         position: relative;
         height: 0;
         font-weight: normal;
+        background-color: $white;
         transition: height .5s ease;
         &::before {
           position: absolute;
@@ -921,8 +945,8 @@ body {
         @include fontvw(24);
         line-height: (42 / 24);
         .small {
+          display: block;
           @include fontvw(22);
-          white-space: nowrap;
         }
       }
       &-title {
@@ -1031,6 +1055,17 @@ body {
 }
 
 @media screen and (min-width: 750px) {
+  .show {
+    opacity: 0;
+    // transform: translate3d(0, vw(10), 0);
+    transform: translate3d(0, rem(10), 0);
+    transition: transform $slow 3s, opacity $slow 3s;
+    &.active {
+      opacity: 1;
+      will-change: opacity, transform;
+      transform: translate3d(0, 0, 0);
+    }
+  }
   .hover, .scroll-trigger, .underline {
     transition: opacity 0.5s $zoom;
     &:hover {
@@ -1053,6 +1088,35 @@ body {
     &.active {
       pointer-events: initial;
       opacity: 1;
+    }
+  }
+  #bottom {
+    position: fixed;
+    @include fitcenter();
+    top: 50%;
+    right: 0;
+    height: rem(185);
+    width: rem(50);
+    background-color: #f7f8f8;
+    border: rem(1) solid $black;
+    transform: translate3d(0, -50%, 0);
+    z-index: 10;
+    .text {
+      font-feature-settings: initial;
+      writing-mode: vertical-rl;
+      @include fontsize(18);
+      @include tracking(100);
+      color: $black;
+      font-weight: bold;
+    }
+    svg {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: rem(15);
+    }
+    svg * {
+      fill: #221815;
     }
   }
   #header {
@@ -1122,13 +1186,16 @@ body {
         @include center();
         text-align: center;
         width: 100%;
-        @include fontsize(28);
-        line-height: (42 / 28);
+        @include fontsize(20);
+        line-height: (30 / 20);
         font-weight: bold;
         color: $white;
         z-index: 1;
         .big {
-        @include fontsize(42);
+          @include fontsize(36);
+        }
+        .medium {
+          @include fontsize(30);
         }
       }
     }
@@ -1147,7 +1214,6 @@ body {
         @include tracking(100);
         font-weight: bold;
         line-height: (36 / 22);
-        text-align: center;
         .wrap {
           position: relative;
           &::after {
@@ -1226,6 +1292,7 @@ body {
           width: rem(300);
           border-radius: rem(10);
           background-color: $lightGreen;
+          cursor: pointer;
           &.navy {
             background-color: $lightBlue;
           }
@@ -1278,6 +1345,10 @@ body {
           top: rem(50);
           right: rem(30);
           width: rem(356.7588);
+        }
+        .example {
+          width: 57%;
+    overflow: hidden;
         }
         .scene-content {
           .text-wrapper {
@@ -1413,7 +1484,8 @@ body {
       }
       &.scene3 {
         .illust {
-          top: rem(-60);
+          // top: rem(-60);
+          top: -6.4rem;
           right: rem(35);
           width: rem(285.253);
         }
@@ -1622,12 +1694,14 @@ body {
         font-weight: bold;
       }
     }
+    .show {
+      &:last-child .qa {
+      margin-bottom: 0;
+      }
+    }
     .qa {
       margin-bottom: rem(25);
       overflow: hidden;
-      &:last-child {
-      margin-bottom: 0;
-      }
       &.light-green {
         .q {
           background-color: $lightGreen;
@@ -1704,10 +1778,14 @@ body {
           width: auto;
         }
       }
-      .q, .a {
+      .q {
         @include fontsize(16);
         line-height: (24 / 16);
         font-weight: bold;
+      }
+      .a {
+        @include fontsize(14);
+        line-height: (24 / 14);
       }
       .q {
         position: relative;
@@ -1718,6 +1796,7 @@ body {
         width: 100%;
         height: rem(60);
         color: $white;
+        cursor: pointer;
         box-sizing: border-box;
         &::before {
           position: absolute;
@@ -1754,6 +1833,7 @@ body {
         position: relative;
         height: 0;
         font-weight: normal;
+        background-color: $white;
         transition: height .5s ease;
         &::before {
           position: absolute;
@@ -1793,21 +1873,9 @@ body {
       }
       .q {
         position: relative;
-        // padding-left: vw(25);
-        // padding-right: vw(80);
         width: 100%;
-        // height: vw(90);
         box-sizing: border-box;
         text-decoration: underline;
-        // &::after {
-        //   position: absolute;
-        //   top: 50%;
-        //   right: vw(25);
-        //   width: vw(40);
-        //   transform: translate3d(0, -50%, 0);
-        //   content: url(./../.../../../assets/img/faq-arrow.svg);
-        //   transition: transform .5s ease;
-        // }
       }
       .a {
         height: 0;
@@ -1859,6 +1927,11 @@ body {
         }
       }
       &#use-jre-point {
+        .bg-title {
+          margin-left: auto;
+          margin-right: auto;
+          width: rem(670);
+        }
         .wrapper {
           padding: rem(75) 0 rem(60);
         }
@@ -1870,6 +1943,9 @@ body {
           }
         }
         .bg-title {
+          margin-left: auto;
+          margin-right: auto;
+          width: rem(890);
           .text {
             @include fontsize(20);
             @include tracking(100);
