@@ -58,6 +58,9 @@ body {
 .whitespace {
   white-space: nowrap;
 }
+.red {
+  color: red !important;
+}
 
 @media screen and (max-width: 749px) {
   .show {
@@ -69,6 +72,22 @@ body {
       opacity: 1;
       will-change: opacity, transform;
       transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+  a.underline {
+    display: inline-flex;
+    &.noicon {
+      &::after {
+        display: none;
+      }
+    }
+    &::after {
+      margin-top: vw(2);
+      margin-left: vw(2);
+      display: block;
+      content: url(./../.../../../assets/img/icon.svg);
+      // height: rem(24);
+      width: vw(20);
     }
   }
   .center-layout {
@@ -189,6 +208,16 @@ body {
         .big, .medium {
           @include fontvw(50);
         }
+        .card {
+          display: block;
+          margin: 0 auto vw(20);
+        }
+        .card1 {
+          width: vw(467.4871);
+        }
+        .card2, .card3 {
+          width: vw(142.6643);
+        }
       }
     }
     .scene-wrapper {
@@ -299,8 +328,8 @@ body {
             top: 50%;
             right: vw(25);
             transform: translate3d(0, -50%, 0);
-            content: url(./../.../../../assets/img/arrow.svg);
-            height: vw(40);
+            content: url(./../.../../../assets/img/icon.svg);
+            // height: vw(40);
             width: vw(20);
           }
         }
@@ -310,7 +339,7 @@ body {
         @include fontvw(24);
         line-height: (48 / 24);
         .big {
-          @include fontvw(30);
+          @include fontvw(34);
           &.black {
             color: #221815 !important;
           }
@@ -357,9 +386,6 @@ body {
                 width: vw(30);
                 line-height: 0;
               }
-              .big {
-                color: $green;
-              }
             }
           }
         }
@@ -389,7 +415,7 @@ body {
                   @include tracking(40);
                   white-space: nowrap;
                   width: 41vw;
-                  font-weight: bold;
+                  font-weight: normal;
                   &::after {
                     position: relative;
                     margin: 0 vw(25);
@@ -402,6 +428,8 @@ body {
                   }
                 }
                 &:nth-child(2) {
+                  margin-right: 0;
+                  margin-left: auto;
                   @include fontvw(32);
                   @include tracking(40);
                   font-weight: bold;
@@ -537,9 +565,15 @@ body {
         }
       }
       &-title {
-        padding: vw(40);
+        position: relative;
+        height: vw(175);
         picture {
-          margin-right: vw(30);
+          position: absolute;
+          @include fitcenter();
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: vw(140);
           img {
             height: vw(90.8643);
             width: auto;
@@ -547,11 +581,20 @@ body {
           }
         }
         p {
-          @include fontvw(38);
+          margin-right: 0;
+          margin-left: auto;
+          @include fitcenter();
+          width: calc( 100% - 15.3333333333vw );
+          @include fontvw(40);
           @include tracking(80);
           line-height: (57 / 38);
           font-weight: bold;
           white-space: nowrap;
+          text-align: center;
+          span {
+            display: inline-block;
+          text-align: left;
+          }
         }
       }
       .example {
@@ -619,10 +662,10 @@ body {
       }
       &.blue {
         // background-color: rgba(161, 214, 220, .6);
-        border: vw(2) solid $blue;
-        color: $blue;
+        border: vw(2) solid $navy;
+        color: $navy;
         svg * {
-          fill: $blue;
+          fill: $navy;
         }
       }
       &.green {
@@ -886,6 +929,13 @@ body {
           }
         }
       }
+      &#use-jre-point , &#get-jre-point {
+        .section {
+          &-title {
+            margin-bottom: vw(75);
+          }
+        }
+      }
       &#use-jre-point {
         .wrapper {
           padding: vw(60) 0 vw(75);
@@ -929,6 +979,9 @@ body {
               p {
                 @include fontvw(24);
                 line-height: (42 / 24);
+                span.bold {
+                  @include fontvw(26);
+                }
                 a {
                   color: $black;
                 }
@@ -939,7 +992,7 @@ body {
       }
       &__inner {
         margin: 0 auto;
-        width: vw(650);
+        width: vw(670);
       }
       &-text {
         @include fontvw(24);
@@ -1066,11 +1119,27 @@ body {
       transform: translate3d(0, 0, 0);
     }
   }
-  .hover, .scroll-trigger, .underline {
+  .hover, .scroll-trigger, a.underline {
     transition: opacity 0.5s $zoom;
     &:hover {
       opacity: 0.5;
       will-change: opacity;
+    }
+  }
+  a.underline {
+    display: inline-flex;
+    &.noicon {
+      &::after {
+        display: none;
+      }
+    }
+    &::after {
+      margin-top: rem(2);
+      margin-left: rem(2);
+      display: block;
+      content: url(./../.../../../assets/img/icon.svg);
+      // height: rem(24);
+      width: rem(12);
     }
   }
   .scroll-trigger {
@@ -1196,6 +1265,18 @@ body {
         }
         .medium {
           @include fontsize(30);
+          line-height: 1.2;
+        }
+        .card {
+          display: block;
+        }
+        .card1 {
+          margin: 0 auto rem(5);
+          width: rem(233.7436);
+        }
+        .card2, .card3 {
+          margin-right: rem(5);
+          width: rem(71.3322);
         }
       }
     }
@@ -1309,8 +1390,8 @@ body {
             top: 50%;
             right: rem(15);
             transform: translate3d(0, -50%, 0);
-            content: url(./../.../../../assets/img/arrow.svg);
-            height: rem(24);
+            content: url(./../.../../../assets/img/icon.svg);
+            // height: rem(24);
             width: rem(12);
           }
         }
@@ -1365,9 +1446,6 @@ body {
                 height: rem(10);
                 width: rem(20);
                 line-height: 0;
-              }
-              .big {
-                color: $green;
               }
             }
           }
@@ -1425,7 +1503,7 @@ body {
                   align-items: center;
                   @include fontsize(16);
                   @include tracking(40);
-                  font-weight: bold;
+                  font-weight: normal;
                   &.zu {
                     &::after {
                       left: rem(9);
@@ -1442,14 +1520,12 @@ body {
                   }
                 }
                 &:nth-child(2) {
+                  margin-right: 0;
+                  margin-left: auto;
                   @include fontsize(18);
                   @include tracking(40);
                   font-weight: bold;
                   color: $green;
-                  &.zu {
-                    position: relative;
-                    left: rem(9);
-                  }
                 }
               }
               .big {
@@ -1666,10 +1742,10 @@ body {
       }
       &.blue {
         // background-color: rgba(161, 214, 220, .6);
-        border: rem(2) solid $blue;
-        color: $blue;
+        border: rem(2) solid $navy;
+        color: $navy;
         svg * {
-          fill: $blue;
+          fill: $navy;
         }
       }
       &.green {
@@ -1947,6 +2023,9 @@ body {
           margin-right: auto;
           width: rem(890);
           .text {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
             @include fontsize(20);
             @include tracking(100);
           }
@@ -1963,7 +2042,7 @@ body {
           justify-content: space-between;
           .box {
             display: block;
-            height: rem(255);
+            // height: rem(255);
             width: 47.5%;
             background-color: $white;
             &-title {
@@ -1978,13 +2057,16 @@ body {
               color: $white;
             }
             &-content {
-              padding: rem(20);
-              height: calc( 100% - 5.6rem );
+              padding: rem(15) rem(20);
+              // height: calc( 100% - 5.6rem );
               width: 100%;
               box-sizing: border-box;
               p {
                 @include fontsize(14);
                 line-height: (24 / 14);
+                span.bold {
+                  @include fontsize(16);
+                }
                 a {
                   color: $black;
                 }

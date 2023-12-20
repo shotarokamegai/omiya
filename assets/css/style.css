@@ -624,6 +624,10 @@ body .hidden {
   white-space: nowrap;
 }
 
+.red {
+  color: red !important;
+}
+
 @media screen and (max-width: 749px) {
   .show {
     opacity: 0;
@@ -634,6 +638,19 @@ body .hidden {
     opacity: 1;
     will-change: opacity, transform;
     transform: translate3d(0, 0, 0) scale(1);
+  }
+  a.underline {
+    display: inline-flex;
+  }
+  a.underline.noicon::after {
+    display: none;
+  }
+  a.underline::after {
+    margin-top: 0.2666666667vw;
+    margin-left: 0.2666666667vw;
+    display: block;
+    content: url(./../.../../../assets/img/icon.svg);
+    width: 2.6666666667vw;
   }
   .center-layout {
     display: block;
@@ -765,6 +782,16 @@ body .hidden {
     font-size: 2.5rem;
     font-size: 6.6666666667vw;
   }
+  main .bg-title .text .card {
+    display: block;
+    margin: 0 auto 2.6666666667vw;
+  }
+  main .bg-title .text .card1 {
+    width: 62.3316133333vw;
+  }
+  main .bg-title .text .card2, main .bg-title .text .card3 {
+    width: 19.0219066667vw;
+  }
   main .scene-wrapper {
     margin-top: 6.6666666667vw;
   }
@@ -883,8 +910,7 @@ body .hidden {
     top: 50%;
     right: 3.3333333333vw;
     transform: translate3d(0, -50%, 0);
-    content: url(./../.../../../assets/img/arrow.svg);
-    height: 5.3333333333vw;
+    content: url(./../.../../../assets/img/icon.svg);
     width: 2.6666666667vw;
   }
   main .scene .text {
@@ -894,8 +920,8 @@ body .hidden {
     line-height: 2;
   }
   main .scene .text .big {
-    font-size: 1.5rem;
-    font-size: 4vw;
+    font-size: 1.7rem;
+    font-size: 4.5333333333vw;
   }
   main .scene .text .big.black {
     color: #221815 !important;
@@ -938,9 +964,6 @@ body .hidden {
     width: 4vw;
     line-height: 0;
   }
-  main .scene.scene1 .scene-content .text-wrapper .text .big {
-    color: #00833E;
-  }
   main .scene.scene2 .illust {
     margin-top: 1.3333333333vw;
     width: 80.1410933333vw;
@@ -966,7 +989,7 @@ body .hidden {
     letter-spacing: 0.04em;
     white-space: nowrap;
     width: 41vw;
-    font-weight: bold;
+    font-weight: normal;
   }
   main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(1)::after {
     position: relative;
@@ -979,6 +1002,8 @@ body .hidden {
     transform: rotate(-90deg);
   }
   main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(2) {
+    margin-right: 0;
+    margin-left: auto;
     font-size: 1.6rem;
     font-size: 4.2666666667vw;
     letter-spacing: 0.04em;
@@ -1099,10 +1124,18 @@ body .hidden {
     background-color: rgba(49, 182, 160, 0.3);
   }
   main .scene-title {
-    padding: 5.3333333333vw;
+    position: relative;
+    height: 23.3333333333vw;
   }
   main .scene-title picture {
-    margin-right: 4vw;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 18.6666666667vw;
   }
   main .scene-title picture img {
     height: 12.11524vw;
@@ -1110,12 +1143,23 @@ body .hidden {
     max-width: initial;
   }
   main .scene-title p {
-    font-size: 1.9rem;
-    font-size: 5.0666666667vw;
+    margin-right: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 15.3333333333vw);
+    font-size: 2rem;
+    font-size: 5.3333333333vw;
     letter-spacing: 0.08em;
     line-height: 1.5;
     font-weight: bold;
     white-space: nowrap;
+    text-align: center;
+  }
+  main .scene-title p span {
+    display: inline-block;
+    text-align: left;
   }
   main .scene .example {
     margin-bottom: 3.3333333333vw;
@@ -1184,11 +1228,11 @@ body .hidden {
     width: 5.3333333333vw;
   }
   main .btn.blue {
-    border: 0.2666666667vw solid #0090D5;
-    color: #0090D5;
+    border: 0.2666666667vw solid #1D65BA;
+    color: #1D65BA;
   }
   main .btn.blue svg * {
-    fill: #0090D5;
+    fill: #1D65BA;
   }
   main .btn.green {
     border: 0.2666666667vw solid #00833E;
@@ -1422,6 +1466,9 @@ body .hidden {
   main .section#information .btn-wrapper .btn:last-child {
     margin-right: 0;
   }
+  main .section#use-jre-point .section-title, main .section#get-jre-point .section-title {
+    margin-bottom: 10vw;
+  }
   main .section#use-jre-point .wrapper {
     padding: 8vw 0 10vw;
   }
@@ -1470,12 +1517,16 @@ body .hidden {
     font-size: 3.2vw;
     line-height: 1.75;
   }
+  main .section#last .wrapper .box-content p span.bold {
+    font-size: 1.3rem;
+    font-size: 3.4666666667vw;
+  }
   main .section#last .wrapper .box-content p a {
     color: #221815;
   }
   main .section__inner {
     margin: 0 auto;
-    width: 86.6666666667vw;
+    width: 89.3333333333vw;
   }
   main .section-text {
     font-size: 1.2rem;
@@ -1585,12 +1636,25 @@ body .hidden {
     will-change: opacity, transform;
     transform: translate3d(0, 0, 0);
   }
-  .hover, .scroll-trigger, .underline {
+  .hover, .scroll-trigger, a.underline {
     transition: opacity 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   }
-  .hover:hover, .scroll-trigger:hover, .underline:hover {
+  .hover:hover, .scroll-trigger:hover, a.underline:hover {
     opacity: 0.5;
     will-change: opacity;
+  }
+  a.underline {
+    display: inline-flex;
+  }
+  a.underline.noicon::after {
+    display: none;
+  }
+  a.underline::after {
+    margin-top: 0.2rem;
+    margin-left: 0.2rem;
+    display: block;
+    content: url(./../.../../../assets/img/icon.svg);
+    width: 1.2rem;
   }
   .scroll-trigger {
     cursor: pointer;
@@ -1727,6 +1791,18 @@ body .hidden {
   main .bg-title .text .medium {
     font-size: 30px;
     font-size: 3rem;
+    line-height: 1.2;
+  }
+  main .bg-title .text .card {
+    display: block;
+  }
+  main .bg-title .text .card1 {
+    margin: 0 auto 0.5rem;
+    width: 23.37436rem;
+  }
+  main .bg-title .text .card2, main .bg-title .text .card3 {
+    margin-right: 0.5rem;
+    width: 7.13322rem;
   }
   main .scene-wrapper {
     margin-top: 5rem;
@@ -1850,8 +1926,7 @@ body .hidden {
     top: 50%;
     right: 1.5rem;
     transform: translate3d(0, -50%, 0);
-    content: url(./../.../../../assets/img/arrow.svg);
-    height: 2.4rem;
+    content: url(./../.../../../assets/img/icon.svg);
     width: 1.2rem;
   }
   main .scene .text {
@@ -1902,9 +1977,6 @@ body .hidden {
     width: 2rem;
     line-height: 0;
   }
-  main .scene.scene1 .scene-content .text-wrapper .text .big {
-    color: #00833E;
-  }
   main .scene.scene2 .illust {
     top: -5rem;
     left: 3rem;
@@ -1953,7 +2025,7 @@ body .hidden {
     font-size: 16px;
     font-size: 1.6rem;
     letter-spacing: 0.04em;
-    font-weight: bold;
+    font-weight: normal;
   }
   main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(1).zu::after {
     left: 0.9rem;
@@ -1968,15 +2040,13 @@ body .hidden {
     transform: rotate(-90deg);
   }
   main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(2) {
+    margin-right: 0;
+    margin-left: auto;
     font-size: 18px;
     font-size: 1.8rem;
     letter-spacing: 0.04em;
     font-weight: bold;
     color: #00833E;
-  }
-  main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(2).zu {
-    position: relative;
-    left: 0.9rem;
   }
   main .scene.scene2 .scene-content .text-wrapper .text .big {
     color: #00833E;
@@ -2172,11 +2242,11 @@ body .hidden {
     width: 2.5rem;
   }
   main .btn.blue {
-    border: 0.2rem solid #0090D5;
-    color: #0090D5;
+    border: 0.2rem solid #1D65BA;
+    color: #1D65BA;
   }
   main .btn.blue svg * {
-    fill: #0090D5;
+    fill: #1D65BA;
   }
   main .btn.green {
     border: 0.2rem solid #00833E;
@@ -2433,6 +2503,9 @@ body .hidden {
     width: 89rem;
   }
   main .section#get-jre-point .bg-title .text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     font-size: 20px;
     font-size: 2rem;
     letter-spacing: 0.1em;
@@ -2450,7 +2523,6 @@ body .hidden {
   }
   main .section#last .wrapper .box {
     display: block;
-    height: 25.5rem;
     width: 47.5%;
     background-color: #ffffff;
   }
@@ -2469,8 +2541,7 @@ body .hidden {
     color: #ffffff;
   }
   main .section#last .wrapper .box-content {
-    padding: 2rem;
-    height: calc(100% - 5.6rem);
+    padding: 1.5rem 2rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -2478,6 +2549,10 @@ body .hidden {
     font-size: 14px;
     font-size: 1.4rem;
     line-height: 1.7142857143;
+  }
+  main .section#last .wrapper .box-content p span.bold {
+    font-size: 16px;
+    font-size: 1.6rem;
   }
   main .section#last .wrapper .box-content p a {
     color: #221815;
