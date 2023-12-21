@@ -87,7 +87,7 @@ body {
       display: block;
       content: url(./../.../../../assets/img/icon.svg);
       // height: rem(24);
-      width: vw(20);
+      width: vw(22);
     }
   }
   .center-layout {
@@ -1139,7 +1139,7 @@ body {
       display: block;
       content: url(./../.../../../assets/img/icon.svg);
       // height: rem(24);
-      width: rem(12);
+      width: rem(11);
     }
   }
   .scroll-trigger {
@@ -1421,6 +1421,22 @@ body {
       .illust {
         position: absolute;
       }
+      &.scene1, &.scene3 {
+        .text-wrapper {
+          text-align: center;
+          .text {
+            text-align: center;
+            &::after {
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+        }
+        .box_ {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
       &.scene1 {
         .illust {
           top: rem(50);
@@ -1429,7 +1445,10 @@ body {
         }
         .example {
           width: 57%;
-    overflow: hidden;
+          overflow: hidden;
+        }
+        .text-wrapper {
+          width: 60%;
         }
         .scene-content {
           .text-wrapper {
@@ -1571,18 +1590,17 @@ body {
             width: rem(560);
           }
           .big-title {
-            text-align: left;
+            // text-align: left;
             &.mt {
               margin-top: rem(25);
             }
           }
           .text-wrapper {
             .text {
-              text-align: left;
               @include fontsize(16);
               &.arrow {
                 &::after {
-                  margin: rem(10) 0 rem(10) 0;
+                  margin: rem(10) auto rem(10) auto;
                   display: block;
                   content: url(./../.../../../assets/img/tri-blue.svg);
                   height: rem(10);
@@ -1597,7 +1615,8 @@ body {
           }
           .text .kome {
             // margin-top: rem(10);
-            text-align: left;
+            // text-align: left;
+            justify-content: center;
           }
           .step-wrapper {
             position: absolute;
