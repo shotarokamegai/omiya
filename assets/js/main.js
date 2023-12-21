@@ -142,7 +142,8 @@ var main = /*#__PURE__*/function () {
     this.top = document.getElementById('top');
     this.menu = document.getElementById('menu');
     this.footer = document.getElementById('footer');
-    this.qa = document.getElementsByClassName('qa-faq');
+    this.qa = document.getElementsByClassName('q');
+    // this.qa = document.getElementsByClassName('qa-faq');
     this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
     this.menuTrigger = document.getElementsByClassName('menu-trigger');
     this.scroller = document.body;
@@ -199,14 +200,20 @@ var main = /*#__PURE__*/function () {
   }, {
     key: "triggerQa",
     value: function triggerQa(e) {
-      var elm = e.currentTarget;
-      var a = elm.getElementsByClassName('a')[0];
+      var elm;
+      if (e.classList.contains('q')) {
+        elm = e;
+      } else {
+        elm = e.currentTarget;
+      }
+      var parent = elm.parentNode;
+      var a = parent.getElementsByClassName('a')[0];
       var aInner = a.getElementsByClassName('a__inner')[0];
-      if (elm.classList.contains('active')) {
-        elm.classList.remove('active');
+      if (parent.classList.contains('active')) {
+        parent.classList.remove('active');
         a.setAttribute('style', "height: 0");
       } else {
-        elm.classList.add('active');
+        parent.classList.add('active');
         a.setAttribute('style', "height: ".concat(aInner.clientHeight, "px"));
       }
     }
@@ -220,6 +227,9 @@ var main = /*#__PURE__*/function () {
       var top = elemRect.top + scrollY;
       top -= this.header.clientHeight;
       _utils_Scroll__WEBPACK_IMPORTED_MODULE_0__["default"].to(top, 2);
+      if (elm.classList.contains('open')) {
+        this.triggerQa(target.getElementsByClassName('q')[0]);
+      }
     }
   }, {
     key: "init",

@@ -54,6 +54,7 @@ body {
 .underline {
   color: $black;
   text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 .whitespace {
   white-space: nowrap;
@@ -328,9 +329,9 @@ body {
             top: 50%;
             right: vw(25);
             transform: translate3d(0, -50%, 0);
-            content: url(./../.../../../assets/img/icon.svg);
+            content: url(./../.../../../assets/img/icon_white.svg);
             // height: vw(40);
-            width: vw(20);
+            width: vw(30);
           }
         }
       }
@@ -776,7 +777,9 @@ body {
       }
       .q, .a {
         @include fontvw(24);
-        line-height: (32 / 24);
+        @include tracking(50);
+        line-height: 1.5;
+        // line-height: (32 / 24);
         font-weight: bold;
       }
       .q {
@@ -864,21 +867,10 @@ body {
       }
       .q {
         position: relative;
-        // padding-left: vw(25);
-        // padding-right: vw(80);
         width: 100%;
-        // height: vw(90);
         box-sizing: border-box;
         text-decoration: underline;
-        // &::after {
-        //   position: absolute;
-        //   top: 50%;
-        //   right: vw(25);
-        //   width: vw(40);
-        //   transform: translate3d(0, -50%, 0);
-        //   content: url(./../.../../../assets/img/faq-arrow.svg);
-        //   transition: transform .5s ease;
-        // }
+        text-decoration-skip-ink: none;
       }
       .a {
         height: 0;
@@ -1221,7 +1213,7 @@ body {
   }
   .container {
     background-image: url(./../../assets/img/bg.svg);
-    background-size: rem(1280);
+    background-size: rem(1680);
     background-repeat: repeat;
   }
   .text-center {
@@ -1322,6 +1314,8 @@ body {
         font-weight: normal !important;
       }
       .box_ {
+        margin-top: rem(10);
+        margin-bottom: rem(10);
         display: block;
         height: rem(30);
         line-height: rem(30);
@@ -1390,9 +1384,9 @@ body {
             top: 50%;
             right: rem(15);
             transform: translate3d(0, -50%, 0);
-            content: url(./../.../../../assets/img/icon.svg);
+            content: url(./../.../../../assets/img/icon_white.svg);
             // height: rem(24);
-            width: rem(12);
+            width: rem(18);
           }
         }
       }
@@ -1416,6 +1410,10 @@ body {
               content: '※';
             }
           }
+        }
+        .super-small {
+          display: block;
+          margin-top: rem(10);
         }
       }
       .illust {
@@ -1460,6 +1458,8 @@ body {
                 }
               }
               &::after {
+                margin-top: rem(10);
+                margin-bottom: rem(10);
                 display: block;
                 content: url(./../.../../../assets/img/tri-green.svg);
                 height: rem(10);
@@ -1472,7 +1472,7 @@ body {
       }
       &.scene2 {
         .illust {
-          top: rem(-50);
+          top: rem(-45);
           left: rem(30);
           width: rem(363.7299);
         }
@@ -1615,8 +1615,8 @@ body {
           }
           .text .kome {
             // margin-top: rem(10);
-            // text-align: left;
-            justify-content: center;
+            text-align: left;
+            // justify-content: center;
           }
           .step-wrapper {
             position: absolute;

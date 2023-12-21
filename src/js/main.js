@@ -12,7 +12,8 @@ class main {
     this.top = document.getElementById('top');
     this.menu = document.getElementById('menu');
     this.footer = document.getElementById('footer');
-    this.qa = document.getElementsByClassName('qa-faq');
+    this.qa = document.getElementsByClassName('q');
+    // this.qa = document.getElementsByClassName('qa-faq');
     this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
     this.menuTrigger = document.getElementsByClassName('menu-trigger');
     this.scroller = document.body;
@@ -71,15 +72,21 @@ class main {
   }
 
   triggerQa(e) {
-    let elm = e.currentTarget;
-    let a = elm.getElementsByClassName('a')[0];
+    let elm;
+    if (e.classList.contains('q')) {
+      elm = e;
+    } else {
+      elm = e.currentTarget;
+    }
+    let parent = elm.parentNode;
+    let a = parent.getElementsByClassName('a')[0];
     let aInner = a.getElementsByClassName('a__inner')[0];
 
-    if (elm.classList.contains('active')) {
-      elm.classList.remove('active');
+    if (parent.classList.contains('active')) {
+      parent.classList.remove('active');
       a.setAttribute('style', `height: 0`);
     } else {
-      elm.classList.add('active');
+      parent.classList.add('active');
       a.setAttribute('style', `height: ${aInner.clientHeight}px`);
     }
   }
@@ -94,6 +101,9 @@ class main {
     top -= this.header.clientHeight;
 
     Scroll.to(top, 2);
+    if (elm.classList.contains('open')) {
+      this.triggerQa(target.getElementsByClassName('q')[0]);
+    }
   }
 
 

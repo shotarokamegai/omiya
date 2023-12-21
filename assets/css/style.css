@@ -618,6 +618,8 @@ body .hidden {
 .underline {
   color: #221815;
   text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
 }
 
 .whitespace {
@@ -910,8 +912,8 @@ body .hidden {
     top: 50%;
     right: 3.3333333333vw;
     transform: translate3d(0, -50%, 0);
-    content: url(./../.../../../assets/img/icon.svg);
-    width: 2.6666666667vw;
+    content: url(./../.../../../assets/img/icon_white.svg);
+    width: 4vw;
   }
   main .scene .text {
     font-weight: bold;
@@ -1328,7 +1330,8 @@ body .hidden {
   main .qa .q, main .qa .a {
     font-size: 1.2rem;
     font-size: 3.2vw;
-    line-height: 1.3333333333;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
     font-weight: bold;
   }
   main .qa .q {
@@ -1420,6 +1423,8 @@ body .hidden {
     width: 100%;
     box-sizing: border-box;
     text-decoration: underline;
+    -webkit-text-decoration-skip-ink: none;
+            text-decoration-skip-ink: none;
   }
   main .faq .a {
     height: 0;
@@ -1741,7 +1746,7 @@ body .hidden {
   }
   .container {
     background-image: url(./../../assets/img/bg.svg);
-    background-size: 128rem;
+    background-size: 168rem;
     background-repeat: repeat;
   }
   .text-center {
@@ -1850,6 +1855,8 @@ body .hidden {
     font-weight: normal !important;
   }
   main .scene .box_ {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: block;
     height: 3rem;
     line-height: 3rem;
@@ -1926,8 +1933,8 @@ body .hidden {
     top: 50%;
     right: 1.5rem;
     transform: translate3d(0, -50%, 0);
-    content: url(./../.../../../assets/img/icon.svg);
-    width: 1.2rem;
+    content: url(./../.../../../assets/img/icon_white.svg);
+    width: 1.8rem;
   }
   main .scene .text {
     font-weight: bold;
@@ -1953,6 +1960,10 @@ body .hidden {
   }
   main .scene .text .small.kome::before {
     content: "※";
+  }
+  main .scene .text .super-small {
+    display: block;
+    margin-top: 1rem;
   }
   main .scene .illust {
     position: absolute;
@@ -1988,6 +1999,8 @@ body .hidden {
     opacity: 0;
   }
   main .scene.scene1 .scene-content .text-wrapper .text::after {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: block;
     content: url(./../.../../../assets/img/tri-green.svg);
     height: 1rem;
@@ -1995,7 +2008,7 @@ body .hidden {
     line-height: 0;
   }
   main .scene.scene2 .illust {
-    top: -5rem;
+    top: -4.5rem;
     left: 3rem;
     width: 36.37299rem;
   }
@@ -2120,7 +2133,7 @@ body .hidden {
     color: #1D65BA;
   }
   main .scene.scene3 .scene-content .text .kome {
-    justify-content: center;
+    text-align: left;
   }
   main .scene.scene3 .scene-content .step-wrapper {
     position: absolute;
