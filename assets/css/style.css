@@ -1187,6 +1187,10 @@ body .hidden {
     margin-bottom: 6vw;
     text-align: center;
   }
+  main .scene-content .big-title.left {
+    position: relative;
+    left: -2vw;
+  }
   main .scene-content .big-title span.wrap {
     position: relative;
     display: inline-block;
