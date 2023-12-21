@@ -1746,8 +1746,7 @@ body .hidden {
   }
   .container {
     background-image: url(./../../assets/img/bg.svg);
-    background-size: 168rem;
-    background-repeat: repeat;
+    background-size: contain;
   }
   .text-center {
     text-align: center;

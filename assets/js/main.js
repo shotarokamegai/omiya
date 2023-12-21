@@ -201,11 +201,12 @@ var main = /*#__PURE__*/function () {
     key: "triggerQa",
     value: function triggerQa(e) {
       var elm;
-      if (e.classList.contains('q')) {
+      if (e instanceof HTMLElement) {
         elm = e;
       } else {
         elm = e.currentTarget;
       }
+      console.log(elm);
       var parent = elm.parentNode;
       var a = parent.getElementsByClassName('a')[0];
       var aInner = a.getElementsByClassName('a__inner')[0];

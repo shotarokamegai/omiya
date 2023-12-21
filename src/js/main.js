@@ -73,11 +73,12 @@ class main {
 
   triggerQa(e) {
     let elm;
-    if (e.classList.contains('q')) {
+    if (e instanceof HTMLElement) {
       elm = e;
     } else {
       elm = e.currentTarget;
     }
+    console.log(elm)
     let parent = elm.parentNode;
     let a = parent.getElementsByClassName('a')[0];
     let aInner = a.getElementsByClassName('a__inner')[0];
