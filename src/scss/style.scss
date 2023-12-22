@@ -225,7 +225,7 @@ body {
       margin-top: vw(50);
     }
     .cards {
-      margin-top: vw(55);
+      margin-top: vw(80);
       .img {
         margin: 0 auto vw(40);
         width: vw(400);
@@ -366,6 +366,9 @@ body {
         transform: translate3d(-50%, 0, 0);
       }
       &.scene1 {
+        .green {
+          color: $green;
+        }
         .illust {
           margin-top: vw(-30);
           width: vw(561.3169);
@@ -598,6 +601,39 @@ body {
           }
         }
       }
+      // &-title {
+      //   position: relative;
+      //   height: vw(175);
+      //   picture {
+      //     position: absolute;
+      //     @include fitcenter();
+      //     left: 0;
+      //     top: 0;
+      //     height: 100%;
+      //     width: vw(140);
+      //     img {
+      //       height: vw(90.8643);
+      //       width: auto;
+      //       max-width: initial;
+      //     }
+      //   }
+      //   p {
+      //     margin-right: 0;
+      //     margin-left: auto;
+      //     @include fitcenter();
+      //     width: calc( 100% - 15.3333333333vw );
+      //     @include fontvw(40);
+      //     @include tracking(80);
+      //     line-height: (57 / 38);
+      //     font-weight: bold;
+      //     white-space: nowrap;
+      //     text-align: center;
+      //     span {
+      //       display: inline-block;
+      //     text-align: left;
+      //     }
+      //   }
+      // }
       .example {
         margin-bottom: vw(25);
         .bar {
@@ -1280,7 +1316,7 @@ body {
       margin-top: rem(50);
     }
     .cards {
-      margin-top: rem(30);
+      margin-top: rem(50);
       @include fitcenter();
       .img {
         margin-right: rem(65);
@@ -1440,6 +1476,9 @@ body {
         }
       }
       &.scene1 {
+        .green {
+          color: $green;
+        }
         .illust {
           top: rem(50);
           right: rem(30);
@@ -1449,8 +1488,11 @@ body {
           width: 57%;
           overflow: hidden;
         }
-        .text-wrapper {
+        .big-title, .text-wrapper {
           width: 60%;
+        }
+        .big-title {
+          text-align: center;
         }
         .scene-content {
           .text-wrapper {
@@ -1498,12 +1540,13 @@ body {
             margin: rem(20) 0 rem(20) auto;
           }
           .flex {
+            flex-wrap: wrap;
             .big-title {
-              margin: 0 6rem 0 0;
+              width: 100%;
+              margin: 0;
             }
           }
           .big-title {
-            text-align: left;
             &.full {
               text-align: center;
               width: 100%;
@@ -2045,6 +2088,10 @@ body {
           margin-left: auto;
           margin-right: auto;
           width: rem(890);
+          .big {
+            position: relative;
+            top: rem(6);
+          }
           .text {
             display: flex;
             justify-content: center;
