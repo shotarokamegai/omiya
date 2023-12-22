@@ -202,7 +202,8 @@ body {
         text-align: center;
         width: 100%;
         @include fontvw(34);
-        line-height: (50 / 34);
+        // line-height: (50 / 34);
+        line-height: 1.6;
         font-weight: bold;
         color: $white;
         z-index: 1;
@@ -407,6 +408,7 @@ body {
             }
           }
           .text-wrapper {
+            margin: 1vw 0;
             display: inline-block;
             .text {
               text-align: center;
@@ -418,7 +420,7 @@ body {
                   @include fontvw(28);
                   @include tracking(40);
                   white-space: nowrap;
-                  width: 41vw;
+                  width: 37vw;
                   font-weight: normal;
                   &::after {
                     position: relative;
@@ -569,15 +571,9 @@ body {
         }
       }
       &-title {
-        position: relative;
-        height: vw(175);
+        padding: vw(40);
         picture {
-          position: absolute;
-          @include fitcenter();
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: vw(140);
+          margin-right: vw(30);
           img {
             height: vw(90.8643);
             width: auto;
@@ -585,20 +581,11 @@ body {
           }
         }
         p {
-          margin-right: 0;
-          margin-left: auto;
-          @include fitcenter();
-          width: calc( 100% - 15.3333333333vw );
-          @include fontvw(40);
+          @include fontvw(38);
           @include tracking(80);
           line-height: (57 / 38);
           font-weight: bold;
           white-space: nowrap;
-          text-align: center;
-          span {
-            display: inline-block;
-          text-align: left;
-          }
         }
       }
       // &-title {
@@ -1288,7 +1275,8 @@ body {
         text-align: center;
         width: 100%;
         @include fontsize(20);
-        line-height: (30 / 20);
+        // line-height: (30 / 20);
+        line-height: 1.6;
         font-weight: bold;
         color: $white;
         z-index: 1;
@@ -1480,7 +1468,7 @@ body {
           color: $green;
         }
         .illust {
-          top: rem(50);
+          top: rem(130);
           right: rem(30);
           width: rem(356.7588);
         }
@@ -1519,11 +1507,12 @@ body {
       &.scene2 {
         .illust {
           top: rem(-45);
-          left: rem(30);
+          right: rem(30);
+          // left: rem(30);
           width: rem(363.7299);
         }
         .scene-title {
-          justify-content: flex-end;
+          // justify-content: flex-end;
         }
         .left, .right {
           .text {
@@ -1533,11 +1522,15 @@ body {
         .scene-content {
           text-align: center;
           .big-title, .example, .text-wrapper {
-            margin: 0 0 0 auto;
+            // margin: 0 0 0 auto;
             width: rem(560);
           }
           .example {
-            margin: rem(20) 0 rem(20) auto;
+            margin: rem(20) auto rem(20) 0;
+            // margin: rem(20) 0 rem(20) auto;
+            .bar {
+              display: none;
+            }
           }
           .flex {
             flex-wrap: wrap;
@@ -1626,8 +1619,7 @@ body {
       }
       &.scene3 {
         .illust {
-          // top: rem(-60);
-          top: -6.4rem;
+          top: rem(100);
           right: rem(35);
           width: rem(285.253);
         }
@@ -1645,6 +1637,9 @@ body {
           .text-wrapper {
             .text {
               @include fontsize(16);
+              &.mb {
+                margin-bottom: rem(10);
+              }
               &.arrow {
                 &::after {
                   margin: rem(10) auto rem(10) auto;
@@ -1666,9 +1661,12 @@ body {
             // justify-content: center;
           }
           .step-wrapper {
-            position: absolute;
-            bottom: rem(30);
-            right: rem(30);
+            // position: absolute;
+            // bottom: rem(30);
+            // right: rem(30);
+            display: flex;
+            justify-content: space-between;
+            margin-top: rem(50);
             .step {
               margin-bottom: rem(25);
               &:last-child {

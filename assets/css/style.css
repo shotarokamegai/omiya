@@ -775,7 +775,7 @@ body .hidden {
     width: 100%;
     font-size: 1.7rem;
     font-size: 4.5333333333vw;
-    line-height: 1.4705882353;
+    line-height: 1.6;
     font-weight: bold;
     color: #ffffff;
     z-index: 1;
@@ -980,6 +980,7 @@ body .hidden {
     margin-bottom: 2.6666666667vw;
   }
   main .scene.scene2 .scene-content .text-wrapper {
+    margin: 1vw 0;
     display: inline-block;
   }
   main .scene.scene2 .scene-content .text-wrapper .text {
@@ -993,7 +994,7 @@ body .hidden {
     font-size: 3.7333333333vw;
     letter-spacing: 0.04em;
     white-space: nowrap;
-    width: 41vw;
+    width: 37vw;
     font-weight: normal;
   }
   main .scene.scene2 .scene-content .text-wrapper .text span:nth-child(1)::after {
@@ -1129,18 +1130,10 @@ body .hidden {
     background-color: rgba(49, 182, 160, 0.3);
   }
   main .scene-title {
-    position: relative;
-    height: 23.3333333333vw;
+    padding: 5.3333333333vw;
   }
   main .scene-title picture {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 18.6666666667vw;
+    margin-right: 4vw;
   }
   main .scene-title picture img {
     height: 12.11524vw;
@@ -1148,23 +1141,12 @@ body .hidden {
     max-width: initial;
   }
   main .scene-title p {
-    margin-right: 0;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: calc(100% - 15.3333333333vw);
-    font-size: 2rem;
-    font-size: 5.3333333333vw;
+    font-size: 1.9rem;
+    font-size: 5.0666666667vw;
     letter-spacing: 0.08em;
     line-height: 1.5;
     font-weight: bold;
     white-space: nowrap;
-    text-align: center;
-  }
-  main .scene-title p span {
-    display: inline-block;
-    text-align: left;
   }
   main .scene .example {
     margin-bottom: 3.3333333333vw;
@@ -1790,7 +1772,7 @@ body .hidden {
     width: 100%;
     font-size: 20px;
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 1.6;
     font-weight: bold;
     color: #ffffff;
     z-index: 1;
@@ -1992,7 +1974,7 @@ body .hidden {
     color: #00833E;
   }
   main .scene.scene1 .illust {
-    top: 5rem;
+    top: 13rem;
     right: 3rem;
     width: 35.67588rem;
   }
@@ -2021,11 +2003,8 @@ body .hidden {
   }
   main .scene.scene2 .illust {
     top: -4.5rem;
-    left: 3rem;
+    right: 3rem;
     width: 36.37299rem;
-  }
-  main .scene.scene2 .scene-title {
-    justify-content: flex-end;
   }
   main .scene.scene2 .left .text, main .scene.scene2 .right .text {
     line-height: 1.6;
@@ -2034,11 +2013,13 @@ body .hidden {
     text-align: center;
   }
   main .scene.scene2 .scene-content .big-title, main .scene.scene2 .scene-content .example, main .scene.scene2 .scene-content .text-wrapper {
-    margin: 0 0 0 auto;
     width: 56rem;
   }
   main .scene.scene2 .scene-content .example {
-    margin: 2rem 0 2rem auto;
+    margin: 2rem auto 2rem 0;
+  }
+  main .scene.scene2 .scene-content .example .bar {
+    display: none;
   }
   main .scene.scene2 .scene-content .flex {
     flex-wrap: wrap;
@@ -2117,7 +2098,7 @@ body .hidden {
     border-bottom: 0.1rem solid #221815;
   }
   main .scene.scene3 .illust {
-    top: -6.4rem;
+    top: 10rem;
     right: 3.5rem;
     width: 28.5253rem;
   }
@@ -2134,6 +2115,9 @@ body .hidden {
     font-size: 16px;
     font-size: 1.6rem;
   }
+  main .scene.scene3 .scene-content .text-wrapper .text.mb {
+    margin-bottom: 1rem;
+  }
   main .scene.scene3 .scene-content .text-wrapper .text.arrow::after {
     margin: 1rem auto 1rem auto;
     display: block;
@@ -2149,9 +2133,9 @@ body .hidden {
     text-align: left;
   }
   main .scene.scene3 .scene-content .step-wrapper {
-    position: absolute;
-    bottom: 3rem;
-    right: 3rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
   }
   main .scene.scene3 .scene-content .step-wrapper .step {
     margin-bottom: 2.5rem;

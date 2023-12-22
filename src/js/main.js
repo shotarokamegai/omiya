@@ -13,7 +13,7 @@ class main {
     this.menu = document.getElementById('menu');
     this.footer = document.getElementById('footer');
     this.qa = document.getElementsByClassName('q');
-    // this.qa = document.getElementsByClassName('qa-faq');
+    this.qaFaq = document.getElementsByClassName('qa-faq');
     this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
     this.menuTrigger = document.getElementsByClassName('menu-trigger');
     this.scroller = document.body;
@@ -41,6 +41,17 @@ class main {
     }
     window.onscroll = () => {
       this.scrollAnimation();
+    }
+  }
+
+  detectHeight() {
+    for (let i = 0; i < this.qaFaq.length; i++) {
+      let faq = this.qaFaq[i];
+      let a = faq.getElementsByClassName('a')[0];
+      let aInner = faq.getElementsByClassName('a__inner')[0];
+      if (faq.classList.contains('active')) {
+        a.setAttribute('style', `height: ${aInner.clientHeight}px`);
+      }
     }
   }
 
@@ -78,7 +89,6 @@ class main {
     } else {
       elm = e.currentTarget;
     }
-    console.log(elm)
     let parent = elm.parentNode;
     let a = parent.getElementsByClassName('a')[0];
     let aInner = a.getElementsByClassName('a__inner')[0];
@@ -119,7 +129,7 @@ class main {
     // カスタム変数--vhの値をドキュメントのルートに設定
     document.documentElement.style.setProperty('--vh', `${vh}px`);
     ScrollTrigger.refresh();
-    // this.checkBreakPoint();
+    this.detectHeight();
   }
   scrollAnimation() {
     this.scrollY = this.scrollingElement.scrollTop;

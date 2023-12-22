@@ -143,7 +143,7 @@ var main = /*#__PURE__*/function () {
     this.menu = document.getElementById('menu');
     this.footer = document.getElementById('footer');
     this.qa = document.getElementsByClassName('q');
-    // this.qa = document.getElementsByClassName('qa-faq');
+    this.qaFaq = document.getElementsByClassName('qa-faq');
     this.scrollTrigger = document.getElementsByClassName('scroll-trigger');
     this.menuTrigger = document.getElementsByClassName('menu-trigger');
     this.scroller = document.body;
@@ -168,6 +168,18 @@ var main = /*#__PURE__*/function () {
     };
   }
   _createClass(main, [{
+    key: "detectHeight",
+    value: function detectHeight() {
+      for (var i = 0; i < this.qaFaq.length; i++) {
+        var faq = this.qaFaq[i];
+        var a = faq.getElementsByClassName('a')[0];
+        var aInner = faq.getElementsByClassName('a__inner')[0];
+        if (faq.classList.contains('active')) {
+          a.setAttribute('style', "height: ".concat(aInner.clientHeight, "px"));
+        }
+      }
+    }
+  }, {
     key: "animationScroll",
     value: function animationScroll() {
       var addactive = document.getElementsByClassName('addactive');
@@ -206,7 +218,6 @@ var main = /*#__PURE__*/function () {
       } else {
         elm = e.currentTarget;
       }
-      console.log(elm);
       var parent = elm.parentNode;
       var a = parent.getElementsByClassName('a')[0];
       var aInner = a.getElementsByClassName('a__inner')[0];
@@ -246,7 +257,7 @@ var main = /*#__PURE__*/function () {
       // カスタム変数--vhの値をドキュメントのルートに設定
       document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
       ScrollTrigger.refresh();
-      // this.checkBreakPoint();
+      this.detectHeight();
     }
   }, {
     key: "scrollAnimation",
