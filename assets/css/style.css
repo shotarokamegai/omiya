@@ -725,6 +725,13 @@ body .hidden {
   #header .newoman {
     width: 23.5475733333vw;
   }
+  #header .jre {
+    width: 12vw;
+    position: absolute;
+    top: 50%;
+    right: 4vw;
+    transform: translate3d(0, -50%, 0);
+  }
   #footer {
     display: flex;
     align-items: center;
@@ -1133,7 +1140,7 @@ body .hidden {
     padding: 5.3333333333vw;
   }
   main .scene-title picture {
-    margin-right: 4vw;
+    margin-right: 9.3333333333vw;
   }
   main .scene-title picture img {
     height: 12.11524vw;
@@ -1719,6 +1726,13 @@ body .hidden {
   }
   #header .newoman {
     width: 13.2rem;
+  }
+  #header .jre {
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    transform: translate3d(0, -50%, 0);
+    width: 5rem;
   }
   #footer {
     display: flex;

@@ -158,6 +158,13 @@ body {
     .newoman {
       width: vw(176.6068); 
     }
+    .jre {
+      width: vw(90); 
+      position: absolute;
+      top: 50%;
+      right: vw(30);
+      transform: translate3d(0, -50%, 0);
+    }
   }
   #footer {
     @include fitcenter();
@@ -573,7 +580,7 @@ body {
       &-title {
         padding: vw(40);
         picture {
-          margin-right: vw(30);
+          margin-right: vw(70);
           img {
             height: vw(90.8643);
             width: auto;
@@ -1226,6 +1233,13 @@ body {
     }
     .newoman {
       width: rem(132); 
+    }
+    .jre {
+      position: absolute;
+      top: 50%;
+      right: rem(30);
+      transform: translate3d(0, -50%, 0);
+      width: rem(50); 
     }
   }
   #footer {
