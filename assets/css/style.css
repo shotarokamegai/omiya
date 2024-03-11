@@ -1447,10 +1447,6 @@ body .hidden {
     padding: 9.3333333333vw 0;
     margin-bottom: 10vw;
   }
-  main .section#information .section-text {
-    padding-top: 3.3333333333vw;
-    border-top: 0.1rem solid #221815;
-  }
   main .section#information .section-text picture, main .section#information .section-text img {
     display: inline-block;
     height: 5.3333333333vw;
@@ -2502,10 +2498,6 @@ body .hidden {
   main .section#information .gray {
     padding: 7rem 0;
     margin-bottom: 4.5rem;
-  }
-  main .section#information .section-text {
-    padding-top: 2rem;
-    border-top: 0.1rem solid #221815;
   }
   main .section#information .section-text picture, main .section#information .section-text img {
     display: inline-block;
