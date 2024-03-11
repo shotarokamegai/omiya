@@ -1315,7 +1315,8 @@ body {
       }
     }
     .scene-wrapper {
-      margin-top: rem(50);
+      margin: rem(50) auto 0;
+      width: rem(700);
     }
     .cards {
       margin-top: rem(50);
@@ -1482,16 +1483,18 @@ body {
           color: $green;
         }
         .illust {
-          top: rem(130);
-          right: rem(30);
+          // top: rem(130);
+          // right: rem(30);
+          top: 11rem;
+          right: -22rem;
           width: rem(356.7588);
         }
         .example {
-          width: 57%;
+          // width: 57%;
           overflow: hidden;
         }
         .big-title, .text-wrapper {
-          width: 60%;
+          // width: 60%;
         }
         .big-title {
           text-align: center;
@@ -1521,9 +1524,16 @@ body {
       &.scene2 {
         .illust {
           top: rem(-45);
-          right: rem(30);
+          // right: rem(30);
+          right: -23rem;
           // left: rem(30);
           width: rem(363.7299);
+        }
+        .step {
+          margin-bottom: rem(30);
+        }
+        .step-btn {
+          margin: rem(10) auto 0;
         }
         .scene-title {
           // justify-content: flex-end;
@@ -1634,7 +1644,8 @@ body {
       &.scene3 {
         .illust {
           top: rem(100);
-          right: rem(35);
+          // right: rem(35);
+          right: -17.5rem;
           width: rem(285.253);
         }
         .scene-content {
@@ -1678,11 +1689,14 @@ body {
             // position: absolute;
             // bottom: rem(30);
             // right: rem(30);
-            display: flex;
-            justify-content: space-between;
-            margin-top: rem(50);
+            // display: flex;
+            // justify-content: space-between;
+            margin-top: rem(30);
             .step {
-              margin-bottom: rem(25);
+              margin: 0 auto rem(25);
+              a {
+                margin: 0 auto;
+              }
               &:last-child {
                 margin-bottom: 0;
               }

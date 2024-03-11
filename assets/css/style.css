@@ -1808,7 +1808,8 @@ body .hidden {
     width: 7.13322rem;
   }
   main .scene-wrapper {
-    margin-top: 5rem;
+    margin: 5rem auto 0;
+    width: 70rem;
   }
   main .cards {
     margin-top: 5rem;
@@ -1984,16 +1985,12 @@ body .hidden {
     color: #00833E;
   }
   main .scene.scene1 .illust {
-    top: 13rem;
-    right: 3rem;
+    top: 11rem;
+    right: -22rem;
     width: 35.67588rem;
   }
   main .scene.scene1 .example {
-    width: 57%;
     overflow: hidden;
-  }
-  main .scene.scene1 .big-title, main .scene.scene1 .text-wrapper {
-    width: 60%;
   }
   main .scene.scene1 .big-title {
     text-align: center;
@@ -2013,8 +2010,14 @@ body .hidden {
   }
   main .scene.scene2 .illust {
     top: -4.5rem;
-    right: 3rem;
+    right: -23rem;
     width: 36.37299rem;
+  }
+  main .scene.scene2 .step {
+    margin-bottom: 3rem;
+  }
+  main .scene.scene2 .step-btn {
+    margin: 1rem auto 0;
   }
   main .scene.scene2 .left .text, main .scene.scene2 .right .text {
     line-height: 1.6;
@@ -2109,7 +2112,7 @@ body .hidden {
   }
   main .scene.scene3 .illust {
     top: 10rem;
-    right: 3.5rem;
+    right: -17.5rem;
     width: 28.5253rem;
   }
   main .scene.scene3 .scene-content {
@@ -2143,12 +2146,13 @@ body .hidden {
     text-align: left;
   }
   main .scene.scene3 .scene-content .step-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
   main .scene.scene3 .scene-content .step-wrapper .step {
-    margin-bottom: 2.5rem;
+    margin: 0 auto 2.5rem;
+  }
+  main .scene.scene3 .scene-content .step-wrapper .step a {
+    margin: 0 auto;
   }
   main .scene.scene3 .scene-content .step-wrapper .step:last-child {
     margin-bottom: 0;
