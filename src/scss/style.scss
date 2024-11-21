@@ -1485,8 +1485,8 @@ body {
         .illust {
           // top: rem(130);
           // right: rem(30);
-          top: 11rem;
-          right: -22rem;
+          top: 13rem;
+          right: -17rem;
           width: rem(356.7588);
         }
         .example {
@@ -1523,9 +1523,11 @@ body {
       }
       &.scene2 {
         .illust {
-          top: rem(-45);
-          // right: rem(30);
-          right: -23rem;
+          bottom: 11rem;
+          left: -23rem;
+          // top: rem(-45);
+          // // right: rem(30);
+          // right: -27rem;
           // left: rem(30);
           width: rem(363.7299);
         }
@@ -1547,6 +1549,8 @@ body {
           text-align: center;
           .big-title, .example, .text-wrapper {
             // margin: 0 0 0 auto;
+            margin-left: auto;
+            margin-right: auto;
             width: rem(560);
           }
           .example {
@@ -1643,14 +1647,18 @@ body {
       }
       &.scene3 {
         .illust {
-          top: rem(100);
-          // right: rem(35);
-          right: -17.5rem;
+          bottom: -3rem;
+    right: -13.5rem;
+          // top: rem(100);
+          // // right: rem(35);
+          // right: -17.5rem;
           width: rem(285.253);
         }
         .scene-content {
           text-align: center;
           .big-title, .text-wrapper, .example {
+            margin-left: auto;
+            margin-right: auto;
             width: rem(560);
           }
           .big-title {
@@ -2113,16 +2121,18 @@ body {
         .bg-title {
           margin-left: auto;
           margin-right: auto;
-          width: rem(890);
+          width: rem(700);
+          // width: rem(890);
           .big {
             position: relative;
             top: rem(6);
+            @include fontsize(27);
           }
           .text {
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            @include fontsize(20);
+            @include fontsize(15);
             @include tracking(100);
           }
         }
