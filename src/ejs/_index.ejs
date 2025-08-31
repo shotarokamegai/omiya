@@ -1,810 +1,136 @@
-<%
-var faq = [
-  ['JRE POINTとは何ですか？',''],
-  ['ルミネ・ニュウマンでポイントを利用したいです。',''],
-  ['ルミネカードでポイントは貯まりますか？',''],
-  ['ルミネカード以外でポイントは貯まりますか？','']
-];
-var tameru = [
-  ['ルミネカードでポイントは貯まりますか？','ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用はもちろん、普段のお買いものやご飲食、公共料金のお支払いにルミネカードをご利用いただくと、ご利用金額1,000円（税込）ごとに5ポイント貯まります。<br/>※ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用の場合、ポイントはご利用明細書のご請求額に対し付与されます。<br/>※ポイントはご請求金額確定時に付与されます。<br/><br/>また、モバイルSuicaでの定期券購入、オートチャージ・チャージのご利用でさらにポイントが貯まります。<br/>詳細は<a href="//www.jreast.co.jp/card/point/save/viewplus.html" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。'],
-  ['お買いもの以外でも、ルミネカードでポイントをもっと貯めたいです。','モバイルSuicaでの定期券購入、オートチャージ・チャージのご利用のお支払いに、ルミネカードのご利用をおすすめいたします。<br/>ポイント還元率については<a href="//www.jreast.co.jp/card/point/" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。<br/><br/>※オートチャージとは、Suicaの残額が設定金額以下になると、改札入出場時に自動的に設定金額にチャージできるサービスです。<br/>詳しくは<a href="//www.jreast.co.jp/card/function/autocharge/" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。<br/>※モバイルSuicaとは、Suicaをスマートフォンでご利用いただけるサービスです。<br/>詳しくは<a href="//www.jreast.co.jp/mobilesuica/" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。'],
-  ['ルミネカード以外でポイントは貯まりますか？','ルミネ・ニュウマンは、<span class="icon"><picture><source srcset="./assets/img/green.webp" type="image/webp" /><img src="./assets/img/green.png" width="40" height="40" alt="カードの提示で貯まる・使える JRE POINT"></picture></span><span class="icon"><picture><img src="./assets/img/yellow.png" alt=""></picture></span>このマークの加盟店です。<br/><br/>・JRE POINT WEBサイトにご登録済みのSuicaでのお支払いで、200円（税込）ごとに1ポイント貯まります。<br/>詳しくは<a href="//www.jrepoint.jp/point/append/suica/" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。<br/><br/>・ビューカード（ルミネカードを除く）、JRE POINTアプリ、LINEマイカードのバーコード提示でJRE POINTが貯まります。<br/>※対象決済手段：現金、商品券、他社クレジット、QR決済、電子マネー<br/>※対象外決済手段：ルミネカードを含むビューカード<div class="overflow"><img src="./assets/img/chart_pc.png" alt="" /></div>※JRE POINTカードはご利用いただけません。<br/>※ビューカード（ルミネカードを除く）、JRE POINTアプリ、LINEマイカードのバーコードの提示で100円（税抜）ごとに1ポイントが貯まります。<br/>※JRE CARDでクレジット払いをいただくと、その場で100円（税抜）につき3ポイントが、ご請求確定時に1,000円（税込）につき5ポイントが貯まります。<br/>※JRE CARD以外のビューカード（ルミネカードを除く）でクレジット払いをいただくと、その場で100円（税抜）につき1ポイントが、ご請求確定時に1,000円（税込）につき5ポイントが貯まります。<br/>※一部対象外ショップがございます。詳しくはショップへお問い合わせください。<br/>※一部ポイント付与時期が異なるサービスがございます。<br/><br/><span class="bold">＜ルミネカードについて＞<br/>ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用がいつでも5％オフ。<br/>また、ご利用金額1,000円（税込）ごとにJRE POINTが5ポイント貯まります。<br/>※ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用の場合、JRE POINTはご利用明細書のご請求額に対し付与されます。<br/>ルミネ・ニュウマン館内でのクレジットカードでのお支払いには、特にルミネカードのご利用をおすすめします。</span>'],
-  ['ルミネカードの提示でポイントは貯まりますか？','ルミネカードの提示ではポイントは貯まりません。<br/>ルミネカードでお支払いいただくと、ご請求確定時に1,000円（税込）ごとに5ポイントが貯まります。<br/>※ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用の場合、JRE POINTはご利用明細書のご請求額に対し付与されます。<br/><br/>なお、ルミネカードでのお支払い時には、ビューカード（ルミネカードを除く）、JRE POINTアプリ、LINEマイカードのバーコードの提示でのポイントは貯まりません。'],
-  ['ルミネ・ニュウマンで、JRE POINT カード（クレジット機能なしのポイントカード）は利用できますか？','<div class="card"><img src="./assets/img/jre-point.png" alt="JRE POINT"></div>JRE POINT カード（クレジット機能なしのポイントカード）は、ポイントを貯めることも使うこともできません。'],
-  ['お買いもの時のポイント利用分に対しても、ポイントは貯まりますか？','<div class="card"><img src="./assets/img/card-three.png" alt=""></div>ビューカード（ルミネカードを除く）、JRE POINTアプリ、LINEマイカードのバーコード提示で、ポイント利用対象金額100円（税抜）ごとに1ポイント（※）貯まります。<br/>※軽減税率適用の有無にかかわらず、お買い上げ金額​から8％分を差し引いて税抜金額相当といたします​<br/><br/>なお、ルミネカードは、ポイント利用分に対するポイント付与対象外です。'],
-  ['貯まっているJRE POINTを確認したい。','JRE POINTは「VIEW\'s NET」、「JRE POINT WEBサイト」、「ビューカードアプリ」、「ご利用代金明細書」などでご確認いただけます。<br/>詳しくは<a href="//faq.viewcard.co.jp/faq/show/1315?site_domain=default" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。']
-];
-var tsukau = [
-  ['ルミネ・ニュウマンでポイントを利用したいです。','<div class="card"><img src="./assets/img/card-four.png" alt=""></div>ルミネカードを含むビューカード、JRE POINTアプリ、LINEマイカードのバーコード提示で、JRE POINTを1ポイント1円としてご利用いただけます。<br/>※JRE POINTカードはご利用いただけません。<br/>※ルミネカードは、利用ポイント相当金額に対するポイントやポイントカードとして提示した場合のポイントは付与されません。<br/>※ルミネのネット通販「アイルミネ」、ルミネカードWEB決済サービス、店頭での無線端末ではポイントは利用できません。<br/>※一部対象外ショップがございます。詳しくはショップへお問い合わせください。'],
-  ['貯まったポイントをルミネ商品券に交換したいです。','JRE POINT WEBサイトでルミネ商品券への交換申込みができます。<br/>ルミネ商品券への交換は<a href="//www.jrepoint.jp/item/group/99001950/" target="_blank" rel="noopener" class="underline bold">こちら</a>からお進みください。<br/><br/>※貯めたポイントをJRE POINT WEBサイトで商品に交換するには、事前にルミネカードや、その他ビューカードをJRE POINT WEBサイトへ登録いただく必要があります。<br/>JRE POINT WEBサイトは<a href="//www.jrepoint.jp/" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。<br/><br/>なお、ビューカード会員の方は、お電話や郵送によるお申込みも可能です。詳しくは<a href="//www.jreast.co.jp/card/point/item/application.html" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。'],
-  ['貯まったポイントをSuicaにチャージして使いたいです。','Suicaへのチャージ方法は<a href="//www.jrepoint.jp/point/spend/suica-charge/" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。<br/>なお、JRE POINT WEBサイトにご登録済みのSuicaで、ルミネ・ニュウマンでお支払いいただくと、200円（税込）ごとに1ポイント貯まります。<br/>詳しくは<a href="//www.jrepoint.jp/point/append/suica/" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。'],
-  ['ルミネカードWEB決済サービスではJRE POINTは利用できますか？','WEB決済サービスでの決済に、ポイントは利用できません。'],
-];
-var sonota = [
-  ['JRE POINTとは何ですか？','JRE POINTは、JR東日本グループのポイントサービスです。<br/>ルミネカードでのお買いものやSuicaへのチャージなどでポイントを貯めることができ、貯まったポイントは、店頭での利用（1ポイント=1円）やルミネ商品券など様々な商品と交換することができます。<br/>詳しくは<a href="//www.jrepoint.jp/" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。'],
-  ['ポイントとルミネマイルの違いは何ですか？','<span class="bold">＜ポイントについて：JRE POINT＞</span><br/>JRE POINTは、JR東日本グループのポイントサービスです。ルミネカードでのお買いものやSuicaへのチャージなどでポイントを貯めることができ、貯まったポイントは、店頭での利用(1ポイント＝1円）やルミネ商品券など様々な商品と交換することができます。<br/>詳しくは<a href="//www.jrepoint.jp/" target="_blank" rel="noopener" class="underline bold">こちら</a>をご覧ください。<br/><br/><span class="bold">＜ルミネマイルについて：ルミネのアプリ「ONE LUMINE」＞</span><br/>ルミネのアプリ「ONE LUMINE」にクレジットカードを連携することで、ルミネ・ニュウマンでのお買いものでマイルが貯まります。貯まったルミネマイルに応じてランクが上がり、ランクアップ時にルミネチケットがプレゼントされます。<br/>詳しくは<a href="//www.lumine.ne.jp/onelumine/" target="_blank" rel="noopener" class="underline bold noicon">こちら</a>をご覧ください。'],
-  ['サービス対象外ショップはありますか？','一部対象外ショップがございます。詳しくショップへお問い合わせください。<br/>※ニュウマン新宿【対象外】ショップは<a href="https://www.newoman.jp/shinjuku/topics/topics_details.php?article_no=9901" target="_blank" rel="noopener" class="underline bold noicon">こちら</a><br/>※ニュウマン横浜【対象外】ショップは<a href="https://www.newoman.jp/yokohama/topics/topics_details.php?article_no=9904" target="_blank" rel="noopener" class="underline bold noicon">こちら</a><br/><br/>※大船ルミネウィングについて、一部ショップで利用できるようになりました。<br/>対象ショップは<a href="https://www.lumine.ne.jp/luminewing/topics/topics_details.php?article_no=9804" target="_blank" rel="noopener" class="underline bold noicon">こちら</a>（記載のあるショップ以外は【対象外】です。）']
-];
-%>
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
-  <%- include('parts/_head', {title: 'JRE POINTが貯まる・使える| LUMINE', description: 'ルミネ・ニュウマンでのお買いものに、ルミネカードを含むビューカード提示で、JRE POINTを1ポイント＝1円（相当）で使えます。たくさん貯まったポイントは、ルミネ商品券にも交換できます。', keywords: 'ルミネ、LUMINE、ニュウマン、NEWoMan、ルミネカード、JRE POINT、ビューカード、JRE POINTアプリ、LINEマイカード、ポイント、貯まる、使える、お得', url: 'https://www.lumine.ne.jp/jrepoint', ogimage: 'https://www.lumine.ne.jp/jrepoint/assets/img/ogp.jpg'}) %>
+  <%- include('parts/_head', {title: '', description: '', keywords: '', url: '', ogimage: ''}) %>
 </head>
 
 <body class="">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTQ2S2R"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFRJDJN"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
   <div class="container">
   <%- include('parts/_header') %>
   <main>
-    <section id="top" class="section">
-        <h1>
-            <picture>
-              <source srcset="./assets/img/title.svg" media="(max-width: 750px)" />
-              <img src="./assets/img/title-pc.svg" alt="JRE POINTのご案内"/>
-            </picture>
-        </h1>
-        <div class="card">
-          <picture class="pc">
-            <source srcset="./assets/img/top_point_pc.webp" type="image/webp" />
-            <img src="./assets/img/top_point_pc.png" width="1302" height="526" alt="">
-          </picture>
-          <picture class="sp">
-            <source srcset="./assets/img/top_point_sp.webp" type="image/webp" />
-            <img src="./assets/img/top_point_sp.png" width="1302" height="526" alt="">
-          </picture>
-        </div>
-    </section>
-    <section id="information" class="section">
-      <div class="wrapper gray">
-        <div class="section__inner">
-          <!-- <h2 class="section-title lightGreen show addactive">
-            <span class="ja">
-              お知らせ
-            </span>
-            <span class="en">
-              INFORMATION
-            </span>
-          </h2> -->
-          <p class="section-text show addactive">
-            <span class="bold">JRE POINTが貯まる・使える</span><br/>
-            ルミネ・ニュウマンは、<picture>
-              <source srcset="./assets/img/green.webp" type="image/webp" />
-              <img src="./assets/img/green.png" width="40" height="40" alt="カードの提示で貯まる・使える JRE POINT">
-            </picture><picture><img src="./assets/img/yellow.png" alt=""></picture>このマークの加盟店です。<br/><br/>
-            <span class="sp">
-              ・ルミネカードを含むビューカード<br/>
-              ・JRE POINTアプリ<br/>
-              ・LINEマイカードのバーコード<br/>
-              <span class="bold underline">提示で、JRE POINTを1ポイント1円としてご利用いただけます。</span><br/><br/>
-              ・ビューカード（ルミネカードを除く）<br/>
-              ・JRE POINTアプリ<br/>
-              ・LINEマイカードのバーコード<br/>
-              <span class="bold underline">提示で、JRE POINTが100円（税抜）<span style="vertical-align: super;font-size: 70%;">※</span>ごとに1ポイント貯まります。</span><br/>
-              ※軽減税率適用の有無にかかわらず、お買い上げ金額から８％分を差し引いて税抜金額相当といたします。
-              </span>
-            </span>
-            <span class="pc">
-              ・ルミネカードを含むビューカード / JRE POINTアプリ / LINEマイカードのバーコード<br/>
-              <span class="bold underline">提示で、JRE POINTを1ポイント1円としてご利用いただけます。</span><br/><br/>
-              ・ビューカード（ルミネカードを除く） / JRE POINTアプリ / LINEマイカードのバーコード<br/>
-              <span class="bold underline">提示で、JRE POINTが100円（税抜）<span style="vertical-align: super;font-size: 70%;">※</span>ごとに1ポイント貯まります。</span><br/>
-              ※軽減税率適用の有無にかかわらず、お買い上げ金額から８％分を差し引いて税抜金額相当といたします。
-              </span>
-            </span><br/><br/>
-            ・JRE POINT WEB サイトに登録した<span class="bold underline">Suicaでのお買いもので、JRE POINTが200円（税込）ごとに1ポイント貯まります。</span><br/><br/>
-            ※一部対象外ショップがございます。対象 / 対象外ショップ詳細は<span data-target="sonota3" class="scroll-trigger bold underline open">こちら</span>をご覧ください。
-          </p>
-        </div>
-      </div>
-      <div class="section__inner">
-        <div class="btn-wrapper flex flex-sp justify-center show addactive">
-          <span class="scroll-trigger btn green hover" data-target="use-jre-point">
-            <span class="text">
-              使う
-            </span>
-            <%- include('parts/_tri') %>
-          </span>
-          <span class="scroll-trigger btn blue hover" data-target="get-jre-point">
-            <span class="text">
-              貯める
-            </span>
-            <%- include('parts/_tri') %>
-          </span>
-          <span class="scroll-trigger btn black hover" data-target="faq">
-            <span class="text">
-              FAQ
-            </span>
-            <%- include('parts/_tri') %>
-          </span>
-        </div>
-      </div>
-    </section>
-    <section id="use-jre-point" class="section">
-      <div class="wrapper green">
-        <div class="section__inner">
-          <h2 class="section-title blue show addactive">
-            <span class="ja">
-              ルミネ・ニュウマンで<br class="sp"/>
-              JRE POINTを使う
-            </span>
-          </h2>
-          <div class="bg-title show addactive">
-            <picture>
-              <source srcset="./assets/img/bg-green.svg" media="(max-width: 750px)" />
-              <img src="./assets/img/bg-green-pc.svg" alt=""/>
-            </picture>
-            <p class="text">
-              <span class="card card1">
-                <picture>
-                  <source srcset="./assets/img/1.webp" type="image/webp" />
-                  <img src="./assets/img/1.png" alt=""/>
-                </picture>
-              </span>
-              <span class="pc">
-                ルミネカードを含むビューカード /<br/>
-                JRE POINTアプリ / LINEマイカードのバーコード<br/>提示で
-              </span>
-              <span class="sp">
-                ルミネカードを含むビューカード<br class="sp"/>
-                JRE POINTアプリ<br class="sp"/>
-                LINEマイカードのバーコード<br class="sp"/>提示で<br class="sp"/>
-              </span>
-              <span class="big">1ポイント＝1円</span><br class="sp">
-              で使えます。
-            </p>
-          </div>
-          <p class="section-text kome text-center show addactive">
-            <span class="small">
-              ※JRE POINTカードではご利用いただけません。
-            </span>
-          </p>
-          <div class="scene-wrapper">
-            <div class="scene green scene1 show addactive">
-              <h3 class="scene-title flex flex-sp align-center">
-                <picture>
-                  <source srcset="./assets/img/scene1.svg" media="(max-width: 750px)" />
-                  <img src="./assets/img/scene1-pc.svg" alt="SCENE 01"/>
-                </picture>
-                <p class="pc">
-                  <span>
-                  貯まったポイントを少しずつ使いたい！
-                  </span>
-                </p>
-                <p class="sp">
-                  <span>
-                  貯まったポイントを<br/>
-                  少しずつ使いたい！
-                  </span>
-                </p>
-              </h3>
-              <div class="scene-content">
-                <p class="big-title sp">
-                  <span class="wrap">
-                    <span class="text">ルミネカードでの</span>
-                    <span class="line"></span>
-                  </span>
-                  <span class="wrap">
-                    <span class="text">おすすめの使い方</span>
-                    <span class="line"></span>
-                  </span>
-                </p>
-                <p class="big-title pc">
-                  <span class="wrap">
-                    <span class="text">ルミネカードでのおすすめの使い方</span>
-                    <span class="line"></span>
-                  </span>
-                </p>
-                <div class="example flex flex-sp align-center">
-                  <span class="bar"></span>
-                  <p>例えば…</p>
-                  <span class="bar"></span>
-                </div>
-                <div class="text-wrapper">
-                  <p class="text">
-                    <span class="big underline">11,000円</span>の商品を購入したい！<br/>
-                    <span class="box_ green">
-                      使う
-                    </span>
-                    ルミネカード提示で<br class="sp"/><span class="big"><span class="green">1,000ポイント</span>利用</span>
-                  </p>
-                  <p class="text">
-                    残り10,000円をルミネカードで支払う<br/>
-                    <span class="big black">お買い上げ金額が5％オフ</span><br/>
-                    <span class="normal">
-                      ※ご利用代金引き落としの際
-                    </span><br />
-                    <span class="whitespace">
-                    <span class="big black"><span class="underline">9,500円</span></span>で購入！
-                    </span>
-                  </p>
-                  <p class="text">
-                    <span class="box_ green mt">
-                      貯まる
-                    </span>
-                    さらに、ルミネカードご利用の9,500円分<br />
-                    <span class="big"><span class="green">45ポイント</span>貯まる！</span><br/>
-                    <span class="small super-small normal center-layout">
-                      （ルミネカードご利用1,000円（税込）ごとに5ポイント貯まります）
-                    </span>
-                  </p>
-                </div>
-                <div class="illust">
-                  <picture>
-                    <source srcset="./assets/img/sc01_illust_pc.webp" type="image/webp" />
-                    <img src="./assets/img/sc01_illust_pc.png" width="715" height="789" alt="">
-                  </picture>
-                </div>
-                <p class="text">
-                  <span class="small kome">
-                    ポイントはご請求金額確定時に付与されます。
-                  </span>
-                  <span class="small kome">
-                    ルミネカードは、利用ポイント相当金額に対するポイントやポイントカードとして提示した場合のポイントは付与されません。
-                  </span>
-                  <span class="small kome">
-                  ルミネのネット通販「アイルミネ」、ルミネカードWEB決済サービス、店頭での無線端末ではポイントは利用できません。
-                  </span>
-                  <span class="small kome">
-                  一部対象外ショップがございます。詳しくはショップへお問い合わせください。
-                  </span>
-                </p>
-              </div>
+    <section id="top" class="section bg-green">
+      <div class="section__inner mx-auto">
+        <div class="wrapper flex">
+          <div class="box">
+            <h1 class="title">
+              <img src="./assets/img/title.svg" alt="ムスブルミネ">
+            </h1>
+            <div class="date">
+              <img src="./assets/img/date.png" alt="2025.11.13 THU GRAND OPEN">
             </div>
-            <div class="scene green scene2 show addactive">
-              <h3 class="scene-title flex flex-sp align-center">
-                <picture>
-                  <source srcset="./assets/img/scene2.svg" media="(max-width: 750px)" />
-                  <img src="./assets/img/scene2-pc.svg" alt="SCENE 02"/>
-                </picture>
-                <p class="pc">
-                  <span>
-                  貯まったポイントをまとめて使いたい！
-                  </span>
-                </p>
-                <p class="sp">
-                  <span>
-                  貯まったポイントを<br />
-                  まとめて使いたい！
-                  </span>
-                </p>
-              </h3>
-              <div class="scene-content">
-                <p class="big-title left">
-                  <span class="sp">
-                    <span class="wrap">
-                      <span class="text">
-                        ルミネ商品券への</span>
-                      <span class="line"></span>
-                    </span>
-                    <span class="wrap">
-                      <span class="text">
-                        交換がおすすめ</span>
-                      <span class="line"></span>
-                    </span>
-                    <span class="wrap">
-                      <span class="text">
-                        還元率が最大120%以上!</span>
-                      <span class="line"></span>
-                    </span>
-                  </span>
-                  <span class="pc">
-                    <span class="wrap">
-                      <span class="text">
-                        ルミネ商品券への交換がおすすめ</span>
-                      <span class="line"></span>
-                    </span>
-                    <span class="wrap">
-                      <span class="text">
-                        還元率が最大120%以上!</span>
-                      <span class="line"></span>
-                    </span>
-                  </span>
-                  <!-- <span class="pc">
-                    <span class="wrap">
-                      <span class="text">
-                        ルミネ商品券への交換がおすすめ還元率が最大120%以上!</span>
-                      <span class="line"></span>
-                    </span>
-                  </span> -->
-                </p>
-                <div class="example flex flex-sp align-center">
-                  <span class="bar"></span>
-                  <p>例えば…</p>
-                  <span class="bar"></span>
-                </div>
-                <div class="text-wrapper">
-                  <div class="left">
-                    <p class="text flex flex-sp align-center">
-                      <span>2,000ポイント</span>
-                      <span>2,000円分</span>
-                    </p>
-                    <p class="text flex flex-sp align-center">
-                      <span>3,600ポイント</span>
-                      <span>4,000円分</span>
-                    </p>
-                    <p class="text flex flex-sp align-center">
-                      <span>5,300ポイント</span>
-                      <span>6,000円分</span>
-                    </p>
-                    <p class="text flex flex-sp align-center">
-                      <span>6,800ポイント</span>
-                      <span>8,000円分</span>
-                    </p>
-                  </div>
-                  <div class="right">
-                    <p class="text flex flex-sp align-center">
-                      <span class="zu">8,400ポイント</span>
-                      <span class="zu">10,000円分</span>
-                    </p>
-                    <p class="text flex flex-sp align-center">
-                      <span>16,400ポイント</span>
-                      <span>20,000円分</span>
-                    </p>
-                    <p class="text flex flex-sp align-center">
-                      <span>24,400ポイント</span>
-                      <span>30,000円分</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="illust">
-                  <picture>
-                    <source srcset="./assets/img/sc02_illust_pc.webp" type="image/webp" />
-                    <img src="./assets/img/sc02_illust_pc.png" width="728" height="750" alt="">
-                  </picture>
-                </div>
-                <div class="hikikae">
-                  <div class="hikikae-title flex flex-sp align-center">
-                    <span class="bar"></span>
-                    <p>交換方法</p>
-                    <span class="bar"></span>
-                  </div>
-                  <div class="step-wrapper">
-                    <div class="step">
-                      <div class="flex space-between">
-                        <div class="flex">
-                          <div class="step-title">
-                            <p>STEP 1</p>
-                          </div>
-                          <p class="step-text">
-                            予め、JRE POINT WEBサイトに<br/>
-                            登録が必要です。
-                          </p>
-                        </div>
-                        <a href="//www.jrepoint.jp/point/guide/82/" target="_blank" rel="noopener" class="step-btn hover">
-                          <span>JRE POINT WEB サイト<br/>
-                            登録方法はこちら</span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="step">
-                      <div class="flex space-between">
-                        <div class="flex">
-                          <div class="step-title">
-                            <p>STEP 2</p>
-                          </div>
-                          <p class="step-text whitespace">
-                            JRE POINT WEBサイトにログインの上、<br/>
-                            ご交換いただけます。
-                          </p>
-                        </div>
-                        <a href="//www.jrepoint.jp/item/group/99001950/" target="_blank" rel="noopener" class="step-btn hover">
-                          <span>ルミネ商品券への<br/>
-                            交換はこちら</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex justify-center align-center">
-                  <p class="big-title small">
-                    <span class="sp">
-                      <span class="wrap">
-                        <span class="text">貯まったポイントはSuicaに</span>
-                        <span class="line"></span>
-                      </span>
-                      <span class="wrap">
-                        <span class="text">
-                          チャージすることもできます。</span>
-                        <span class="line"></span>
-                      </span>
-                    </span>
-                    <span class="pc">
-                      <span class="wrap">
-                        <span class="text">貯まったポイントはSuicaにチャージすることもできます。</span>
-                        <span class="line"></span>
-                      </span>
-                    </span>
-                  </p>
-                  <p class="section-text">
-                    <span class="small">詳細は<span data-target="tsukau3" class="scroll-trigger bold underline open">こちら</span></span>
-                  </p>
-                </div>
-              </div>
+          </div>
+          <div class="box">
+            <div class="kv">
+              <img src="./assets/img/kv.png" alt="">
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="get-jre-point" class="section">
-      <div class="wrapper blue">
-        <div class="section__inner">
-          <h2 class="section-title green show addactive">
-            <span class="ja">
-              ルミネ・ニュウマンで<br class="sp"/>
-              JRE POINTを貯める
-            </span>
-          </h2>
-          <div class="bg-title show addactive">
-            <picture>
-              <source srcset="./assets/img/bg-blue1.svg" media="(max-width: 750px)" />
-              <img src="./assets/img/bg-blue1-pc.svg" alt=""/>
-            </picture>
-            <p class="text">
-              <span class="card card2">
-                <picture>
-                  <source srcset="./assets/img/2.webp" type="image/webp" />
-                  <img src="./assets/img/2.png" alt=""/>
-                </picture>
-              </span>
-              ルミネカードのご利用で<br class="sp"/>
-              <span class="big">1,000円</span>（税込）ごとに<br class="sp"/>
-              <span class="big">5ポイント</span><br class="sp"/>貯まります。
-            </p>
+        <p class="section-text fade-in text-white">
+          地域と身体と地球を想いより良い出会いが生まれる場「ムスブルミネ」。<br/>
+          心も身体も満たされる「食」をキーワードにやさしい明日をむすんでいきます。
+        </p>
+        <div class="map-wrapper flex justify-between">
+          <div class="box">
+              <img src="./assets/img/map.png" alt="">
           </div>
-          <p class="section-text kome text-center show addactive">
-            <span class="small">
-              ※ルミネ・ニュウマン・ネット通販「アイルミネ」でのご利用の場合、<br class="sp">JRE POINTはご利用明細書のご請求額に対し付与されます。
-            </span>
-            <span class="small">
-              ※ポイントはご請求金額確定時に付与されます。
-            </span>
-            <span class="small">
-              ※ルミネカード以外でのポイント付与について、詳細は<span data-target="tameru3" class="scroll-trigger bold underline open">こちら</span>
-            </span>
-          </p>
-          <div class="bg-title mt show addactive">
-            <picture>
-              <source srcset="./assets/img/bg-blue1.svg" media="(max-width: 750px)" />
-              <img src="./assets/img/bg-blue2-pc.svg" alt=""/>
-            </picture>
-            <p class="text">
-              <span class="card card3">
-                <picture>
-                  <source srcset="./assets/img/3.webp" type="image/webp" />
-                  <img src="./assets/img/3.png" alt=""/>
-                </picture>
-              </span>
-              Suicaのご利用で<br class="sp"/>
-              <span class="big">200円</span>（税込）ごとに<br class="sp"/>
-              <span class="big">1ポイント</span><br class="sp"/>貯まります。
-            </p>
-          </div>
-          <p class="section-text kome text-center show addactive">
-            <span class="small">
-            ※予めJRE POINT WEBサイトに登録したSuicaでの支払いが条件です。
-            </span>
-          </p>
-          <div class="scene-wrapper">
-            <div class="scene navy scene3 show addactive">
-              <h3 class="scene-title flex flex-sp align-center">
-                <picture>
-                  <source srcset="./assets/img/scene3.svg" media="(max-width: 750px)" />
-                  <img src="./assets/img/scene3-pc.svg" alt="SCENE 03"/>
-                </picture>
-                <p>
-                  <span>
-                    お買いもの以外でも<br class="sp"/>ポイントを貯めたい！
-                  </span>
-                </p>
-              </h3>
-              <div class="scene-content">
-                <p class="big-title">
-                  <span class="sp">
-                    <span class="wrap">
-                      <span class="text">
-                        モバイルSuicaの</span>
-                      <span class="line"></span>
-                    </span><br/>
-                    <span class="wrap">
-                      <span class="text">
-                        定期券購入で</span>
-                      <span class="line"></span>
-                    </span><br/>
-                    <span class="wrap">
-                      <span class="text">
-                        5％還元！</span>
-                      <span class="line"></span>
-                    </span>
-                  </span>
-                  <span class="pc">
-                    <span class="wrap">
-                      <span class="text">モバイルSuicaの定期券購入で5％還元！</span>
-                      <span class="line"></span>
-                    </span>
-                  </span>
-                </p>
-                <div class="example flex flex-sp align-center">
-                  <span class="bar"></span>
-                  <p>例えば…</p>
-                  <span class="bar"></span>
-                </div>
-                <div class="text-wrapper">
-                  <p class="text arrow">
-                    70,000円の定期券を<br class="sp"/>モバイルSuicaで購入
+          <div class="box">
+            <div class="box-wrapper">
+              <div class="box-content">
+                <div class="box-header flex">
+                  <p class="bg-orange">
+                    営業時間
                   </p>
-                  <p class="text mb">
-                    <span class="big">3,500円相当ポイント</span>貯まる！
-                  </p>
-                  <p class="text">
-                    <span class="small kome">
-                      モバイルSuicaとは、Suicaをスマートフォンでご利用いただけるサービスです。
-                    </span>
-                    <span class="small kome">
-                      「5%還元」とは、モバイルSuica定期券の購入で付与される2%と、その際にルミネカードで決済時に<br class="pc">付与される3%の合計です。
-                    </span>
-                    <span class="small kome">
-                      JR東⽇本のみどりの窓⼝や券売機での定期券購入では、1,000円（税込）ごとにJRE POINTが5ポイント<br class="pc">貯まります。
-                    </span>
-                    <span class="small kome">
-                      適用条件など詳しくは<a href="//www.jreast.co.jp/card/point/save/viewplus.html" target="_blank" rel="noopener" class="bold underline">こちら</a>
-                    </span>
+                  <p class="text-white">
+                    7:30～23:00
                   </p>
                 </div>
-                <p class="big-title mt">
-                  <span class="wrap">
-                    <span class="text">                      
-                      <span class="md">
-                        定期券じゃなくてもOK。
-                      </span>
-                    </span>
-                  </span><br class="pc">
-                  <span class="sp">
-                    <span class="wrap">
-                      <span class="text">                      
-                        Suicaへのオートチャージで
-                      </span>
-                      <span class="line"></span>
-                    </span>
-                    <span class="wrap">
-                      <span class="text">
-                      1.5％還元！
-                      </span>
-                      <span class="line"></span>
-                    </span>
-                  </span>
-                  <span class="pc">
-                    <span class="wrap">
-                      <span class="text">                      
-                        Suicaへのオートチャージで1.5％還元！
-                      </span>
-                      <span class="line"></span>
-                    </span>
-                  </span>
-                </p>
-                <div class="text-wrapper">
-                  <p class="text whitespace">
-                    オートチャージ機能により、<br class="sp"><span class="big">日常的にサクサク貯まります。</span>
+                <div class="box-text w-full">
+                  <p class="text-white">※営業時間は店舗により異なる</p>
+                </div>
+              </div>
+              <div class="box-content">
+                <div class="box-header flex">
+                  <p class="bg-orange">
+                    アクセス
                   </p>
-                  <p class="text">
-                    <span class="small kome">
-                      オートチャージとは、Suicaの残額が設定金額以下になると、改札入出場時に自動的に設定金額にチャージできるサービスです。
-                    </span>
+                  <p class="text-white">
+                    JR大宮駅 東口 徒歩1分
                   </p>
                 </div>
-                <div class="illust">
-                  <picture>
-                    <source srcset="./assets/img/sc03_illust_pc.webp" type="image/webp" />
-                    <img src="./assets/img/sc03_illust_pc.png" width="533" height="634" alt="">
-                  </picture>
-                </div>
-                <div class="step-wrapper">
-                  <div class="step">
-                    <a href="//www.jreast.co.jp/card/point/save/viewplus.html" target="_blank" rel="noopener" class="step-btn hover navy">
-                      <span>還元の適用条件など<br/>
-                        詳しくはこちら</span>
-                    </a>
-                  </div>
-                  <div class="step">
-                    <a href="//www.jreast.co.jp/mobilesuica/start/entry/" target="_blank" rel="noopener" class="step-btn hover navy">
-                      <span>モバイルSuicaの<br/>
-                        新規登録はこちら</span>
-                    </a>
-                  </div>
-                  <div class="step">
-                    <a href="//www.jreast.co.jp/card/function/autocharge/use_view.html" target="_blank" rel="noopener" class="step-btn hover navy">
-                      <span>オートチャージの<br/>
-                        ご利用方法はこちら</span>
-                    </a>
-                  </div>
+                <div class="box-text w-full">
+                  <p class="text-white">※専用駐車場/駐輪場はございません<br/>
+                  ※駐車サービスはルミネ大宮と同様</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="cards">
-            <div class="img show addactive">
-              <picture>
-                <source srcset="./assets/img/3card_pc.webp" type="image/webp" />
-                <img src="./assets/img/3card_pc.png" width="829" height="537" alt="">
-              </picture>
-            </div>
-            <p class=" show addactive">
-              ルミネ・ニュウマン・ネット通販<br/>
-              「アイルミネ」でのご利用が<span class="wrap"><span class="text">いつでも5％オフ。</span></span><br/>
-              <span class="pc">
-                クレジットカード決済でのお支払いで<br/><span class="wrap"><span class="text">JRE POINTが1,000円（税込）ごとに5ポイント貯まる。</span></span><br/>
-              </span>
-              <span class="sp">
-                クレジットカード決済でのお支払いで<br/>
-                <span class="wrap"><span class="text">JRE POINTが1,000円（税込）ごとに</span></span><br/>
-                <span class="wrap"><span class="text">5ポイント貯まる。</span></span><br/>
-              </span>
-              Suica定期券としても使える。<br/>
-              館内でのご利用は、<br class="sp"/>
-              <span class="wrap"><span class="text">特にルミネカードがおすすめ！</span></span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="faq" class="section">
-      <div class="wrapper gray">
-        <div class="section__inner">
-          <h2 class="section-title lightGreen show addactive">
-            <span class="ja">
-              よくある質問
-            </span>
-            <span class="en">
-              FAQ
-            </span>
-          </h2>
-          <div class="faq-wrapper show addactive">
-            
-            <div class="faq scroll-trigger open" data-target="sonota1">
-              <div class="q flex flex-sp align-center">
-                  <p>
-                      JRE POINTとは何ですか？
-                  </p>
-              </div>
-            </div>
-          
-            <div class="faq scroll-trigger open" data-target="tsukau1">
-              <div class="q flex flex-sp align-center">
-                  <p>
-                      ルミネ・ニュウマンでポイントを利用したいです。
-                  </p>
-              </div>
-            </div>
-          
-            <div class="faq scroll-trigger open" data-target="tameru1">
-              <div class="q flex flex-sp align-center">
-                  <p>
-                      ルミネカードでポイントは貯まりますか？
-                  </p>
-              </div>
-            </div>
-          
-            <div class="faq scroll-trigger open" data-target="tameru3">
-              <div class="q flex flex-sp align-center">
-                  <p>
-                      ルミネカード以外でポイントは貯まりますか？
-                  </p>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      <div class="section__inner">
-        <h3 class="faq-title navy show addactive" id="tameru">
-          <span class="bar">
-          </span>
-          <span class="text">貯める</span>
-          <span class="bar">
-          </span>
-        </h3>
-        <div class="qa-wrapper">
-          <% for (var i = 0; i < tameru.length; i++) { %>
-            <%- include('parts/_qa', {q: tameru[i][0], a: tameru[i][1], id: `tameru${i+1}`, color: 'light-blue'}) %>
-          <% } %>
-        </div>
-        <h3 class="faq-title green show addactive" id="tsukau">
-          <span class="bar">
-          </span>
-          <span class="text">使う</span>
-          <span class="bar">
-          </span>
-        </h3>
-        <div class="qa-wrapper">
-          <% for (var i = 0; i < tsukau.length; i++) { %>
-            <%- include('parts/_qa', {q: tsukau[i][0], a: tsukau[i][1], id: `tsukau${i+1}`, color: 'light-green'}) %>
-          <% } %>
-        </div>
-        <h3 class="faq-title black show addactive" id="sonota">
-          <span class="bar">
-          </span>
-          <span class="text">その他</span>
-          <span class="bar">
-          </span>
-        </h3>
-        <div class="qa-wrapper">
-          <% for (var i = 0; i < sonota.length; i++) { %>
-            <%- include('parts/_qa', {q: sonota[i][0], a: sonota[i][1], id: `sonota${i+1}`, color: 'light-gray'}) %>
-          <% } %>
-        </div>
-      </div>
-    </section>
-    <section id="last" class="section">
-      <div class="section__inner">
-        <div class="wrapper flex flex-sp space-between">
-          <div class="box show addactive">
-            <p class="box-title">
-              JRE POINTに関する問い合わせ先
-            </p>
-            <div class="box-content">
+            <div class="box-bottom bg-orange">
               <p>
-                お電話、メールでお問合せを受け付けています。<br /><a href="//faq.jrepoint.jp/?site_domain=default" target="_blank" rel="noopener" class="bold underline">こちら</a>をご確認ください。<br/><br/>
-                <span class="bold">
-                  ＜お電話でのお問い合わせ＞<br/>
-                  JRE POINTコールセンター<br/>（10:00～18:00）<br/>
-                  <a href="tel:0570-036-389" class="hover">0570-036-389</a>ナビダイヤル
-                </span>
+                「ムスブルミネ」のトピックス・サービスは<br/>
+                ルミネ大宮ホームページをCHECK！<%- include('parts/svg/_link') %>
               </p>
             </div>
           </div>
-          <div class="box show addactive">
-            <p class="box-title">
-              ルミネカードに関する問い合わせ先
-            </p>
-            <div class="box-content">
+        </div>
+      </div>
+    </section>
+    <section id="shops" class="section">
+      <h2 class="section-title flex justify-center items-center">
+        <span class="source-sans-3">SHOPS</span>
+        <span class="ja">［店舗紹介］</span>
+      </h2>
+      <div class="wrapper mx-auto">
+        <div class="content">
+          <div class="content-wrapper flex flex-wrap">
+            <div class="content-image">
+              <div class="image"></div>
+              <p class="name bold">SLB THE DINING</p>
+            </div>
+            <div class="content-body">
+              <header class="content-header flex items-center">
+                <p class="bg-orange">営業時間</p>
+                <div class="content-header-text">
+                  <p class="flex helvetica">
+                    <span>LUNCH</span>
+                    <span>11:00-15:30（L.O. 15:00）</span>
+                  </p>
+                  <p class="flex helvetica">
+                    <span>DINNER</span>
+                    <span>17:00-23:00（L.O. 22:00）</span>
+                  </p>
+                </div>
+              </header>
+              <p class="content-text">大宮市場から仕入れたお魚や、埼玉県産の食材を使用。健康に必要な栄養素をバランスよく摂取できる理想的な献立「一汁三菜」を、和と洋の両方の魅力を味わえる、現代的でカジュアルなスタイルに再構築したコース料理で心も身体も満たされた時間を過ごせるレストラン「SLB THE DINING」</p>
+            </div>
+            <div class="swiper-container relative mx-auto fade-in w-full" data-swiper="true" data-swiperPc="true" data-initialslide="0" data-center="false" data-centerPc="false" data-loop="false" data-space="135" data-spacePc="40" data-slides="1"  data-slidesPc="2" data-speed="1000" data-autoplay="false" data-navigation="true" data-navigationPc="false" data-scrollbar="false" data-scrollbarPc="false" data-reverse="false" data-pagination="false" data-paginationPc="false">	
+                <div class="swiper-button-prev items-center justify-center bg-white flex">
+                    <div class="relative"></div>
+                </div>
+                <div class="swiper-button-next flex items-center justify-center bg-white flex">
+                    <div class="relative"></div>
+                </div>
+              <div class="swiper-wrapper">
+              </div>
+            </div>
+            <div class="content-note">
               <p>
-                <span class="bold">
-                  ＜紛失・盗難の場合＞<br/>
-                ビューカード　紛失・盗難デスク<br/>
-                (24時間年中無休)<br/>
-                <a href="tel:03-6685-4800" class="hover">03-6685-4800</a>
-                </span><br/><br/>
-                <span class="bold">
-                  ＜その他、お問い合わせの場合＞<br/>
-                【VIEW】ルミネカード専用ダイヤル<br />(9:00～20:00　年中無休)<br/>
-                </span>
-                ※受付時間は予告なく変更となる場合がございます。<br/>
-                <span class="bold">
-                  <a href="tel:03-6685-9000" class="hover">03-6685-9000</a><br/><br/>
-                </span>
+                11月13日（木）～11月19日（水）期間はルミネのアプリ「ONE LUMINE」にて完全事前予約制<br/>
+                詳細はルミネ大宮HPもしくはONE LUMINEよりご確認ください。<br/>
+                <span class="small">※11月20日以降は下記サイトよりご予約を承ります。</span>
               </p>
+            </div>
+            <div class="text-center">
+              <a href="http://" target="_blank" rel="noopener" class="button flex justify-center relative">
+                <span class="button-text text-white">ご予約はこちらから</span>
+                <%- include('parts/svg/_link') %>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <%- include('parts/_footer') %>
-  <div id="bottom" class="scroll-trigger" data-target="faq">
-    <span class="text">よくある質問</span>
-    <%- include('parts/_tri') %>
   </div>
-  </div>
-  <script type="text/javascript">
-    (function () {
-      var tagjs = document.createElement("script");
-      var s = document.getElementsByTagName("script")[0];
-      tagjs.async = true;
-      tagjs.src = "//s.yjtag.jp/tag.js#site=APNU6vI";
-      s.parentNode.insertBefore(tagjs, s);
-    }());
-  </script>
-  <noscript>
-    <iframe src="//b.yjtag.jp/iframe?c=APNU6vI" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-  </noscript>
 </body>
-<script src="./assets/js/libs.js"></script>
 <script src="./assets/js/main.js"></script>
 </html>

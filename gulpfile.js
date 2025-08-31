@@ -1,7 +1,6 @@
 const gulp = require("gulp");
 const connect = require('gulp-connect');
 const notify = require('gulp-notify');
-const htmlbeautify = require("gulp-html-beautify");
 const webpack = require("webpack");
 const cleanCSS = require('gulp-clean-css');
 const webpackStream = require("webpack-stream");
@@ -10,6 +9,7 @@ const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps')
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require("autoprefixer");
+const tailwindcss = require('tailwindcss');
 // const webserver = require('gulp-webserver');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss')
@@ -27,13 +27,13 @@ gulp.task('watch', (done) => {
 });
 
 // localhost
-gulp.task('connect', (done) => {
-  connect.server({
-    root: './',
-    livereload: true
-  });
-  done();
-});
+// gulp.task('connect', (done) => {
+//   connect.server({
+//     root: './',
+//     livereload: true
+//   });
+//   done();
+// });
 
 gulp.task("js", (done) => {
   gulp.src('./src/js/main.js')
@@ -58,10 +58,15 @@ gulp.task("js", (done) => {
               , plugins: ["transform-class-properties"]
             }
           }]
-        }]
+        },
+{
+  test: /\.(vert|frag|obj)$/i,
+  type: 'asset/source'
+}
+      ]
       },
     }, webpack))
-    .pipe(connect.reload())
+    // .pipe(connect.reload())
     .pipe(gulp.dest('./assets/js/'));
   done();
 });
@@ -74,7 +79,7 @@ gulp.task('sass', () => {
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.init())
-    .pipe(postcss([autoprefixer()]))
+    .pipe(postcss([tailwindcss(), autoprefixer()]))
     // .pipe(webpack())
     .pipe(gulp.dest('./assets/css/'))
     .pipe(cleanCSS())
@@ -82,7 +87,7 @@ gulp.task('sass', () => {
       suffix: '.min',
     }))
     .pipe(sourcemaps.write('.'))
-    .pipe(connect.reload())
+    // .pipe(connect.reload())
     .pipe(gulp.dest('./assets/css/'));
 
   return (pc);
@@ -93,9 +98,9 @@ gulp.task('ejs', (done) => {
   gulp.src('./src/ejs/_index.ejs')
     .pipe(ejs())
     .pipe(rename('index.html'))
-    .pipe(connect.reload())
+    // .pipe(connect.reload())
     .pipe(gulp.dest(`./`));
   done();
 });
 
-gulp.task('default', gulp.series(gulp.parallel('connect', 'ejs', 'sass', 'js', 'watch')));
+gulp.task('default', gulp.series(gulp.parallel('ejs', 'sass', 'js', 'watch')));
