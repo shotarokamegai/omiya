@@ -97,6 +97,11 @@ body {
     width: rem(50);
     bottom: rem(100);
     right: rem(50);
+    will-change: transform;
+    transition: transform .5s $Power1easeInOut;
+    &.hide {
+      transform: translate3d(0, rem(151), 0);
+    }
   }
   .section {
     &-text {
@@ -119,9 +124,24 @@ body {
       }
     }
     .button {
+      will-change: background-color;
+      transition: background-color .5s $Power1easeInOut;
+      &:hover {
+        background-color: $white;
+        .button-text {
+          color: $red;
+        }
+        svg {
+          * {
+            stroke: $red;
+          }
+        }
+      }
       &-text {
         @include fontsize(18);
         @include tracking(50);
+        will-change: color;
+        transition: color .5s $Power1easeInOut;
       }
       svg {
         position: absolute;
@@ -131,6 +151,8 @@ body {
         width: rem(15);
         * {
           stroke: white;
+          will-change: stroke;
+          transition: stroke .5s $Power1easeInOut;
         }
       }
     }
@@ -156,13 +178,15 @@ body {
       &#top {
         padding-bottom: rem(75);
         .wrapper {
-          width: calc( 1150 / 1280 * 100%);
+          &-content {
+            width: calc( 1150 / 1280 * 100%);
+          }
         }
         .section-text {
           margin-bottom: rem(50);
         }
         .wrapper {
-          padding: rem(35) 0 rem(45);
+          height: calc(100vh - rem(65));
         }
         .box {
           .title {
@@ -343,27 +367,40 @@ body {
         }
         .illust-wrapper {
           left: calc( 30 / 1280 * -100%);
+          &.active {
+            .illust {
+              opacity: 1;
+              transform: translate3d(0, 0,0);
+            }
+          }
         }
         .illust {
+          opacity: 0;
+          transform: translate3d(0, rem(20),0);
+          will-change: transform, opacity;
           &.illust1 {
             top: rem(127.0586);
             left: calc(69.939 / 1045 * 100%);
             width: calc(125.9249 / 1045 * 100%);
+            transition: opacity 1s $Power1easeInOut, transform 1s $Power1easeInOut;
           }
           &.illust2 {
             left: 0;
             bottom: rem(30);
             width: calc(223.2225 / 1045 * 100%);
+            transition: opacity 1s $Power1easeInOut .1s, transform 1s $Power1easeInOut .1s;
           }
           &.illust3 {
             top: 0;
             right: 0;
             width: calc(163.3265 / 1045 * 100%);
+            transition: opacity 1s $Power1easeInOut .2s, transform 1s $Power1easeInOut .2s;
           }
           &.illust4 {
             bottom: 0;
             right: 0;
             width: calc(242.7338 / 1045 * 100%);
+            transition: opacity 1s $Power1easeInOut .3s, transform 1s $Power1easeInOut .3s;
           }
         }
         .box {

@@ -1243,6 +1243,11 @@ body .hidden {
     width: 5rem;
     bottom: 10rem;
     right: 5rem;
+    will-change: transform;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  #to-top.hide {
+    transform: translate3d(0, 15.1rem, 0);
   }
   .section-text {
     font-size: 16px;
@@ -1266,10 +1271,25 @@ body .hidden {
     font-size: 22.5px;
     font-size: 2.25rem;
   }
+  .section .button {
+    will-change: background-color;
+    transition: background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .section .button:hover {
+    background-color: #ffffff;
+  }
+  .section .button:hover .button-text {
+    color: #e14a3b;
+  }
+  .section .button:hover svg * {
+    stroke: #e14a3b;
+  }
   .section .button-text {
     font-size: 18px;
     font-size: 1.8rem;
     letter-spacing: 0.05em;
+    will-change: color;
+    transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section .button svg {
     position: absolute;
@@ -1280,6 +1300,8 @@ body .hidden {
   }
   .section .button svg * {
     stroke: white;
+    will-change: stroke;
+    transition: stroke 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section .title-header {
     margin-bottom: 1rem;
@@ -1303,14 +1325,14 @@ body .hidden {
   main section#top {
     padding-bottom: 7.5rem;
   }
-  main section#top .wrapper {
+  main section#top .wrapper-content {
     width: 89.84375%;
   }
   main section#top .section-text {
     margin-bottom: 5rem;
   }
   main section#top .wrapper {
-    padding: 3.5rem 0 4.5rem;
+    height: calc(100vh - 6.5rem);
   }
   main section#top .box .title {
     margin-bottom: 12.8125%;
@@ -1468,25 +1490,38 @@ body .hidden {
   main section#message .illust-wrapper {
     left: -2.34375%;
   }
+  main section#message .illust-wrapper.active .illust {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  main section#message .illust {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+    will-change: transform, opacity;
+  }
   main section#message .illust.illust1 {
     top: 12.70586rem;
     left: 6.6927272727%;
     width: 12.0502296651%;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   main section#message .illust.illust2 {
     left: 0;
     bottom: 3rem;
     width: 21.3610047847%;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
   }
   main section#message .illust.illust3 {
     top: 0;
     right: 0;
     width: 15.6293301435%;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
   }
   main section#message .illust.illust4 {
     bottom: 0;
     right: 0;
     width: 23.2281148325%;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
   }
   main section#message .box-image {
     margin-right: 8rem;

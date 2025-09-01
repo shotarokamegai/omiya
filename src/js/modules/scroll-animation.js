@@ -6,18 +6,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 class scrollAnimation {
   constructor() {
-    let container = document.getElementById('container');
-    let home = document.getElementById('home');
     let top = document.getElementById('top');
-    let vertical = document.getElementById('vertical');
-    let about = document.getElementById('vertical');
+    let topWrapper = document.getElementById('top-wrapper');
     let addactive = document.getElementsByClassName('addactive');
     let fadeIn = document.getElementsByClassName('fade-in');
-    let scrollTarget = document.getElementsByClassName('scroll-target');
+    let toTop = document.getElementById('to-top');
     let scaleImage = document.getElementsByClassName('scale-image');
     let parallax = document.getElementsByClassName('parallax');
     let zoom = document.getElementsByClassName('zoom');
-    let ratio = 832 / 1280;
     let pastW = window.innerWidth;
     this.deviceController = new DeviceController();
 
@@ -30,86 +26,24 @@ class scrollAnimation {
       pastW = window.innerWidth;
     });
 
-    function getAmount(order, type) {
-      let amount = order*window.innerHeight*.5;
-      if (type === 'end') {
-        amount = order*window.innerHeight*.5;
+    gsap.fromTo(topWrapper, {
+      }, {
+      scrollTrigger: {
+        trigger: topWrapper,
+        start: `top top`, 
+        end: () => `top bottom`, 
+        // pin: true,
+        invalidateOnRefresh: true,
+        onEnter: () => {
+          console.log('enter')
+          toTop.classList.add('hide');
+        },
+        onLeave: () => {
+          console.log('leave')
+          toTop.classList.remove('hide');
+        }
       }
-      // if (amount < window.innerHeight) {
-      //   amount = window.innerHeight;
-      // }
-      return amount;
-    }
-
-    // if (home) {
-    //   let max = scrollTarget.length + 3;
-    //   gsap.fromTo(top, {
-    //     //  y: `0px`,
-    //     }, {
-    //     scrollTrigger: {
-    //       trigger: top,
-    //       start: `top top`, 
-    //       end: () => `top top-=${window.innerHeight*7}`, 
-    //       pin: true,
-    //       invalidateOnRefresh: true,
-    //       onEnter: () => {
-    //         console.log('enter')
-    //       },
-    //       onLeave: () => {
-    //         console.log('leave')
-    //       }
-    //     }
-    //   });
-    //   for (let i = 0; i < scrollTarget.length; i++) {
-    //     let elm = scrollTarget[i];
-    //     let order = parseFloat(elm.getAttribute('data-order'));
-    //     order = max - order;
-    //     let markers = true;
-    //     if (elm.getAttribute('id') === 'logo') {
-    //       markers = true;
-    //       let logo = document.getElementById('logo');
-    //       gsap.fromTo(logo, {
-    //         y: () => '0px',
-    //         autoAlpha: 1
-    //         }, {
-    //         y: `${(window.innerHeight/-2) - (elm.clientHeight/2)}`,
-    //         autoAlpha: 0,
-    //         // duration: 1,
-    //         // ease: "power1.inOut",
-    //         scrollTrigger: {
-    //           trigger: () => window.innerWidth < this.deviceController.getDevice('sm') ? about: vertical,
-    //           start: () => `top top+=${(max-1)*window.innerHeight/2 + window.innerHeight*0}`, 
-    //           end: () => `bottom top+=${(max-1)*window.innerHeight/2 + window.innerHeight*0}`, 
-    //           invalidateOnRefresh: true,
-    //           scrub: 1,
-    //           onEnter: () => {
-    //             container.classList.add('scroll')
-    //             console.log('onenter')
-    //           },
-    //           onLeave: () => {
-    //             console.log('onleave')
-    //           },
-    //           onEnterBack: () => {
-    //             container.classList.remove('scroll')
-    //           },
-    //         }
-    //       });
-    //     } else {
-    //       gsap.fromTo(elm, {
-    //          y: () => window.innerHeight / window.innerWidth > ratio ? window.innerHeight : window.innerWidth,
-    //         }, {
-    //         y: '0px',
-    //         scrollTrigger: {
-    //           trigger: () => window.innerWidth < this.deviceController.getDevice('sm') ? about: vertical,
-    //           start: () => `top top+=${getAmount(order, 'start')}`, 
-    //           end: () => `bottom top+=${getAmount(order, 'end')}`, 
-    //           invalidateOnRefresh: true,
-    //           scrub: 1,
-    //         }
-    //       });
-    //     }
-    //   }
-    // }
+    });
 
     for (let i = 0; i < fadeIn.length; i++) {
       let elm = fadeIn[i];
