@@ -1052,10 +1052,10 @@ var InitLenis = /*#__PURE__*/function () {
       var _loop = function _loop() {
         var target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
         scrollTrigger[i].addEventListener('click', function () {
-          menu.classList.remove('active');
-          for (var _i = 0; _i < menuTrigger.length; _i++) {
-            menuTrigger[_i].classList.remove('active');
-          }
+          // menu.classList.remove('active');
+          // for (let i = 0; i < menuTrigger.length; i++) {
+          //   menuTrigger[i].classList.remove('active');
+          // }
           _this.lenisInstance.scrollTo(target, {
             duration: 1,
             easing: easeInOutCubic,

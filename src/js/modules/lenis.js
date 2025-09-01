@@ -31,10 +31,10 @@ class InitLenis {
     for (let i = 0; i < scrollTrigger.length; i++) {
       let target = document.getElementById(scrollTrigger[i].getAttribute('data-target'));
       scrollTrigger[i].addEventListener('click', () => {
-        menu.classList.remove('active');
-        for (let i = 0; i < menuTrigger.length; i++) {
-          menuTrigger[i].classList.remove('active');
-        }
+        // menu.classList.remove('active');
+        // for (let i = 0; i < menuTrigger.length; i++) {
+        //   menuTrigger[i].classList.remove('active');
+        // }
         this.lenisInstance.scrollTo(target, {
           duration: 1,
           easing: easeInOutCubic,
