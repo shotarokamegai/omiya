@@ -10,11 +10,11 @@
   <%- include('parts/_header') %>
   <main>
     <section id="top" class="section bg-green">
-      <div class="wrapper w-full flex itens-center" id="to-wrapper">
-        <div class="wrapper-content flex mx-auto">
-        <div class="box w-1/2 flex items-center justify-center">
+      <div class="wrapper w-full flex itens-center sm:block" id="to-wrapper">
+        <div class="wrapper-content flex mx-auto sm:flex-col">
+        <div class="box w-1/2 flex items-center justify-center sm:w-full sm:order-2">
           <div>
-            <h1 class="title mx-auto">
+            <h1 class="title mx-auto sm:hidden">
               <img src="./assets/img/title.svg" alt="ムスブルミネ">
             </h1>
             <div class="date mx-auto">
@@ -22,8 +22,11 @@
             </div>
           </div>
         </div>
-        <div class="box w-1/2 flex items-center justify-center">
-          <div class="kv">
+        <div class="box w-1/2 flex items-center justify-center sm:block sm:w-full sm:order-1">
+          <h1 class="title mx-auto hidden sm:block">
+            <img src="./assets/img/title.svg" alt="ムスブルミネ">
+          </h1>
+          <div class="kv sm:mx-auto">
             <img src="./assets/img/kv.png" alt="">
           </div>
         </div>
@@ -31,17 +34,17 @@
       </div>
       <div class="section__inner mx-auto">
         <p class="section-text bold fade-in text-white">
-          地域と身体と地球を想いより良い出会いが生まれる場「ムスブルミネ」。<br/>
+          地域と身体と地球を想いより良い出会いが生まれる場「ムスブルミネ」。<br class="sm:hidden" />
           心も身体も満たされる「食」をキーワードにやさしい明日をむすんでいきます。
         </p>
-        <div class="map-wrapper flex justify-between">
+        <div class="map-wrapper flex justify-between sm:block">
           <div class="box fade-in">
               <img src="./assets/img/map.png" alt="">
           </div>
           <div class="box flex flex-col">
             <div class="box-wrapper">
-              <div class="box-content fade-in">
-                <div class="box-header flex items-center title-header">
+              <div class="box-content fade-in sm:flex">
+                <div class="box-header flex items-center title-header sm:!mb-0">
                   <p class="bg-orange bold">
                     営業時間
                   </p>
@@ -63,7 +66,7 @@
                   </p>
                 </div>
                 <div class="box-text w-full">
-                  <p class="text-white">※専用駐車場/駐輪場はございません<br/>
+                  <p class="text-white whitespace-nowrap">※専用駐車場/駐輪場はございません<br class="sm:hidden"/>
                   ※駐車サービスはルミネ大宮と同様</p>
                 </div>
               </div>
@@ -79,7 +82,7 @@
       </div>
     </section>
     <section id="shops" class="section bg-beige">
-      <div class="text-center">
+      <div class="text-center sm:text-left">
         <h2 class="section-title inline-flex justify-center items-center bg-orange fade-in">
           <span class="source-sans-3 bold">SHOPS</span>
           <span class="ja">［店舗紹介］</span>
@@ -87,7 +90,7 @@
       </div>
       <div class="wrapper mx-auto">
         <div class="content">
-          <div class="content-wrapper flex justify-between flex-wrap mx-auto">
+          <div class="content-wrapper flex justify-between flex-wrap mx-auto sm:block">
             <div class="content-image fade-in">
               <div class="image flex items-center justify-center relative">
 
@@ -157,7 +160,7 @@
               </div>
             </div>
             <div class="content-wrapper mx-auto">
-              <div class="content-note mx-auto flex items-center justify-center fade-in">
+              <div class="content-note mx-auto flex items-center justify-center fade-in sm:block">
                 <p class="text-center">
                   11月13日（木）～11月19日（水）期間はルミネのアプリ「ONE LUMINE」にて完全事前予約制<br/>
                   詳細はルミネ大宮HPもしくはONE LUMINEよりご確認ください。<br/>
@@ -175,7 +178,7 @@
         </div>
       </section>
       <section id="message" class="section overflow-hidden">
-        <div class="text-center">
+        <div class="text-center sm:text-left">
           <h2 class="section-title inline-flex justify-center items-center bg-orange fade-in">
             <span class="source-sans-3 bold">MESSAGE</span>
             <span class="ja">［メッセージ］</span>
