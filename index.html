@@ -39,7 +39,7 @@
 </header>
   <main>
     <section id="top" class="section bg-green">
-      <div class="wrapper w-full flex itens-center sm:block" id="to-wrapper">
+      <div class="wrapper w-full flex itens-center sm:block" id="top-wrapper">
         <div class="wrapper-content flex mx-auto sm:flex-col">
         <div class="box w-1/2 flex items-center justify-center sm:w-full sm:order-2">
           <div>
@@ -141,16 +141,16 @@
       <div class="wrapper mx-auto">
         <div class="content">
           <div class="content-wrapper flex justify-between flex-wrap mx-auto sm:block">
-            <div class="content-image fade-in">
+            <div class="content-image fade-in sm:mx-auto">
               <div class="image flex items-center justify-center relative">
 
               </div>
               <p class="name bold text-center">SLB THE DINING</p>
             </div>
             <div class="content-body fade-in">
-              <header class="content-header flex items-center title-header">
-                <p class="bg-orange bold">営業時間</p>
-                <div class="content-header-text flex ">
+              <header class="content-header flex items-center title-header sm:flex-wrap sm:justify-center">
+                <p class="bg-orange bold sm:inline-block">営業時間</p>
+                <div class="content-header-text flex sm:justify-center">
                   <p class="helvetica bold">
                     <span>LUNCH</span><br/>
                     <span>DINNER</span>
@@ -165,7 +165,7 @@
             </div>
           </div>
           <div class="swipers mx-auto relative fade-in">
-              <div class="swiper-button-prev items-center justify-center flex">
+              <div class="swiper-button-prev items-center justify-center flex sm:!hidden">
                 <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 27">
   <defs>
     <style>
@@ -183,7 +183,7 @@
   </g>
 </svg>
               </div>
-              <div class="swiper-button-next flex items-center justify-center flex">
+              <div class="swiper-button-next flex items-center justify-center flex sm:!hidden">
                 <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 27">
   <defs>
     <style>
@@ -201,7 +201,7 @@
   </g>
 </svg>
               </div>
-              <div class="swiper-container relative mx-auto fade-in w-full overflow-hidden" data-swiper="true" data-swiperPc="true" data-initialslide="0" data-center="true" data-centerPc="true" data-loop="true" data-space="20" data-spacePc="20" data-slides="1.2"  data-slidesPc="3" data-speed="1000" data-autoplay="false" data-navigation="true" data-navigationPc="false" data-scrollbar="false" data-scrollbarPc="false" data-reverse="false" data-pagination="false" data-paginationPc="false">	
+              <div class="swiper-container relative mx-auto fade-in w-full overflow-hidden" data-swiper="true" data-swiperPc="true" data-initialslide="0" data-center="true" data-centerPc="true" data-loop="true" data-space="20" data-spacePc="20" data-slides="1.5"  data-slidesPc="3" data-speed="1000" data-autoplay="false" data-navigation="false" data-navigationPc="false" data-scrollbar="false" data-scrollbarPc="false" data-reverse="false" data-pagination="false" data-paginationPc="false">	
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <div class="item">
@@ -242,8 +242,8 @@
             <div class="content-wrapper mx-auto">
               <div class="content-note mx-auto flex items-center justify-center fade-in sm:block">
                 <p class="text-center">
-                  11月13日（木）～11月19日（水）期間はルミネのアプリ「ONE LUMINE」にて完全事前予約制<br/>
-                  詳細はルミネ大宮HPもしくはONE LUMINEよりご確認ください。<br/>
+                  11月13日（木）～11月19日（水）期間は<br class="hidden sm:block" />ルミネのアプリ「ONE LUMINE」にて完全事前予約制<br/>
+                  詳細はルミネ大宮HPもしくはONE LUMINEより<br class="hidden sm:block" />ご確認ください。<br/>
                   <span class="small block">※11月20日以降は下記サイトよりご予約を承ります。</span>
                 </p>
               </div>
@@ -286,29 +286,32 @@
           </h2>
         </div>
         <div class="section__inner mx-auto relative">
-          <div class="illust-wrapper absolute top-0 left-0 h-full w-full addactive">
-            <div class="illust illust1 absolute">
+          <div class="illust-wrapper absolute top-0 left-0 h-full w-full addactive sm:center-x sm:w-screen">
+            <div class="illust illust1 absolute addactive">
               <img src="./assets/img/illust1.png" alt="">
             </div>
-            <div class="illust illust2 absolute">
+            <div class="illust illust2 absolute addactive">
               <img src="./assets/img/illust2.png" alt="">
             </div>
-            <div class="illust illust3 absolute">
+            <div class="illust illust3 absolute addactive">
               <img src="./assets/img/illust3.png" alt="">
             </div>
-            <div class="illust illust4 absolute">
+            <div class="illust illust4 absolute addactive">
               <img src="./assets/img/illust4.png" alt="">
             </div>
           </div>
-          <div class="wrapper flex items-center justify-center">
+          <div class="wrapper flex items-center justify-center sm:block">
             <div class="box">
               <div class="box-image fade-in">
-                <img src="./assets/img/catch.svg" alt="ムスブルミネ ここからむすぶ地域と未来とわたしのあした">
+                <picture>
+				  	 	    <source srcset="./assets/img/catch-sp.svg" media="(max-width:749px)" />
+				  	 	    <img src="./assets/img/catch.svg" alt="ムスブルミネ ここからむすぶ地域と未来とわたしのあした" />
+				  	 	  </picture>
               </div>
             </div>
             <div class="box">
-              <div class="box-text fade-in">
-                <p class="bold">
+              <div class="box-text fade-in sm:text-center">
+                <p class="bold sm:inline-block sm:text-left">
                   身体と地球を想い<br/>
                   ひとつの選択をした今日は<br/>
                   大切な明日をつくってくれる<br/><br/>
@@ -327,7 +330,7 @@
           </div>
         </div>
         <div class="swipers mx-auto relative fade-in">
-          <div class="swiper-container relative mx-auto fade-in w-full overflow-hidden marquee" data-swiper="true" data-swiperPc="true" data-initialslide="0" data-center="true" data-centerPc="true" data-loop="true" data-space="20" data-spacePc="20" data-slides="1.2"  data-slidesPc="2" data-speed="15000" data-autoplay="marquee" data-navigation="false" data-navigationPc="false" data-scrollbar="false" data-scrollbarPc="false" data-reverse="false" data-pagination="false" data-paginationPc="false">	
+          <div class="swiper-container relative mx-auto fade-in w-full overflow-hidden marquee" data-swiper="true" data-swiperPc="true" data-initialslide="0" data-center="true" data-centerPc="true" data-loop="true" data-space="20" data-spacePc="20" data-slides="1.5"  data-slidesPc="2" data-speed="15000" data-autoplay="marquee" data-navigation="false" data-navigationPc="false" data-scrollbar="false" data-scrollbarPc="false" data-reverse="false" data-pagination="false" data-paginationPc="false">	
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img src="./assets/img/slide1.png" alt="">
@@ -352,97 +355,142 @@
             <span class="ja">［コンセプト］</span>
           </h2>
         </div>
-        <h3 class="bg-green flex items-center justify-center mx-auto fade-in">
-          <p class="text-white bold">
-            お客さまと「地域（地元）」「未来（環境や地球）」をむすぶ
+        <h3 class="bg-green flex items-center justify-center mx-auto fade-in sm:bg-transparent">
+          <p class="text-white bold sm:text-center">
+            <span class="sm:inline-block sm:bg-green">
+            お客さまと「地域（地元）」
+            </span><br class="hidden sm:block" />
+            <span class="sm:inline-block sm:bg-green">
+            「未来（環境や地球）」をむすぶ
+            </span>
           </p>
         </h3>
-        <div class="wrapper flex mx-auto">
-          <div class="box box1 fade-in" data-delay="0">
-            <p class="box-title flex justify-center">
-              <img src="./assets/img/social.svg" alt="Social">
-            </p>
-            <p class="box-text text-center">
-              地域をもっと好きになる<br/>
-              地球にとってよい選択をする
-            </p>
-            <div class="box-image mx-auto relative">
-              <img src="./assets/img/illust5.png" alt="">
-            </div>
-            <ul>
-              <li>
-                <span>
-                  大宮駅と氷川参道を結ぶ、<br/>
-                  大宮駅東口に生まれた緑あふれる憩いの場
-                </span>
-              </li>
-              <li>
-                <span>
-                  木造建築の施設で<br/>
-                  施設前庭の木々は埼玉県で自生している<br/>
-                  品種からセレクト
-                </span>
-              </li>
-              <li>
-                <span>
-                  埼玉のクラフトビールCOEDOなど<br/>
-                  地域/地方の食材が楽しめる
-                </span>
-              </li>
-            </ul>
+        <div class="swipers mx-auto relative fade-in">
+          <div class="swiper-button-prev items-center justify-center !hidden sm:!flex">
+            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 27">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #008a7c;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_1-2" data-name="レイヤー 1">
+    <path class="cls-1" d="M16,26L1.97,15.64c-1.29-.95-1.29-3.33,0-4.29L16,1"/>
+  </g>
+</svg>
           </div>
-          <div class="box box2 fade-in" data-delay="1">
-            <p class="box-title flex justify-center">
-              <img src="./assets/img/life-enriching.svg" alt="Life-enriching">
-            </p>
-            <p class="box-text text-center">
-              心も身体も満たされる<br/>
-              豊かな時間を過ごす
-            </p>
-            <div class="box-image mx-auto relative">
-              <img src="./assets/img/illust6.png" alt="">
-            </div>
-            <ul>
-              <li>
-                <span>
-                  大宮市場から仕入れたお魚や、埼玉県産の<br/>
-                  食材を使用。健康に必要な栄養素をバランス<br/>
-                  よく摂取できる理想的な献立「一汁三菜」を、<br/>
-                  和と洋の両方の魅力を味わえる、<br/>
-                  現代的でカジュアルなスタイルに再構築した<br/>
-                  コース料理で心も身体も満たされた<br/>
-                  時間を過ごせるレストラン<br/>
-                  「SLB THE DINING」
-                </span>
-              </li>
-            </ul>
+          <div class="swiper-button-next items-center justify-center !hidden sm:!flex">
+            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 27">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #008a7c;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_1-2" data-name="レイヤー 1">
+    <path class="cls-1" d="M16,26L1.97,15.64c-1.29-.95-1.29-3.33,0-4.29L16,1"/>
+  </g>
+</svg>
           </div>
-          <div class="box box3 fade-in" data-delay="2">
-            <p class="box-title flex justify-center">
-              <img src="./assets/img/body-friendly.svg" alt="Body-friendly">
-            </p>
-            <p class="box-text text-center">
-              健康的な生活の<br/>
-              ヒントと出会う
-            </p>
-            <div class="box-image mx-auto relative">
-              <img src="./assets/img/illust7.png" alt="">
+          <div class="swiper-container relative mx-auto fade-in w-full overflow-hidden" data-swiper="true" data-swiperPc="false" data-initialslide="0" data-center="true" data-centerPc="true" data-loop="false" data-space="0" data-spacePc="20" data-slides="1"  data-slidesPc="2" data-speed="1000" data-autoplay="false" data-navigation="true" data-navigationPc="false" data-scrollbar="false" data-scrollbarPc="false" data-reverse="false" data-pagination="false" data-paginationPc="false">	
+            <div class="swiper-wrapper wrapper !flex !box-border mx-auto">
+              <div class="swiper-slide box box1 fade-in" data-delay="0">
+                <p class="box-title flex justify-center">
+                  <img src="./assets/img/social.svg" alt="Social">
+                </p>
+                <p class="box-text text-center">
+                  地域をもっと好きになる<br/>
+                  地球にとってよい選択をする
+                </p>
+                <div class="box-image mx-auto relative">
+                  <img src="./assets/img/illust5.png" alt="">
+                </div>
+                <ul>
+                  <li>
+                    <span>
+                      大宮駅と氷川参道を結ぶ、<br/>
+                      大宮駅東口に生まれた緑あふれる憩いの場
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      木造建築の施設で<br/>
+                      施設前庭の木々は埼玉県で自生している<br/>
+                      品種からセレクト
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      埼玉のクラフトビールCOEDOなど<br/>
+                      地域/地方の食材が楽しめる
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="swiper-slide box box2 fade-in" data-delay="1">
+                <p class="box-title flex justify-center">
+                  <img src="./assets/img/life-enriching.svg" alt="Life-enriching">
+                </p>
+                <p class="box-text text-center">
+                  心も身体も満たされる<br/>
+                  豊かな時間を過ごす
+                </p>
+                <div class="box-image mx-auto relative">
+                  <img src="./assets/img/illust6.png" alt="">
+                </div>
+                <ul>
+                  <li>
+                    <span>
+                      大宮市場から仕入れたお魚や、埼玉県産の<br/>
+                      食材を使用。健康に必要な栄養素をバランス<br/>
+                      よく摂取できる理想的な献立「一汁三菜」を、<br/>
+                      和と洋の両方の魅力を味わえる、<br/>
+                      現代的でカジュアルなスタイルに再構築した<br/>
+                      コース料理で心も身体も満たされた<br/>
+                      時間を過ごせるレストラン<br/>
+                      「SLB THE DINING」
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="swiper-slide box box3 fade-in" data-delay="2">
+                <p class="box-title flex justify-center">
+                  <img src="./assets/img/body-friendly.svg" alt="Body-friendly">
+                </p>
+                <p class="box-text text-center">
+                  健康的な生活の<br/>
+                  ヒントと出会う
+                </p>
+                <div class="box-image mx-auto relative">
+                  <img src="./assets/img/illust7.png" alt="">
+                </div>
+                <ul>
+                  <li>
+                    <span>
+                      身体に優しいお粥で有意義な<br/>
+                      朝時間を過ごせるカフェ「SLB CAFE」   
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      毎日の食卓が楽しくなるような<br/>
+                      オーガニック野菜やこだわり調味料と<br/>
+                      出会える「ORGANIC&CO.」   
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <ul>
-              <li>
-                <span>
-                  身体に優しいお粥で有意義な<br/>
-                  朝時間を過ごせるカフェ「SLB CAFE」   
-                </span>
-              </li>
-              <li>
-                <span>
-                  毎日の食卓が楽しくなるような<br/>
-                  オーガニック野菜やこだわり調味料と<br/>
-                  出会える「ORGANIC&CO.」   
-                </span>
-              </li>
-            </ul>
           </div>
         </div>
       </section>
