@@ -187,6 +187,16 @@ body {
         .wrapper {
         }
         .box {
+          .title, .kv img {
+            transform: scale(1.1);
+            opacity: 0;
+            will-change: opacity, transform;
+            transition: opacity 1s $Power1easeInOut, transform 1s $Power1easeInOut;
+            &.active {
+              transform: scale(1);
+              opacity: 1;
+            }
+          }
           .title {
             margin-bottom: vw(90);
             width: vw(350);
@@ -194,10 +204,22 @@ body {
           .date {
             margin-bottom: vw(10);
             width: calc( 411.1051 / 640 * 100% );
+            opacity: 0;
+            transform: translate3d(0, rem(20), 0);
+            will-change: opacity, transform;
+            transition: opacity 1s $Power1easeInOut, transform 1s $Power1easeInOut;
+            &.active {
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
+            }
           }
           .kv {
             margin-bottom: vw(10);
             width: vw(666);
+            border-radius: vw(25);
+            img {
+            transition: opacity 1s $Power1easeInOut .2s, transform 1s $Power1easeInOut .2s;
+            }
           }
         }
         .map-wrapper {
@@ -543,6 +565,16 @@ body {
 }
 
 @media screen and (min-width: 750px) {
+  #container {
+    &.loaded {
+      section#top .box {
+        .title, .date, .kv img {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+  }
   #header {
     padding: 0 rem(20);
     height: rem(65);
@@ -666,15 +698,26 @@ body {
           height: calc(100vh - rem(65));
         }
         .box {
+          .title, .date, .kv img {
+            transform: scale(1.1);
+            opacity: 0;
+            will-change: opacity, transform;
+          }
           .title {
             margin-bottom: calc( 82 / 640 * 100% );
             width: calc( 431.2731 / 640 * 100% );
+            transition: opacity 1s $Power1easeInOut, transform 1s $Power1easeInOut;
           }
           .date {
             width: calc( 411.1051 / 640 * 100% );
+            transition: opacity 1s $Power1easeInOut .2s, transform 1s $Power1easeInOut .2s;
           }
           .kv {
             width: calc( 495.5581 / 640 * 100%);
+            border-radius: rem(11.9053);
+            img {
+              transition: opacity 1s $Power1easeInOut .4s, transform 1s $Power1easeInOut .4s;
+            }
           }
         }
         .map-wrapper {
@@ -847,37 +890,37 @@ body {
           &.active {
             .illust {
               opacity: 1;
-              transform: translate3d(0, 0,0);
+              transform: scale(1);
             }
           }
         }
         .illust {
           opacity: 0;
-          transform: translate3d(0, rem(20),0);
+          transform: scale(0);
           will-change: transform, opacity;
           &.illust1 {
             top: rem(127.0586);
             left: calc(69.939 / 1045 * 100%);
             width: calc(125.9249 / 1045 * 100%);
-            transition: opacity 1s $Power1easeInOut, transform 1s $Power1easeInOut;
+            transition: opacity 1s $Power1easeInOut, transform 1s $easeInOutBack;
           }
           &.illust2 {
             left: 0;
             bottom: rem(30);
             width: calc(223.2225 / 1045 * 100%);
-            transition: opacity 1s $Power1easeInOut .1s, transform 1s $Power1easeInOut .1s;
+            transition: opacity 1s $Power1easeInOut .1s, transform 1s $easeInOutBack .1s;
           }
           &.illust3 {
             top: 0;
             right: 0;
             width: calc(163.3265 / 1045 * 100%);
-            transition: opacity 1s $Power1easeInOut .2s, transform 1s $Power1easeInOut .2s;
+            transition: opacity 1s $Power1easeInOut .2s, transform 1s $easeInOutBack .2s;
           }
           &.illust4 {
             bottom: 0;
             right: 0;
             width: calc(242.7338 / 1045 * 100%);
-            transition: opacity 1s $Power1easeInOut .3s, transform 1s $Power1easeInOut .3s;
+            transition: opacity 1s $Power1easeInOut .3s, transform 1s $easeInOutBack .3s;
           }
         }
         .box {

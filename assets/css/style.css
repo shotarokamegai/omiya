@@ -1344,6 +1344,16 @@ body.loaded, body.visited {
   main section#top .section-text {
     margin-bottom: 6.6666666667vw;
   }
+  main section#top .box .title, main section#top .box .kv img {
+    transform: scale(1.1);
+    opacity: 0;
+    will-change: opacity, transform;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  main section#top .box .title.active, main section#top .box .kv img.active {
+    transform: scale(1);
+    opacity: 1;
+  }
   main section#top .box .title {
     margin-bottom: 12vw;
     width: 46.6666666667vw;
@@ -1351,10 +1361,22 @@ body.loaded, body.visited {
   main section#top .box .date {
     margin-bottom: 1.3333333333vw;
     width: 64.235171875%;
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+    will-change: opacity, transform;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  main section#top .box .date.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
   main section#top .box .kv {
     margin-bottom: 1.3333333333vw;
     width: 88.8vw;
+    border-radius: 3.3333333333vw;
+  }
+  main section#top .box .kv img {
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
   }
   main section#top .map-wrapper .box:nth-child(1) {
     margin-bottom: 7.3333333333vw;
@@ -1636,6 +1658,10 @@ body.loaded, body.visited {
   }
 }
 @media screen and (min-width: 750px) {
+  #container.loaded section#top .box .title, #container.loaded section#top .box .date, #container.loaded section#top .box .kv img {
+    opacity: 1;
+    transform: scale(1);
+  }
   #header {
     padding: 0 2rem;
     height: 6.5rem;
@@ -1759,15 +1785,26 @@ body.loaded, body.visited {
   main section#top .wrapper {
     height: calc(100vh - 6.5rem);
   }
+  main section#top .box .title, main section#top .box .date, main section#top .box .kv img {
+    transform: scale(1.1);
+    opacity: 0;
+    will-change: opacity, transform;
+  }
   main section#top .box .title {
     margin-bottom: 12.8125%;
     width: 67.386421875%;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   main section#top .box .date {
     width: 64.235171875%;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
   }
   main section#top .box .kv {
     width: 77.430953125%;
+    border-radius: 1.19053rem;
+  }
+  main section#top .box .kv img {
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
   }
   main section#top .map-wrapper .box:nth-child(1) {
     width: 58%;
@@ -1917,36 +1954,36 @@ body.loaded, body.visited {
   }
   main section#message .illust-wrapper.active .illust {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: scale(1);
   }
   main section#message .illust {
     opacity: 0;
-    transform: translate3d(0, 2rem, 0);
+    transform: scale(0);
     will-change: transform, opacity;
   }
   main section#message .illust.illust1 {
     top: 12.70586rem;
     left: 6.6927272727%;
     width: 12.0502296651%;
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   main section#message .illust.illust2 {
     left: 0;
     bottom: 3rem;
     width: 21.3610047847%;
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
   }
   main section#message .illust.illust3 {
     top: 0;
     right: 0;
     width: 15.6293301435%;
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s, transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
   }
   main section#message .illust.illust4 {
     bottom: 0;
     right: 0;
     width: 23.2281148325%;
-    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s, transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s;
   }
   main section#message .box-image {
     margin-right: 8rem;
