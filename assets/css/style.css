@@ -1285,7 +1285,7 @@ body.loaded, body.visited {
   }
   .section .button {
     will-change: background-color;
-    transition: background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section .button:active {
     background-color: #ffffff;
@@ -1301,7 +1301,7 @@ body.loaded, body.visited {
     font-size: 4.8vw;
     letter-spacing: 0.05em;
     will-change: color;
-    transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section .button svg {
     position: absolute;
@@ -1313,7 +1313,7 @@ body.loaded, body.visited {
   .section .button svg * {
     stroke: white;
     will-change: stroke;
-    transition: stroke 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: stroke 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section .title-header {
     margin-bottom: 4vw;
@@ -1724,7 +1724,14 @@ body.loaded, body.visited {
   }
   .section .button {
     will-change: background-color;
-    transition: background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 0.1rem solid #e14a3b;
+    transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .section .button.bg-green {
+    border: 0.1rem solid #008a7c;
+  }
+  .section .button.bg-green:hover .button-text {
+    color: #008a7c;
   }
   .section .button:hover {
     background-color: #ffffff;
@@ -1740,7 +1747,7 @@ body.loaded, body.visited {
     font-size: 1.8rem;
     letter-spacing: 0.05em;
     will-change: color;
-    transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section .button svg {
     position: absolute;
@@ -1752,7 +1759,7 @@ body.loaded, body.visited {
   .section .button svg * {
     stroke: white;
     will-change: stroke;
-    transition: stroke 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: stroke 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section .title-header {
     margin-bottom: 1rem;
@@ -1857,14 +1864,26 @@ body.loaded, body.visited {
     width: 93.0693069307%;
   }
   main section#shops .swiper-button-prev, main section#shops .swiper-button-next {
+    height: 2.382rem;
+    top: calc((100% - 4.6rem) / 2 - 2.382rem / 2);
+    transform: initial;
+    margin-top: 0;
     width: 1.5rem;
   }
   main section#shops .swiper-button-prev::after, main section#shops .swiper-button-next::after {
     display: none;
   }
+  main section#shops .swiper-button-next {
+    left: auto;
+    right: 0;
+  }
   main section#shops .swiper-button-next svg {
     position: relative;
     transform: rotate(180deg);
+  }
+  main section#shops .swiper-button-prev {
+    left: 0;
+    right: auto;
   }
   main section#shops .swiper-slide .item-image {
     margin-bottom: 1rem;
@@ -1873,6 +1892,7 @@ body.loaded, body.visited {
     font-size: 12px;
     font-size: 1.2rem;
     line-height: 1.5;
+    white-space: nowrap;
   }
   main section#shops .wrapper .content {
     margin-bottom: 7.5rem;
@@ -1886,6 +1906,9 @@ body.loaded, body.visited {
     width: 32.5rem;
     border-radius: 0.5rem;
   }
+  main section#shops .wrapper .content .button.long {
+    width: 47.5rem;
+  }
   main section#shops .wrapper .content-text {
     font-size: 14px;
     font-size: 1.4rem;
@@ -1896,7 +1919,7 @@ body.loaded, body.visited {
     padding: 2.5rem 0;
     margin-top: 4.5rem;
     border: 0.1rem solid #000000;
-    width: 72rem;
+    max-width: 72rem;
   }
   main section#shops .wrapper .content-note p {
     font-size: 14px;
