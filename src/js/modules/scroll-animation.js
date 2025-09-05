@@ -32,16 +32,19 @@ class scrollAnimation {
         trigger: topWrapper,
         start: `top top`, 
         end: () => `top bottom`, 
-        // pin: true,
         invalidateOnRefresh: true,
         onEnter: () => {
-          console.log('enter')
           toTop.classList.add('hide');
         },
         onLeave: () => {
-          console.log('leave')
           toTop.classList.remove('hide');
-        }
+        },
+        onEnterBack: () => {
+          toTop.classList.add('hide');
+        },
+        onLeaveBack: () => {
+          // toTop.classList.remove('hide');
+        },
       }
     });
 

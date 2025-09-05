@@ -11868,15 +11868,18 @@ var scrollAnimation = /*#__PURE__*/_createClass(function scrollAnimation() {
       end: function end() {
         return "top bottom";
       },
-      // pin: true,
       invalidateOnRefresh: true,
       onEnter: function onEnter() {
-        console.log('enter');
         toTop.classList.add('hide');
       },
       onLeave: function onLeave() {
-        console.log('leave');
         toTop.classList.remove('hide');
+      },
+      onEnterBack: function onEnterBack() {
+        toTop.classList.add('hide');
+      },
+      onLeaveBack: function onLeaveBack() {
+        // toTop.classList.remove('hide');
       }
     }
   });
