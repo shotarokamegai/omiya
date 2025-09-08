@@ -1237,9 +1237,9 @@ body.loaded, body.visited {
     -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
             clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     will-change: clip-path;
-    transition: -webkit-clip-path 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: clip-path 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: clip-path 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-clip-path 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: -webkit-clip-path 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: clip-path 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: clip-path 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-clip-path 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section-title.active {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -1689,9 +1689,9 @@ body.loaded, body.visited {
     -webkit-clip-path: polygon(50% 0, 50% 0%, 50% 100%, 50% 100%);
             clip-path: polygon(50% 0, 50% 0%, 50% 100%, 50% 100%);
     will-change: clip-path;
-    transition: -webkit-clip-path 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: clip-path 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: clip-path 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-clip-path 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: -webkit-clip-path 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: clip-path 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: clip-path 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-clip-path 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section-title.active {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
