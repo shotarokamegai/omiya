@@ -73,6 +73,13 @@ body {
 }
 
 @media screen and (max-width: 749px) {
+  .swiper-container {
+    &.marquee-sp {
+      .swiper-wrapper {
+        transition-timing-function: linear;
+      }
+    }
+  }
   #header {
     padding: 0 vw(25);
     height: vw(100);

@@ -37,27 +37,49 @@ class initSwiper {
           clickable: true
         } : {};
       let speed = parseInt(thisSwiper.getAttribute('data-speed'));
-      let autoplay;
+      let autoplay, autoplayPc;
       let speedPc = speed;
       let speedSp = speed;
 
       if (thisSwiper.getAttribute('data-autoplay') === 'marquee') {
+        autoplayPc = {
+          delay: 0,
+          // pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+          preventInteractionOnTransition: true,
+        };
         autoplay = {
           delay: 0,
           // pauseOnMouseEnter: true,
           disableOnInteraction: false,
           preventInteractionOnTransition: true,
         };
-        speedPc = speed * (1 - .27291666666666664);
+        speedPc = speed * 1.5;
       } else if (thisSwiper.getAttribute('data-autoplay') === 'false') {
         autoplay = false;
       } else if (thisSwiper.getAttribute('data-autoplay') !== 'false' && thisSwiper.getAttribute('data-autoplay') !== 'marquee') {
+        autoplayPc = {
+          delay: parseInt(thisSwiper.getAttribute('data-autoplay')),
+          pauseOnMouseEnter: true,
+          // disableOnInteraction: false,
+          preventInteractionOnTransition: true,
+        };
         autoplay = {
           delay: parseInt(thisSwiper.getAttribute('data-autoplay')),
           pauseOnMouseEnter: true,
           // disableOnInteraction: false,
           preventInteractionOnTransition: true,
         };
+      }
+      if (thisSwiper.classList.contains('marquee-sp')) {
+        autoplayPc = false;
+        autoplay = {
+          delay: 0,
+          // pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+          preventInteractionOnTransition: true,
+        };
+        speedSp = 6000;
       }
       if (window.innerWidth < this.deviceController.getDevice('sm') && thisSwiper.getAttribute('data-swiper') === 'true') {
         excute = true;
@@ -82,6 +104,7 @@ class initSwiper {
           breakpoints: {
             750: {
               speed: speedPc,
+              autoplay: autoplayPc,
               slidesPerView: slidesPc,
               // loopAdditionalSlides: loopedSlides,
               centeredSlides:(thisSwiper.getAttribute('data-centerPc') === 'true') ? true : false,

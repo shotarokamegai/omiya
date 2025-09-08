@@ -897,26 +897,49 @@ var initSwiper = /*#__PURE__*/function () {
           clickable: true
         } : {};
         var speed = parseInt(thisSwiper.getAttribute('data-speed'));
-        var autoplay = void 0;
+        var autoplay = void 0,
+          autoplayPc = void 0;
         var speedPc = speed;
         var speedSp = speed;
         if (thisSwiper.getAttribute('data-autoplay') === 'marquee') {
+          autoplayPc = {
+            delay: 0,
+            // pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+            preventInteractionOnTransition: true
+          };
           autoplay = {
             delay: 0,
             // pauseOnMouseEnter: true,
             disableOnInteraction: false,
             preventInteractionOnTransition: true
           };
-          speedPc = speed * (1 - .27291666666666664);
+          speedPc = speed * 1.5;
         } else if (thisSwiper.getAttribute('data-autoplay') === 'false') {
           autoplay = false;
         } else if (thisSwiper.getAttribute('data-autoplay') !== 'false' && thisSwiper.getAttribute('data-autoplay') !== 'marquee') {
+          autoplayPc = {
+            delay: parseInt(thisSwiper.getAttribute('data-autoplay')),
+            pauseOnMouseEnter: true,
+            // disableOnInteraction: false,
+            preventInteractionOnTransition: true
+          };
           autoplay = {
             delay: parseInt(thisSwiper.getAttribute('data-autoplay')),
             pauseOnMouseEnter: true,
             // disableOnInteraction: false,
             preventInteractionOnTransition: true
           };
+        }
+        if (thisSwiper.classList.contains('marquee-sp')) {
+          autoplayPc = false;
+          autoplay = {
+            delay: 0,
+            // pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+            preventInteractionOnTransition: true
+          };
+          speedSp = 6000;
         }
         if (window.innerWidth < this.deviceController.getDevice('sm') && thisSwiper.getAttribute('data-swiper') === 'true') {
           excute = true;
@@ -941,6 +964,7 @@ var initSwiper = /*#__PURE__*/function () {
             breakpoints: {
               750: {
                 speed: speedPc,
+                autoplay: autoplayPc,
                 slidesPerView: slidesPc,
                 // loopAdditionalSlides: loopedSlides,
                 centeredSlides: thisSwiper.getAttribute('data-centerPc') === 'true' ? true : false,
