@@ -210,8 +210,9 @@ body {
             width: vw(350);
           }
           .date {
-            margin-bottom: vw(10);
-            width: calc( 411.1051 / 640 * 100% );
+            margin-top: vw(65);
+            margin-bottom: vw(70);
+            width: calc( 325 / 640 * 100% );
             opacity: 0;
             transform: translate3d(0, rem(20), 0);
             will-change: opacity, transform;
@@ -725,7 +726,7 @@ body {
             transition: opacity 1s $Power1easeInOut, transform 1s $Power1easeInOut;
           }
           .date {
-            width: calc( 411.1051 / 640 * 100% );
+            width: calc( 325 / 640 * 100% );
             transition: opacity 1s $Power1easeInOut .2s, transform 1s $Power1easeInOut .2s;
           }
           .kv {
