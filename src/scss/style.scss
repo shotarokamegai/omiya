@@ -855,6 +855,8 @@ body {
           }
         }
         .wrapper {
+          width: calc( 1000 / 1280 * 100%);
+          max-width: rem(1150);
           .content {
             margin-bottom: rem(75);
             &:last-child {

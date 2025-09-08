@@ -1934,6 +1934,10 @@ body.loaded, body.visited {
     line-height: 1.5;
     white-space: nowrap;
   }
+  main section#shops .wrapper {
+    width: 78.125%;
+    max-width: 115rem;
+  }
   main section#shops .wrapper .content {
     margin-bottom: 7.5rem;
   }
