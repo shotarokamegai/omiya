@@ -73,6 +73,14 @@ body {
 }
 
 @media screen and (max-width: 749px) {
+  .section-title {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    will-change: clip-path;
+    transition: clip-path .5s $Power1easeInOut;
+    &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
   .swiper-container {
     &.marquee-sp {
       .swiper-wrapper {
@@ -579,6 +587,14 @@ body {
 }
 
 @media screen and (min-width: 750px) {
+  .section-title {
+    clip-path: polygon(50% 0, 50% 0%, 50% 100%, 50% 100%);
+    will-change: clip-path;
+    transition: clip-path .5s $Power1easeInOut;
+    &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
   #container {
     &.loaded {
       section#top .box {
