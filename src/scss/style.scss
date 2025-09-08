@@ -815,7 +815,7 @@ body {
         }
         .swipers {
           margin-top: rem(45);
-          width: calc( 1010 / 1280 * 100%)
+          // width: calc( 1010 / 1280 * 100%)
         }
         .swiper-container {
           width: calc( 940 / 1010 * 100%);
@@ -855,7 +855,7 @@ body {
           }
         }
         .wrapper {
-          width: calc( 1000 / 1280 * 100%);
+          // width: calc( 1000 / 1280 * 100%);
           max-width: rem(1150);
           .content {
             margin-bottom: rem(75);
@@ -893,7 +893,7 @@ body {
               }
             }
             &-wrapper {
-              width: calc( 940 / 1280 * 100%);
+              // width: calc( 940 / 1280 * 100%);
             }
             &-image {
               width: calc( 250 / 940 * 100%);

@@ -1898,7 +1898,6 @@ body.loaded, body.visited {
   }
   main section#shops .swipers {
     margin-top: 4.5rem;
-    width: 78.90625%;
   }
   main section#shops .swiper-container {
     width: 93.0693069307%;
@@ -1935,7 +1934,6 @@ body.loaded, body.visited {
     white-space: nowrap;
   }
   main section#shops .wrapper {
-    width: 78.125%;
     max-width: 115rem;
   }
   main section#shops .wrapper .content {
@@ -1976,9 +1974,6 @@ body.loaded, body.visited {
     font-size: 12px;
     font-size: 1.2rem;
     letter-spacing: 0.03em;
-  }
-  main section#shops .wrapper .content-wrapper {
-    width: 73.4375%;
   }
   main section#shops .wrapper .content-image {
     width: 26.5957446809%;
