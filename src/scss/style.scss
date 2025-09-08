@@ -134,11 +134,19 @@ body {
           }
         }
       }
+      &.icon-bottom {
+        svg {
+          top: auto;
+          bottom: vw(32);
+          transform: translate3d(0, 0, 0);
+        }
+      }
       &-text {
         @include fontvw(36);
         @include tracking(50);
         will-change: color;
         transition: color .3s $Power1easeInOut;
+        line-height: (56 / 36);
       }
       svg {
         position: absolute;
@@ -250,7 +258,7 @@ body {
               padding: vw(35);
               border-radius: vw(10);
               p {
-                top: vw(3);
+                top: vw(1);
                 @include fontvw(30);
                 line-height: (48.5 / 30);
                 white-space: nowrap;
@@ -320,15 +328,18 @@ body {
             }
           }
           .content {
-            margin-bottom: rem(75);
+            margin-bottom: vw(100);
             &:last-child {
               margin-bottom: 0;
             }
             .button {
-              margin-top: rem(25);
-              height: rem(50);
+              margin-top: vw(70);
+              height: vw(150);
               width: vw(650);
-              border-radius: rem(5);
+              border-radius: vw(10);
+              &.small {
+                height: vw(100);
+              }
             }
             &-text {
               @include fontvw(28);
@@ -395,13 +406,6 @@ body {
         }
         .section-title {
           margin-bottom: vw(75);
-        }
-        .section__inner {
-          // width: calc( 1045 / 1280 * 100%);
-          // min-height: rem(667);
-          // max-width: rem(1045);
-        }
-        .illust-wrapper {
         }
         .illust {
           opacity: 0;
@@ -487,6 +491,8 @@ body {
             padding: 0 vw(50);
             box-sizing: border-box;
             width: 100%;
+            opacity: 1 !important;
+            transform: translate3d(0, 0, 0) !important;
             &.box1 {
               .box-image {
                 img {
@@ -619,6 +625,7 @@ body {
     }
     &__inner {
       width: calc( 1000 / 1280 * 100%);
+      max-width: rem(1150);
     }
     &-title {
       height: rem(54.375); 
@@ -755,7 +762,7 @@ body {
               padding: rem(15);
               border-radius: rem(5);
               p {
-                top: rem(3);
+                top: rem(1);
                 @include fontsize(15);
                 line-height: (24.25 / 15);
                 white-space: nowrap;
@@ -976,6 +983,7 @@ body {
         }
         .wrapper {
           width: calc( 1125 / 1280 * 100%);
+          max-width: rem(1125);
           .box {
             padding: 0 rem(25);
             width: calc( 33.333%);

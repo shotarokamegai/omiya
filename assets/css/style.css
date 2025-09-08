@@ -1296,12 +1296,18 @@ body.loaded, body.visited {
   .section .button:active svg * {
     stroke: #e14a3b;
   }
+  .section .button.icon-bottom svg {
+    top: auto;
+    bottom: 4.2666666667vw;
+    transform: translate3d(0, 0, 0);
+  }
   .section .button-text {
     font-size: 1.8rem;
     font-size: 4.8vw;
     letter-spacing: 0.05em;
     will-change: color;
     transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    line-height: 1.5555555556;
   }
   .section .button svg {
     position: absolute;
@@ -1397,7 +1403,7 @@ body.loaded, body.visited {
     border-radius: 1.3333333333vw;
   }
   main section#top .map-wrapper .box-bottom p {
-    top: 0.4vw;
+    top: 0.1333333333vw;
     font-size: 1.5rem;
     font-size: 4vw;
     line-height: 1.6166666667;
@@ -1449,16 +1455,19 @@ body.loaded, body.visited {
     width: 100%;
   }
   main section#shops .wrapper .content {
-    margin-bottom: 7.5rem;
+    margin-bottom: 13.3333333333vw;
   }
   main section#shops .wrapper .content:last-child {
     margin-bottom: 0;
   }
   main section#shops .wrapper .content .button {
-    margin-top: 2.5rem;
-    height: 5rem;
+    margin-top: 9.3333333333vw;
+    height: 20vw;
     width: 86.6666666667vw;
-    border-radius: 0.5rem;
+    border-radius: 1.3333333333vw;
+  }
+  main section#shops .wrapper .content .button.small {
+    height: 13.3333333333vw;
   }
   main section#shops .wrapper .content-text {
     font-size: 1.4rem;
@@ -1594,6 +1603,8 @@ body.loaded, body.visited {
     padding: 0 6.6666666667vw;
     box-sizing: border-box;
     width: 100%;
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
   }
   main section#concept .wrapper .box.box1 .box-image img {
     width: 129.4843049327%;
@@ -1707,6 +1718,7 @@ body.loaded, body.visited {
   }
   .section__inner {
     width: 78.125%;
+    max-width: 115rem;
   }
   .section-title {
     height: 5.4375rem;
@@ -1833,7 +1845,7 @@ body.loaded, body.visited {
     border-radius: 0.5rem;
   }
   main section#top .map-wrapper .box-bottom p {
-    top: 0.3rem;
+    top: 0.1rem;
     font-size: 15px;
     font-size: 1.5rem;
     line-height: 1.6166666667;
@@ -2036,6 +2048,7 @@ body.loaded, body.visited {
   }
   main section#concept .wrapper {
     width: 87.890625%;
+    max-width: 112.5rem;
   }
   main section#concept .wrapper .box {
     padding: 0 2.5rem;
@@ -2153,6 +2166,9 @@ body.loaded, body.visited {
   }
   .sm\:justify-center{
     justify-content: center;
+  }
+  .sm\:whitespace-nowrap{
+    white-space: nowrap;
   }
   .sm\:bg-green{
     --tw-bg-opacity: 1;
