@@ -585,6 +585,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(248 244 221 / var(--tw-text-opacity, 1));
 }
+.text-red{
+  --tw-text-opacity: 1;
+  color: rgb(225 74 59 / var(--tw-text-opacity, 1));
+}
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -1494,7 +1498,7 @@ body.loaded, body.visited {
   main section#shops .wrapper .content-note {
     padding: 3.3333333333vw 0;
     margin-top: 5.3333333333vw;
-    border: 0.1rem solid #000000;
+    border: 0.1rem solid #e14a3b;
     width: 86.6666666667vw;
   }
   main section#shops .wrapper .content-note p {
@@ -1701,6 +1705,13 @@ body.loaded, body.visited {
     opacity: 1;
     transform: scale(1);
   }
+  #container .hover {
+    will-change: opacity;
+    transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  #container .hover:hover {
+    opacity: 0.7;
+  }
   #header {
     padding: 0 2rem;
     height: 6.5rem;
@@ -1773,6 +1784,9 @@ body.loaded, body.visited {
   .section .button.bg-green:hover .button-text {
     color: #008a7c;
   }
+  .section .button.bg-green:hover svg * {
+    stroke: #008a7c;
+  }
   .section .button:hover {
     background-color: #ffffff;
   }
@@ -1798,8 +1812,8 @@ body.loaded, body.visited {
   }
   .section .button svg * {
     stroke: white;
-    will-change: stroke;
-    transition: stroke 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: stroke, fill;
+    transition: fill 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), stroke 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .section .title-header {
     margin-bottom: 1rem;
@@ -1871,6 +1885,12 @@ body.loaded, body.visited {
   main section#top .map-wrapper .box-bottom {
     padding: 1.5rem;
     border-radius: 0.5rem;
+    border: 0.1rem solid #f4ba2e;
+    will-change: background-color;
+    transition: background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  main section#top .map-wrapper .box-bottom:hover {
+    background-color: #ffffff;
   }
   main section#top .map-wrapper .box-bottom p {
     top: 0.1rem;
@@ -1878,11 +1898,17 @@ body.loaded, body.visited {
     font-size: 1.5rem;
     line-height: 1.6166666667;
     white-space: nowrap;
+    will-change: color;
+    transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   main section#top .map-wrapper .box-bottom svg {
     display: inline;
     width: 1.5rem;
     margin-left: 1rem;
+  }
+  main section#top .map-wrapper .box-bottom svg * {
+    will-change: fill;
+    transition: fill 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   main section#top .map-wrapper .box-wrapper .box-content {
     margin-bottom: 1.5rem;
@@ -1960,7 +1986,7 @@ body.loaded, body.visited {
   main section#shops .wrapper .content-note {
     padding: 2.5rem 0;
     margin-top: 4.5rem;
-    border: 0.1rem solid #000000;
+    border: 0.1rem solid #e14a3b;
     max-width: 72rem;
   }
   main section#shops .wrapper .content-note p {
