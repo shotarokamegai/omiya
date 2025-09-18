@@ -387,7 +387,6 @@ body {
               .image {
                 margin-bottom: vw(50);
                 height: vw(250);
-                background-color: gray;
               }
               p {
                 @include fontvw(32);  
@@ -924,7 +923,6 @@ body {
               .image {
                 margin-bottom: rem(35);
                 height: rem(125);
-                background-color: gray;
               }
               p {
                 @include fontsize(16);  

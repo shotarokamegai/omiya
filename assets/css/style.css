@@ -1523,7 +1523,6 @@ body.loaded, body.visited {
   main section#shops .wrapper .content-image .image {
     margin-bottom: 6.6666666667vw;
     height: 33.3333333333vw;
-    background-color: gray;
   }
   main section#shops .wrapper .content-image p {
     font-size: 1.6rem;
@@ -2007,7 +2006,6 @@ body.loaded, body.visited {
   main section#shops .wrapper .content-image .image {
     margin-bottom: 3.5rem;
     height: 12.5rem;
-    background-color: gray;
   }
   main section#shops .wrapper .content-image p {
     font-size: 16px;
