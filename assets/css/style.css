@@ -571,10 +571,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(244 186 46 / var(--tw-bg-opacity, 1));
 }
-.bg-red{
-  --tw-bg-opacity: 1;
-  background-color: rgb(225 74 59 / var(--tw-bg-opacity, 1));
-}
 .text-center{
   text-align: center;
 }
@@ -584,10 +580,6 @@ video {
 .text-beige{
   --tw-text-opacity: 1;
   color: rgb(248 244 221 / var(--tw-text-opacity, 1));
-}
-.text-red{
-  --tw-text-opacity: 1;
-  color: rgb(225 74 59 / var(--tw-text-opacity, 1));
 }
 .text-white{
   --tw-text-opacity: 1;
@@ -1475,10 +1467,29 @@ body.loaded, body.visited {
     width: 100%;
   }
   main section#shops .wrapper .content {
-    margin-bottom: 13.3333333333vw;
+    margin-bottom: 6.6666666667vw;
+    padding-bottom: 6.6666666667vw;
+  }
+  main section#shops .wrapper .content.active::after {
+    width: 100%;
+  }
+  main section#shops .wrapper .content::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    height: 0.1rem;
+    width: 0%;
+    background-color: #008a7c;
+    will-change: width;
+    transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   main section#shops .wrapper .content:last-child {
     margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  main section#shops .wrapper .content:last-child::after {
+    display: none;
   }
   main section#shops .wrapper .content .button {
     margin-top: 9.3333333333vw;
@@ -1962,10 +1973,30 @@ body.loaded, body.visited {
     max-width: 115rem;
   }
   main section#shops .wrapper .content {
-    margin-bottom: 7.5rem;
+    position: relative;
+    margin-bottom: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+  main section#shops .wrapper .content.active::after {
+    width: 100%;
+  }
+  main section#shops .wrapper .content::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    height: 0.1rem;
+    width: 0%;
+    background-color: #008a7c;
+    will-change: width;
+    transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   main section#shops .wrapper .content:last-child {
     margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  main section#shops .wrapper .content:last-child::after {
+    display: none;
   }
   main section#shops .wrapper .content .button {
     margin-top: 2.5rem;
@@ -2196,9 +2227,6 @@ body.loaded, body.visited {
   }
   .sm\:flex{
     display: flex;
-  }
-  .sm\:\!hidden{
-    display: none !important;
   }
   .sm\:hidden{
     display: none;
