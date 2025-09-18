@@ -1509,7 +1509,7 @@ body.loaded, body.visited {
   main section#shops .wrapper .content-note {
     padding: 3.3333333333vw 0;
     margin-top: 5.3333333333vw;
-    border: 0.1rem solid #e14a3b;
+    border: 0.1rem solid #000000;
     width: 86.6666666667vw;
   }
   main section#shops .wrapper .content-note p {
@@ -2016,7 +2016,7 @@ body.loaded, body.visited {
   main section#shops .wrapper .content-note {
     padding: 2.5rem 0;
     margin-top: 4.5rem;
-    border: 0.1rem solid #e14a3b;
+    border: 0.1rem solid #000000;
     max-width: 72rem;
   }
   main section#shops .wrapper .content-note p {

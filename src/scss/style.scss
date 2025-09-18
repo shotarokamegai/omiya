@@ -386,7 +386,7 @@ body {
             &-note {
               padding: vw(25) 0;
               margin-top: vw(40);
-              border: rem(1) solid $red;
+              border: rem(1) solid $black;
               width: vw(650);
               p {
                 @include fontvw(24);
@@ -945,7 +945,7 @@ body {
             &-note {
               padding: rem(25) 0;
               margin-top: rem(45);
-              border: rem(1) solid $red;
+              border: rem(1) solid $black;
               max-width: rem(720);
               p {
                 @include fontsize(14);
