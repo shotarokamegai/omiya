@@ -95,6 +95,12 @@ body {
     .logo {
       width: vw(110.5365);
     }
+    .instagram {
+      img {
+        height: vw(50);
+        width: auto;
+      }
+    }
   }
   #footer {
     height: vw(100);
@@ -639,6 +645,12 @@ body {
     .logo {
       width: rem(88.4292);
     }
+    .instagram {
+      img {
+        height: rem(30);
+        width: auto;
+      }
+    }
   }
   #footer {
     height: rem(50);
@@ -905,6 +917,11 @@ body {
             position: relative;
             margin-bottom: rem(37.5);
             padding-bottom: rem(37.5);
+            &.content1 {
+              .swiper-wrapper {
+                justify-content: center;
+              }
+            }
             &.active {
               &::after {
                 width: 100%;

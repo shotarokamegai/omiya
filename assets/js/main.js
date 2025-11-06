@@ -901,6 +901,7 @@ var initSwiper = /*#__PURE__*/function () {
           autoplayPc = void 0;
         var speedPc = speed;
         var speedSp = speed;
+        var loopPc = thisSwiper.getAttribute('data-loopPC') == '' ? false : true;
         if (thisSwiper.getAttribute('data-autoplay') === 'marquee') {
           autoplayPc = {
             delay: 0,
@@ -966,6 +967,7 @@ var initSwiper = /*#__PURE__*/function () {
                 speed: speedPc,
                 autoplay: autoplayPc,
                 slidesPerView: slidesPc,
+                loop: loopPc,
                 // loopAdditionalSlides: loopedSlides,
                 centeredSlides: thisSwiper.getAttribute('data-centerPc') === 'true' ? true : false,
                 scrollbar: scrollbarPc,

@@ -40,6 +40,7 @@ class initSwiper {
       let autoplay, autoplayPc;
       let speedPc = speed;
       let speedSp = speed;
+      let loopPc = (thisSwiper.getAttribute('data-loopPC') == '') ? false: true;
 
       if (thisSwiper.getAttribute('data-autoplay') === 'marquee') {
         autoplayPc = {
@@ -106,6 +107,7 @@ class initSwiper {
               speed: speedPc,
               autoplay: autoplayPc,
               slidesPerView: slidesPc,
+              loop: loopPc,
               // loopAdditionalSlides: loopedSlides,
               centeredSlides:(thisSwiper.getAttribute('data-centerPc') === 'true') ? true : false,
               scrollbar: scrollbarPc,
