@@ -233,7 +233,7 @@ body {
           .date {
             margin-top: vw(65);
             margin-bottom: vw(70);
-            width: calc( 325 / 640 * 100% );
+            // width: calc( 325 / 640 * 100% );
             opacity: 0;
             transform: translate3d(0, rem(20), 0);
             will-change: opacity, transform;
@@ -793,7 +793,7 @@ body {
             transition: opacity 1s $Power1easeInOut, transform 1s $Power1easeInOut;
           }
           .date {
-            width: calc( 325 / 640 * 100% );
+            // width: calc( 325 / 640 * 100% );
             transition: opacity 1s $Power1easeInOut .2s, transform 1s $Power1easeInOut .2s;
           }
           .kv {
@@ -919,7 +919,7 @@ body {
             padding-bottom: rem(37.5);
             &.content1 {
               .swiper-wrapper {
-                justify-content: center;
+                // justify-content: center;
               }
             }
             &.active {

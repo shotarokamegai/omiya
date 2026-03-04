@@ -901,7 +901,7 @@ var initSwiper = /*#__PURE__*/function () {
           autoplayPc = void 0;
         var speedPc = speed;
         var speedSp = speed;
-        var loopPc = thisSwiper.getAttribute('data-loopPC') == '' ? false : true;
+        var loopPc = thisSwiper.getAttribute('data-loopPc') == '' ? false : true;
         if (thisSwiper.getAttribute('data-autoplay') === 'marquee') {
           autoplayPc = {
             delay: 0,
@@ -961,7 +961,8 @@ var initSwiper = /*#__PURE__*/function () {
             scrollbar: scrollbarPc,
             pagination: pagination,
             navigation: navigation,
-            simulateTouch: false,
+            // simulateTouch: false,
+            simulateTouch: true,
             breakpoints: {
               750: {
                 speed: speedPc,

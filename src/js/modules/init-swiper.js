@@ -40,7 +40,7 @@ class initSwiper {
       let autoplay, autoplayPc;
       let speedPc = speed;
       let speedSp = speed;
-      let loopPc = (thisSwiper.getAttribute('data-loopPC') == '') ? false: true;
+      let loopPc = (thisSwiper.getAttribute('data-loopPc') == '') ? false: true;
 
       if (thisSwiper.getAttribute('data-autoplay') === 'marquee') {
         autoplayPc = {
@@ -101,7 +101,8 @@ class initSwiper {
           scrollbar: scrollbarPc,
           pagination: pagination, 
           navigation: navigation,
-          simulateTouch: false,
+          // simulateTouch: false,
+          simulateTouch: true,
           breakpoints: {
             750: {
               speed: speedPc,
