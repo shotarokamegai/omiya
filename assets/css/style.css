@@ -437,6 +437,9 @@ video {
 .container{
   width: 100%;
 }
+.pointer-events-none{
+  pointer-events: none;
+}
 .visible{
   visibility: visible;
 }
@@ -574,9 +577,6 @@ video {
 .bg-red{
   --tw-bg-opacity: 1;
   background-color: rgb(225 74 59 / var(--tw-bg-opacity, 1));
-}
-.text-left{
-  text-align: left;
 }
 .text-center{
   text-align: center;

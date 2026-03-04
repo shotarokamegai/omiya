@@ -27,20 +27,21 @@
 		</div>
 	</div>
 	<div class="swipers mx-auto relative fade-in">
-		<div class="swiper-button-prev items-center justify-center flex sm:!hidden">
+		<div class="swiper-button-prev items-center justify-center flex !hidden sm:!hidden">
 			<%- include('./svg/_arrow') %>
 		</div>
-		<div class="swiper-button-next flex items-center justify-center flex sm:!hidden">
+		<div class="swiper-button-next flex items-center justify-center !hidden sm:!hidden">
 			<%- include('./svg/_arrow') %>
 		</div>
 		<div
-			class="swiper-container relative mx-auto fade-in w-full overflow-hidden marquee-sp"
+			class="swiper-container relative mx-auto fade-in w-full overflow-hidden marquee-sp pointer-events-none"
 			data-swiper="true"
 			data-swiperPc="true"
 			data-initialslide="0"
 			data-center="true"
 			data-centerPc="false"
-			data-loop="true"
+			data-loopPc="false"
+			data-loop="false"
 			data-space="20"
 			data-spacePc="20"
 			data-slides="1.5"
