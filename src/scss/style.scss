@@ -878,7 +878,7 @@ body {
         }
         .swiper-button-prev, .swiper-button-next {
           height: rem(23.82);
-          top: calc( (100% - rem(46)) / 2 - (rem(23.82) / 2));
+          top: calc( rem(343.33) / 2 -  rem(23.81) / 2 );
           transform: initial;
           margin-top: 0;
           width: rem(15);

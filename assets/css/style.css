@@ -1968,7 +1968,7 @@ body.loaded, body.visited {
   }
   main section#shops .swiper-button-prev, main section#shops .swiper-button-next {
     height: 2.382rem;
-    top: calc((100% - 4.6rem) / 2 - 2.382rem / 2);
+    top: calc(34.333rem / 2 - 2.381rem / 2);
     transform: initial;
     margin-top: 0;
     width: 1.5rem;
