@@ -437,9 +437,6 @@ video {
 .container{
   width: 100%;
 }
-.pointer-events-none{
-  pointer-events: none;
-}
 .visible{
   visibility: visible;
 }
@@ -519,6 +516,9 @@ video {
 .w-1\/2{
   width: 50%;
 }
+.w-\[93\.0693069307\%\]{
+  width: 93.0693069307%;
+}
 .w-full{
   width: 100%;
 }
@@ -583,6 +583,9 @@ video {
 }
 .text-center{
   text-align: center;
+}
+.text-right{
+  text-align: right;
 }
 .text-\[12px\]{
   font-size: 12px;
