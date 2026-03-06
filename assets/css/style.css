@@ -471,9 +471,6 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
-.mb-\[100px\]{
-  margin-bottom: 100px;
-}
 .mt-\[10px\]{
   margin-top: 10px;
 }
@@ -524,6 +521,9 @@ video {
 }
 .w-full{
   width: 100%;
+}
+.min-w-\[310px\]{
+  min-width: 310px;
 }
 .border-collapse{
   border-collapse: collapse;
@@ -2247,9 +2247,6 @@ body.loaded, body.visited {
   .sm\:\!mb-0{
     margin-bottom: 0px !important;
   }
-  .sm\:mb-0{
-    margin-bottom: 0px;
-  }
   .sm\:mt-\[calc\(10\/750\*100vw\)\]{
     margin-top: calc(10 / 750 * 100vw);
   }
@@ -2271,11 +2268,17 @@ body.loaded, body.visited {
   .sm\:hidden{
     display: none;
   }
+  .sm\:h-auto{
+    height: auto;
+  }
   .sm\:w-full{
     width: 100%;
   }
   .sm\:w-screen{
     width: 100vw;
+  }
+  .sm\:min-w-\[initial\]{
+    min-width: initial;
   }
   .sm\:flex-col{
     flex-direction: column;
