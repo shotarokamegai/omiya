@@ -525,6 +525,9 @@ video {
 .min-w-\[310px\]{
   min-width: 310px;
 }
+.flex-shrink{
+  flex-shrink: 1;
+}
 .border-collapse{
   border-collapse: collapse;
 }
@@ -1701,14 +1704,19 @@ body.loaded, body.visited {
     line-height: 1.6666666667;
     line-height: 150%;
   }
-  main section#concept .wrapper .box ul li {
+  main section#concept .ul-wrapper {
+    margin: 6.6666666667vw auto 0;
+    width: 86.6666666667vw;
+  }
+  main section#concept .ul-wrapper ul li {
     display: flex;
     margin-bottom: 4vw;
   }
-  main section#concept .wrapper .box ul li:last-child {
+  main section#concept .ul-wrapper ul li:last-child {
     margin-bottom: 0;
   }
-  main section#concept .wrapper .box ul li::before {
+  main section#concept .ul-wrapper ul li::before {
+    flex-shrink: 0;
     margin-right: 2vw;
     content: "";
     height: 5.9994vw;
@@ -1717,7 +1725,7 @@ body.loaded, body.visited {
     background-size: contain;
     background-repeat: no-repeat;
   }
-  main section#concept .wrapper .box ul li span {
+  main section#concept .ul-wrapper ul li span {
     position: relative;
     top: -0.4vw;
     font-size: 1.4rem;
@@ -2208,14 +2216,19 @@ body.loaded, body.visited {
     line-height: 1.6666666667;
     line-height: 150%;
   }
-  main section#concept .wrapper .box ul li {
+  main section#concept .ul-wrapper {
+    margin: 5rem auto 0;
+    width: 87.890625%;
+    max-width: 112.5rem;
+  }
+  main section#concept .ul-wrapper ul li {
     display: flex;
     margin-bottom: 1rem;
   }
-  main section#concept .wrapper .box ul li:last-child {
+  main section#concept .ul-wrapper ul li:last-child {
     margin-bottom: 0;
   }
-  main section#concept .wrapper .box ul li::before {
+  main section#concept .ul-wrapper ul li::before {
     margin-right: 1rem;
     content: "";
     height: 2.24978rem;
@@ -2224,7 +2237,7 @@ body.loaded, body.visited {
     background-size: contain;
     background-repeat: no-repeat;
   }
-  main section#concept .wrapper .box ul li span {
+  main section#concept .ul-wrapper ul li span {
     position: relative;
     top: -0.3rem;
     font-size: 14px;
