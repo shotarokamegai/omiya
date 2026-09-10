@@ -2229,6 +2229,7 @@ body.loaded, body.visited {
     margin-bottom: 0;
   }
   main section#concept .ul-wrapper ul li::before {
+    flex-shrink: 0;
     margin-right: 1rem;
     content: "";
     height: 2.24978rem;

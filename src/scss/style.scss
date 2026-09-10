@@ -1161,6 +1161,7 @@ body {
                 margin-bottom: 0;
               }
               &::before {
+                flex-shrink: 0;
                 margin-right: rem(10);
                 content: '';
                 height: rem(22.4978);
